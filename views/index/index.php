@@ -6,12 +6,7 @@
   <title>BIT PC</title>
 </head>
 <body>
-  <header>
-    <div class="container-nav">
-      <nav>hola</nav>
-    </div>
-    <div class="container-browser">akshdb</div>
-  </header>
+  <?php require_once 'views/header.php';?>
   <h1>HOLA MUNDO</h1>
 </body>
 </html>
