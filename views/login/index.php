@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Ingresar</title>
+  <title>Login</title>
 </head>
 <body>
 <div>
@@ -22,7 +22,7 @@
         </div>
         <div>
             <label for="password">Contraseña</label>
-            <input type="password" class="form-control" id="password" name="pass">
+            <input type="password" id="password" name="pass">
         </div>
         <div>
             <button type="submit">Ingresar</button>
