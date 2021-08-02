@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Nombre App</title>
+    <title>BIT PC</title>
 </head>
 <body>
     <?php require_once 'views/header.php';?>

@@ -25,7 +25,7 @@ class Login_Controller extends Controller
             $_SESSION["nombre"] = $nombre;
             $this->view->render('login/ingresar');
         } else {
-            $this->view->resultadoLogin = "usuario o contraseña incorrectos";
+            $this->view->resultadoLogin = "Nombre de usuario o contraseña incorrectos";
             $this->view->render('login/index');
         }
     }
