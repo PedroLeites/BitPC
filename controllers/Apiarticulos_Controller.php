@@ -9,7 +9,7 @@ class Api260260articulos_Controller extends Controller
 
     }
 
-    //localahost/prophp3bj/proyectoPHPComun/Api260260articulos
+    //localahost/proyectofinal3bj/BitPC/apiarticulos/
     public function render()
     {
 
@@ -21,11 +21,6 @@ class Api260260articulos_Controller extends Controller
         $this->view->respuesta = json_encode($respuesta);
 
         $this->view->render('api/articulos/listar');
-        //var_dump($this);
-        //var_dump($this->view);
-        //$this->view->render('apilea/articulos/index');
-        //var_dump($this);
-        //var_dump($this->view);
     }
 
     public function listar()
@@ -33,7 +28,7 @@ class Api260260articulos_Controller extends Controller
 
         $listaArticulos = $this->model->listar();
         $respuesta = [
-            "datos" => $listaArticulos,
+            "Articulos disponibles" => $listaArticulos,
             "totalResultados" => count($listaArticulos),
         ];
         $this->view->respuesta = json_encode($respuesta);
@@ -68,7 +63,7 @@ class Api260260articulos_Controller extends Controller
         ];
         $this->view->respuesta = json_encode($respuesta);
 
-        $this->view->render('api260260/articulos/crearm');
+        $this->view->render('api/articulos/crearm');
         //var_dump($this);
         //var_dump($this->view);
     } //end crear
