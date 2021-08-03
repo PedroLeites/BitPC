@@ -20,7 +20,7 @@ class Api260260articulos_Controller extends Controller
         ];
         $this->view->respuesta = json_encode($respuesta);
 
-        $this->view->render('api260260/articulos/listar');
+        $this->view->render('api/articulos/listar');
         //var_dump($this);
         //var_dump($this->view);
         //$this->view->render('apilea/articulos/index');
@@ -38,12 +38,7 @@ class Api260260articulos_Controller extends Controller
         ];
         $this->view->respuesta = json_encode($respuesta);
 
-        $this->view->render('api260260/articulos/listar');
-        //var_dump($this);
-        //var_dump($this->view);
-        //$this->view->render('apilea/articulos/index');
-        //var_dump($this);
-        //var_dump($this->view);
+        $this->view->render('api/articulos/listar');
     }
 
     public function crear()
@@ -101,7 +96,7 @@ class Api260260articulos_Controller extends Controller
             "ArituloId" => $resultado,
         ];
         $this->view->respuesta = json_encode($respuesta);
-        $this->view->render('api260260/articulos/crearm');
+        $this->view->render('api/articulos/crearm');
 
     }
 
@@ -116,7 +111,7 @@ class Api260260articulos_Controller extends Controller
             "verboHTTP" => $verboHTTP,
         ];
         $this->view->respuesta = json_encode($respuesta);
-        $this->view->render('api260260/articulos/borrar');
+        $this->view->render('api/articulos/borrar');
     } //end borrar
 
     public function actualizar()
@@ -137,7 +132,7 @@ class Api260260articulos_Controller extends Controller
             "verboHTTP" => $verboHTTP,
         ];
         $this->view->respuesta = json_encode($respuesta);
-        $this->view->render('api260260/articulos/crearm');
+        $this->view->render('api/articulos/crearm');
     } //end update
 
     public function ver($param)
@@ -151,6 +146,6 @@ class Api260260articulos_Controller extends Controller
             "verboHTTP" => $verboHTTP,
         ];
         $this->view->respuesta = json_encode($respuesta);
-        $this->view->render('api260260/articulos/ver');
+        $this->view->render('api/articulos/ver');
     } // end ver
 }
