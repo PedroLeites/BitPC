@@ -10,7 +10,7 @@
     <div>
       <div>
         <div>
-          <h1>Lista Productos</h1>
+          <h1>Tienda Productos</h1>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 (function($, param) {
   $(document).ready(function() {
-      alert('hola index02');
+      alert('ListaArticulos-ADMINS (index02.js)');
       console.log("funciona");
       const items = document.querySelectorAll(".btnEliminar");
       items.forEach(item => {

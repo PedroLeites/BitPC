@@ -9,7 +9,7 @@
 <div>
     <div>
         <div>
-        <h1>Lista de Productos</h1>
+        <h1>Lista de Articulos (ADMINS)</h1>
     </div>
     <div >
         <div>

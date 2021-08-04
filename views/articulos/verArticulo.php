@@ -28,7 +28,7 @@
           <input type="text"
           id="articuloNombre"
           name="codigo"
-          value="<?=$this->articulo->codigo;?>">
+          value="<?=$this->articulo->nombre;?>">
       </div>
       <div>
           <label for="articuloDescripcion">Descripcion</label>

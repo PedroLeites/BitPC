@@ -1,6 +1,6 @@
 (function($, param) {
   $(document).ready(function() {
-      alert('hola listar');
+      alert('TIENDA (listar.js)');
       console.log("funciona ver articulo");
       let $listaArticulos=[];
       let url= $("#url").val();
