@@ -6,7 +6,6 @@ class Apiarticulos_Controller extends Controller
     public function __construct()
     {
         parent::__construct();
-
     }
 
     //localahost/proyectofinal3bj/BitPC/apiarticulos/
@@ -77,10 +76,9 @@ class Apiarticulos_Controller extends Controller
         $lista = [];
         foreach ($listaArticulos as $key => $obj) {
             $articulo = new Articulo();
-            $articulo->codigo = $obj->codigo;
+            $articulo->nombre = $obj->nombre;
             $articulo->descripcion = $obj->descripcion;
             $articulo->precio = $obj->precio;
-            $articulo->fecha = $obj->fecha;
             //$lista[] = $articulo;
             array_push($lista, $articulo);
         }
@@ -115,10 +113,9 @@ class Apiarticulos_Controller extends Controller
         $obj = json_decode($json);
         $articulo = new Articulo();
         $articulo->id = $obj->id;
-        $articulo->codigo = $obj->codigo;
+        $articulo->nombre = $obj->nombre;
         $articulo->descripcion = $obj->descripcion;
         $articulo->precio = $obj->precio;
-        $articulo->fecha = $obj->fecha;
         $resultado = $this->model->actualizar($articulo);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [

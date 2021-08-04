@@ -21,7 +21,7 @@ class Apiarticulos_Model extends Model
             while ($row = $query->fetch()) {
                 $item = new Articulo();
                 $item->id = $row['id'];
-                $item->codigo = $row['nombre'];
+                $item->nombre = $row['nombre'];
                 $item->descripcion = $row['descripcion'];
                 $item->precio = $row['precio'];
                 $item->url = isset($row['url']) ? $row['url'] : $urlDefecto;
@@ -65,7 +65,6 @@ class Apiarticulos_Model extends Model
         try {
             $query = $pdo->prepare('insert into productos (nombre, descripcion,precio,) values (:nombre, :descripcion, :precio)');
             foreach ($lista as $key => $articulo) {
-                # code...
                 $query->bindParam(':nombre', $articulo->nombre);
                 $query->bindParam(':descripcion', $articulo->descripcion);
                 $query->bindParam(':precio', $articulo->precio);
@@ -135,7 +134,7 @@ class Apiarticulos_Model extends Model
             while ($row = $query->fetch()) {
                 $articulo = new Articulo();
                 $articulo->id = $row['id'];
-                $articulo->codigo = $row['nombre'];
+                $articulo->nombre = $row['nombre'];
                 $articulo->descripcion = $row['descripcion'];
                 $articulo->precio = $row['precio'];
             }
