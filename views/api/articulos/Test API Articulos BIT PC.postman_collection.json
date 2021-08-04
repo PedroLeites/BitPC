@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "8f019c26-8d03-40ff-93ea-7c69da0a1e05",
+		"name": "Test API Articulos BIT PC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar Articulos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/proyectofinal3bj/BitPC/apiarticulos/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"proyectofinal3bj",
+						"BitPC",
+						"apiarticulos",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Articulo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/proyectofinal3bj/BitPC/apiarticulos/ver/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"proyectofinal3bj",
+						"BitPC",
+						"apiarticulos",
+						"ver",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Articulo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\" : \"Computadora\",\r\n    \"descripcion\" : \"PC Gamer gama media\",\r\n    \"precio\" : \"500\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/proyectofinal3bj/BitPC/apiarticulos/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"proyectofinal3bj",
+						"BitPC",
+						"apiarticulos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Articulo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"9\",\r\n    \"nombre\" : \"Computadora update\",\r\n    \"descripcion\" : \"PC Gamer gama media\",\r\n    \"precio\" : \"500\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/proyectofinal3bj/BitPC/apiarticulos/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"proyectofinal3bj",
+						"BitPC",
+						"apiarticulos",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Lista de Articulos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n    \"nombre\" : \"pc02\",\r\n    \"descripcion\" : \"descripcion\",\r\n    \"precio\" : \"200.00\"\r\n},\r\n{\r\n    \"nombre\" : \"pc03\",\r\n    \"descripcion\" : \"descripcion\",\r\n    \"precio\" : \"300.00\"\r\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/proyectofinal3bj/BitPC/apiarticulos/crearm",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"proyectofinal3bj",
+						"BitPC",
+						"apiarticulos",
+						"crearm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Articulo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/proyectofinal3bj/BitPC/apiarticulos/borrar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"proyectofinal3bj",
+						"BitPC",
+						"apiarticulos",
+						"borrar",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
