@@ -36,7 +36,7 @@ foreach ($this->articulos as $row) {
                     <td><?php echo $articulo->descripcion; ?></td>
                     <td><?php echo $articulo->precio; ?></td>
                     <td><a href="<?php echo constant('URL') . 'articulos/verArticulo/' . $articulo->id; ?>">Actualizar</a></td>
-                    <td><button data-articulo="<?php echo $articulo->id; ?>" id="art<?php echo $articulo->id; ?>">Eliminar</button></td>
+                    <td><button class="btnEliminar" data-articulo="<?php echo $articulo->id; ?>" id="art<?php echo $articulo->id; ?>">Eliminar</button></td>
                 </tr>
                 <?php }?>
                 </tbody>
@@ -47,7 +47,6 @@ foreach ($this->articulos as $row) {
 <!-- importo la libreria jquery-->
     <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
     <!-- importo el javascript-->
-    <script src="<?php echo constant('URL'); ?>/public/js/articulos/index02.js"></script>
-    <script src="<?php echo constant('URL'); ?>/public/js/main.js"></script>
+    <script src="<?php echo constant('URL'); ?>/public/js/articulos/index.js"></script>
 </body>
 </html>

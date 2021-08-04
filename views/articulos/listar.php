@@ -32,16 +32,12 @@
       </div><!-- end card -->
     </div><!-- end col --><?php }
 ;?>
-
-
-
       </div>
     </div>
 
     <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
     <!-- importo el javascript-->
     <script src="<?php echo constant('URL'); ?>/public/js/articulos/listar.js"></script>
-    <!--<script src="<?php echo constant('URL'); ?>/public/js/main.js"></script> -->
 
 </body>
 </html>

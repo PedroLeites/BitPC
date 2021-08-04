@@ -7,7 +7,7 @@
    <ul>
       <li><a href="<?php echo constant('URL'); ?>index">Inicio</a></li>
       <li><a href="<?php echo constant('URL'); ?>articulos/listar">Tienda</a></li>
-      <li><a href="<?php echo constant('URL'); ?>articulos">Lista de Productos</a></li>
+      <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
     </ul>
    </div>
    <div id="user-menu">

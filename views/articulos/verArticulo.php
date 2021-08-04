@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Editar Articulo</title>
 </head>
 <body>
 <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
@@ -27,7 +27,7 @@
           <label for="articuloNombre">Nombre</label>
           <input type="text"
           id="articuloNombre"
-          name="codigo"
+          name="nombre"
           value="<?=$this->articulo->nombre;?>">
       </div>
       <div>
@@ -37,7 +37,7 @@
           name="descripcion"
           value="<?=$this->articulo->descripcion;?>">
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12">
+      <div>
           <label for="articuloPrecio">Precio</label>
           <input type="text"
           id="articuloPrecio"
@@ -51,10 +51,10 @@
       </form>
     </div>
 
+     <!-- importo el jQuery-->
     <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
     <!-- importo el javascript-->
     <script src="<?php echo constant('URL'); ?>/public/js/articulos/verArticulo.js"></script>
-    <!--<script src="<?php echo constant('URL'); ?>/public/js/main.js"></script> -->
 
 </body>
 </html>
