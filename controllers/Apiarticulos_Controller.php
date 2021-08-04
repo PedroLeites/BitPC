@@ -1,7 +1,7 @@
 <?php
 require_once 'entidades/articulo.php';
 
-class Api260260articulos_Controller extends Controller
+class Apiarticulos_Controller extends Controller
 {
     public function __construct()
     {
@@ -44,10 +44,10 @@ class Api260260articulos_Controller extends Controller
         $obj = json_decode($json);
 
         $articulo = new Articulo();
-        $articulo->codigo = $obj->codigo;
+        $articulo->nombre = $obj->nombre;
         $articulo->descripcion = $obj->descripcion;
         $articulo->precio = $obj->precio;
-        $articulo->fecha = $obj->fecha;
+        //$articulo->fecha = $obj->fecha;
         //array_push($listaArticulos, $articulo);
         //$items[] = $item;
 
