@@ -4,6 +4,7 @@
   <title>Login</title>
 </head>
 <body>
+<?php require 'views/header.php';?>
 <div>
     <div>
         <div>

@@ -25,7 +25,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php
+<?php
 
 foreach ($this->articulos as $row) {
     $articulo = new Articulo();
@@ -45,9 +45,9 @@ foreach ($this->articulos as $row) {
     </div>
 </div>
 <!-- importo la libreria jquery-->
-<script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
     <!-- importo el javascript-->
     <script src="<?php echo constant('URL'); ?>/public/js/articulos/index02.js"></script>
-    <!--<script src="<?php echo constant('URL'); ?>/public/js/main.js"></script> -->
+    <script src="<?php echo constant('URL'); ?>/public/js/main.js"></script>
 </body>
 </html>

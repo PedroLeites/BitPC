@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Tienda</title>
+    <title>BIT PC - Tienda</title>
 </head>
 <body>
 <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
@@ -15,7 +15,7 @@
       </div>
 
       <div>
-      <?php foreach ($this->articulos as $key => $value) {; # code...
+      <?php foreach ($this->articulos as $key => $value) {;
 
     ?><div>
       <div>

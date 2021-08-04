@@ -1,6 +1,6 @@
 (function($, param) {
   $(document).ready(function() {
-      //alert('hola');
+      alert('hola index02');
       console.log("funciona");
       const items = document.querySelectorAll(".btnEliminar");
       items.forEach(item => {

@@ -1,7 +1,7 @@
 (function($, param) {
   $(document).ready(function() {
-      //alert('hola');
-      //console.log("funciona ver articulo");
+      alert('hola listar');
+      console.log("funciona ver articulo");
       let $listaArticulos=[];
       let url= $("#url").val();
       let urlReq =url+"apiarticulos/listar";
