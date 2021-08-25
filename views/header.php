@@ -8,6 +8,7 @@
       <li><a href="<?php echo constant('URL'); ?>index">Inicio</a></li>
       <li><a href="<?php echo constant('URL'); ?>articulos/listar">Tienda</a></li>
       <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
+      <li><a href="<?php echo constant('URL'); ?>carrito">Carrito</a></li>
     </ul>
    </div>
    <div id="user-menu">
