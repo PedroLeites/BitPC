@@ -1,11 +1,16 @@
-(function($, param) {
+(function($) {
   $(document).ready(function() {
-      alert('TIENDA (listar.js)');
-      console.log("funciona ver articulo");
+
+    let carritoStr = localStorage.getItem("carrito");
+    let carrito;
+    if (carritoStr){
+      carrito = JSON.parse(carritoStr);
+      console.log("ento");
+    }
+    
       let $listaArticulos=[];
       let url= $("#url").val();
       let urlReq =url+"apiarticulos/listar";
-      console.log("url: "+urlReq);
       let headers = {"Content-Type":"application/json;charset=utf-8"}; 
       let data = {};
             $.ajax({
@@ -16,20 +21,19 @@
           })
           .done(function (data) { 
             $listaArticulos=data.datos;
-            //console.log($listaArticulos);
+            console.log(data);
            })
-          .fail(function (jqXHR, textStatus, errorThrown) { serrorFunction(); });
+          .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });
 
           //asiganr la funcionalidad del carrito
-          const items = document.querySelectorAll(".btnAgregar");
-          items.forEach(item => {
-          item.addEventListener("click", function(){          
-            let articuloId = this.dataset.articuloId;
-            //console.log(articuloId);
-            let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);
-            console.log(JSON.stringify(articulo));            
+          $(".btnAgregar").each(function(index) {            
+          $(this).on("click", function(){        
+            let articuloId = $(this).data("articuloId");
+            let articuloDescripcion = $(this).data("articuloDescripcion");
+            let articuloCodigo = $(this).data("articuloCodigo");
+            console.log(articuloId);
+            let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);           
             carrito = JSON.parse(localStorage.getItem("carrito"));
-            console.log("carrito: "+ carrito);
             if (carrito==null){
               //inicilizo el carrito
               //agrego el elememto al carrito
@@ -38,14 +42,19 @@
               if (cantidadAux>=1){
                 cantidad = cantidadAux;
               }
-              console.log("cantidad:" + cantidad);
+              //console.log("cantidad:" + cantidad);
               carrito=[];
               console.log();
               item={"id" : articulo.id,
                      "precio": articulo.precio,
-                      "cantidad": cantidad}
-              carrito.push(item);
+                     "descripcion": articuloDescripcion,
+                     "codigo": articuloCodigo,
+                      "cantidad": cantidad,
+                    "url": articulo.url
+                  }
+              carrito.push(item);              
               localStorage.setItem("carrito", JSON.stringify(carrito));
+              $("#cantidadElemCarrito").text(carrito.length);
             } else{
               //ya tienen por lo menos un item
               let cantidadAux= $("#art-"+articuloId).val();
@@ -53,28 +62,26 @@
               if (cantidadAux>=1){
                 cantidad = cantidadAux;
               }
-              console.log("cantidad:" + cantidad);              
-              console.log();
+              //console.log("cantidad:" + cantidad);              
+              //console.log();
               item={"id" : articulo.id,
                      "precio": articulo.precio,
-                      "cantidad": cantidad}
+                     "descripcion": articuloDescripcion,
+                     "codigo": articuloCodigo,
+                      "cantidad": cantidad,
+                      "url": articulo.url
+                    
+                    }
               let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
-              console.log("itemCarrito: "+itemCarrito);
+              //console.log("itemCarrito: "+itemCarrito);
               if (itemCarrito==undefined){
                 carrito.push(item);
-                localStorage.setItem("carrito", JSON.stringify(carrito));              
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+                $("#cantidadElemCarrito").text(carrito.length);
               } 
               
             }
-            //console.log("carrito: "+$carrito);           
-            //localStorage.setItem("carrito", )
-            //$("#filaart-"+alumnoId).remove();
           });//end item click
       });//end item click items foreach
-
-          
-
-
-
   });//end ready
-})(jQuery, "hola mundo");
+})(jQuery);

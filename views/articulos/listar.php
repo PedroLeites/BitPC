@@ -27,7 +27,7 @@
           <input id="art-<?=$value->id;?>"
           value="1" type="number"
           ></p>
-          <button type="button" data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
+          <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
         </div>
       </div><!-- end card -->
     </div><!-- end col --><?php }

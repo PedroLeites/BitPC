@@ -1,7 +1,6 @@
 (function($, param) {
   $(document).ready(function() {
-      //alert('hola');
-      //console.log("funciona ver articulo"); 
+      alert('editar articulo');
       $("#enviarForm").click(function() {
         //alert('hola');
         //console.log("enviarFormulario");
@@ -17,12 +16,8 @@
         //console.log(objeto);
         const confirm = window.confirm("Deseas actualizar el elemento?");
         if (confirm){
-          //console.log("entro if");
-          //solitud ajax, 
-          //$("#filaart-"+alumnoId).remove();
           let url= $("#url").val();
           let urlReq =url+"apiarticulos/actualizar";
-          //console.log("url: "+urlReq);
           let headers = {"Content-Type":"application/json;charset=utf-8"};
           let data = JSON.stringify(objeto);
           $.ajax({
