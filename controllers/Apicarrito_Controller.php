@@ -45,11 +45,6 @@ class Apicarrito_Controller extends Controller
             http_response_code(200);
         }
         $this->view->render('api/carrito/completarcarrito');
-        //var_dump($this);
-        //var_dump($this->view);
-        //$this->view->render('apilea/articulos/index');
-        //var_dump($this);
-        //var_dump($this->view);
     }
 
 }
