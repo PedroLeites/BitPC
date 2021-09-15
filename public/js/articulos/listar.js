@@ -1,13 +1,11 @@
 (function($) {
   $(document).ready(function() {
-
     let carritoStr = localStorage.getItem("carrito");
     let carrito;
     if (carritoStr){
       carrito = JSON.parse(carritoStr);
-      console.log("ento");
+      console.log("entro");
     }
-    
       let $listaArticulos=[];
       let url= $("#url").val();
       let urlReq =url+"apiarticulos/listar";
@@ -24,18 +22,17 @@
             console.log(data);
            })
           .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });
-
-          //asiganr la funcionalidad del carrito
           $(".btnAgregar").each(function(index) {            
-          $(this).on("click", function(){        
+          $(this).on("click", function(){    
+            console.log('hace click');    
             let articuloId = $(this).data("articuloId");
             let articuloDescripcion = $(this).data("articuloDescripcion");
             let articuloCodigo = $(this).data("articuloCodigo");
-            console.log(articuloId);
-            let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);           
+            console.log('Articulo ID: '+articuloId);
+            let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);          
             carrito = JSON.parse(localStorage.getItem("carrito"));
             if (carrito==null){
-              //inicializo el carrito
+              //inicilizo el carrito
               //agrego el elememto al carrito
               let cantidadAux= $("#art-"+articuloId).val();
               let cantidad=1; 
@@ -48,8 +45,8 @@
                      "precio": articulo.precio,
                      "descripcion": articuloDescripcion,
                      "codigo": articuloCodigo,
-                     "cantidad": cantidad,
-                     "url": articulo.url
+                      "cantidad": cantidad,
+                    "url": articulo.url
                   }
               carrito.push(item);              
               localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -61,8 +58,6 @@
               if (cantidadAux>=1){
                 cantidad = cantidadAux;
               }
-              //console.log("cantidad:" + cantidad);              
-              //console.log();
               item={"id" : articulo.id,
                      "precio": articulo.precio,
                      "descripcion": articuloDescripcion,
@@ -72,7 +67,6 @@
                     
                     }
               let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
-              //console.log("itemCarrito: "+itemCarrito);
               if (itemCarrito==undefined){
                 carrito.push(item);
                 localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -82,5 +76,10 @@
             }
           });//end item click
       });//end item click items foreach
+
+          
+
+
+
   });//end ready
 })(jQuery);

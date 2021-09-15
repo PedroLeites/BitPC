@@ -1,6 +1,5 @@
 (function($, param) {
   $(document).ready(function() {
-      alert('ListaArticulos-ADMINS (articulos/index.js)');
       console.log("funciona");
       const items = document.querySelectorAll(".btnEliminar");
       items.forEach(item => {
@@ -37,4 +36,4 @@
         });//end item click
       });//end item click items foreach  
   });  
-})(jQuery, "hola mundo");
+})(jQuery);

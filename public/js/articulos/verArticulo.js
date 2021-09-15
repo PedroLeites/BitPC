@@ -1,6 +1,6 @@
 (function($, param) {
   $(document).ready(function() {
-      alert('editar articulo');
+      //alert('editar articulo');
       $("#enviarForm").click(function() {
         //alert('hola');
         //console.log("enviarFormulario");

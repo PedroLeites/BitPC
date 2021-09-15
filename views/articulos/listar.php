@@ -22,8 +22,8 @@
         <img src="<?=$value->url;?>"/>
         <div>
           <h5>ID: <?=$value->id;?> <?=$value->nombre;?></h5>
-          <p class="card-text"><?=$value->descripcion;?></p>
-          <p class="card-text">$ <?=$value->precio;?></p>
+          <p class=""><?=$value->descripcion;?></p>
+          <p class="">$ <?=$value->precio;?></p>
           <input id="art-<?=$value->id;?>"
           value="1" type="number"
           ></p>
@@ -35,6 +35,7 @@
       </div>
     </div>
 
+    <!-- importo jQuery-->
     <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
     <!-- importo el javascript-->
     <script src="<?php echo constant('URL'); ?>/public/js/articulos/listar.js"></script>
