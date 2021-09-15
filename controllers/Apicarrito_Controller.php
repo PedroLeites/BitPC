@@ -18,6 +18,7 @@ class Apicarrito_Controller extends Controller
         $usuario = $datos->usuario_id;
         //lista = array();
         $lista = [];
+        //Crea el objeto carrito con la lista de articulos
         foreach ($listaArticulos as $key => $obj) {
             $articulo = new Carrito();
             $articulo->id = $obj->id;
@@ -26,8 +27,8 @@ class Apicarrito_Controller extends Controller
             $lista[] = $articulo;
             //array_push($lista, $articulo);
         }
+        //Defino los resultados de las request
         $resultado = $this->model->completarCarrito($lista, $usuario);
-
         $respuesta = [];
         if ($resultado == true) {
             http_response_code(200);
@@ -35,17 +36,19 @@ class Apicarrito_Controller extends Controller
                 "datos" => $lista,
                 "totalResultados" => count($lista),
                 "usuario" => $usuario,
-                "respuesta" => "pedido completado",
+                "respuesta" => "Pedido Completado",
             ];
         } else {
             http_response_code(400);
             $respuesta = json_encode([
                 "resultado" => $resultado,
-                "respuesta" => "error al completar el pedido",
+                "respuesta" => "Error al completar el pedido",
             ]);
 
         }
+        //convierto la respuesta a json
         $this->view->respuesta = json_encode($respuesta);
+        //llamo al método render
         $this->view->render('api/carrito/completarcarrito');
     }
 

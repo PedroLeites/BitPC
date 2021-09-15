@@ -24,7 +24,9 @@ class Apicarrito_Model extends Model
                 //por si hay errores
                 $lastInsertId = -1;
             }
+            // inserto en la base de datos
             $query = $pdo->prepare('insert into item (articulo_id, cantidad, precio, pedido_id) VALUES (:articulo_id, :cantidad, :precio, :pedido_id)');
+            // le paso los parámetros a lista
             foreach ($lista as $key => $articulo) {
                 $query->bindParam(':articulo_id', $articulo->id);
                 $query->bindParam(':cantidad', $articulo->cantidad);
@@ -34,9 +36,11 @@ class Apicarrito_Model extends Model
             }
             $pdo->commit();
             return true;
+            // Si hay una exception, vuelve a insertar
         } catch (PDOException $e) {
             $pdo->rollBack();
             return false;
+            // finally para liberar espacio
         } finally {
             $pdo = null;
         }
