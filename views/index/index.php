@@ -7,6 +7,7 @@
 </head>
 <body>
   <?php require_once 'views/header.php';?>
-  <h1>HOLA MUNDO</h1>
+  <?php require_once 'views/buscador.php';?>
+  <h1>INICIO</h1>
 </body>
 </html>

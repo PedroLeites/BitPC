@@ -1,17 +1,17 @@
-<div>
+<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/header.css">
+<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
+<div id="header-principal">
   <nav>
-   <div id="menu-container">
-   <div id="logo-container">
-     <h1>BIT PC</h1>
+  <div id="menu-container">
+  <div id="logo-container">
+     <img src="<?php echo constant('URL'); ?>public/img/logos/logo-nav.png" height="auto" width="200px">
    </div>
    <ul>
-      <li><a href="<?php echo constant('URL'); ?>index">Inicio</a></li>
-      <li><a href="<?php echo constant('URL'); ?>articulos/listar">Tienda</a></li>
-      <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
-      <li><a href="<?php echo constant('URL'); ?>carrito">Carrito <span id="CantidadElemCarrito">0</span></a></li>
+      <li><a href="<?php echo constant('URL'); ?>index"><b>Inicio</b></a></li>
+      <li><a href="<?php echo constant('URL'); ?>articulos/listar"><b>Tienda</b></a></li>
+      <li><a href="<?php echo constant('URL'); ?>articulos"><b>Administrar Articulos</b></a></li>
     </ul>
-   </div>
-   <div id="user-menu">
+    <div id="user-menu">
     <?php
 
 if (isset($_SESSION["estalogueado"])) {
@@ -26,9 +26,11 @@ if ($estaLogueado) {
         <a href="<?php echo constant('URL'); ?>login/salir">Salir</a>
   <?php } else {
     ?>
-          <a class="btn btn-outline-light mx-2" href="<?php echo constant('URL'); ?>login">Ingresar</a>
+          <a class="" href="<?php echo constant('URL'); ?>login"><b>Ingresar</b></a>
+          <a class="" href="<?php echo constant('URL'); ?>"><b>Registrarse</b></a>
 <?php }
 ;?>
+   </div>
    </div>
   </nav>
 </div>
