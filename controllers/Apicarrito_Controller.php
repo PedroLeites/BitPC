@@ -15,7 +15,7 @@ class Apicarrito_Controller extends Controller
         //convierto el json en un array asociativo de php
         $datos = json_decode($json);
         $listaArticulos = $datos->lista;
-        //$usuario = $datos->usuario;
+        $usuario = $datos->usuario_id;
         //lista = array();
         $lista = [];
         foreach ($listaArticulos as $key => $obj) {
@@ -28,22 +28,24 @@ class Apicarrito_Controller extends Controller
         }
         $resultado = $this->model->completarCarrito($lista, $usuario);
 
-        $respuesta = [
-            "datos" => $lista,
-            "totalResultados" => count($lista),
-            "usuario" => $usuario,
-            "resultado" => $resultado,
-        ];
-        $this->view->respuesta = json_encode($respuesta);
-        if ($resultado == false) {
+        $respuesta = [];
+        if ($resultado == true) {
+            http_response_code(200);
+            $respuesta = [
+                "datos" => $lista,
+                "totalResultados" => count($lista),
+                "usuario" => $usuario,
+                "respuesta" => "pedido completado",
+            ];
+        } else {
             http_response_code(400);
-            $this->view->respuesta = json_encode([
+            $respuesta = json_encode([
                 "resultado" => $resultado,
                 "respuesta" => "error al completar el pedido",
             ]);
-        } else {
-            http_response_code(200);
+
         }
+        $this->view->respuesta = json_encode($respuesta);
         $this->view->render('api/carrito/completarcarrito');
     }
 

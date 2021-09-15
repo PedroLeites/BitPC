@@ -15,10 +15,10 @@ class Apicarrito_Model extends Model
         try {
             $fecha = date('Y-m-d h:i:s', time());
             $query = $pdo->prepare('insert into pedido (usuario_id, fecha) VALUES (:idUsuario, :fecha)');
-            $query->blindParam(':idUsuario', $usuario);
-            $query->blindParam(':fecha', $fecha);
+            $query->bindParam(':idUsuario', $usuario);
+            $query->bindParam(':fecha', $fecha);
             $lastInsertId = 0;
-            if ($query->execute) {
+            if ($query->execute()) {
                 $lastInsertId = $pdo->lastInsertId();
             } else {
                 //por si hay errores
@@ -27,12 +27,13 @@ class Apicarrito_Model extends Model
             $query = $pdo->prepare('insert into item (articulo_id, cantidad, precio, pedido_id) VALUES (:articulo_id, :cantidad, :precio, :pedido_id)');
             foreach ($lista as $key => $articulo) {
                 $query->bindParam(':articulo_id', $articulo->id);
-                $query->bindParam(':cantidad', $articulo->id);
+                $query->bindParam(':cantidad', $articulo->cantidad);
                 $query->bindParam(':precio', $articulo->precio);
                 $query->bindParam(':pedido_id', $lastInsertId);
                 $query->execute();
             }
             $pdo->commit();
+            return true;
         } catch (PDOException $e) {
             $pdo->rollBack();
             return false;

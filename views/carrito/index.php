@@ -10,5 +10,10 @@
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
   <?php require_once 'views/header.php';?>
   <h1>Articulos en el carrito</h1>
+
+  <!-- importo jQuery-->
+  <script src="<?php echo constant('URL'); ?>public/js/jquery-3.6.0.min.js"></script>
+  <!-- importo el javascript-->
+  <script src="<?php echo constant('URL'); ?>public/js/carrito/index.js"></script>
 </body>
 </html>

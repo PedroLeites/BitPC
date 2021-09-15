@@ -35,22 +35,21 @@
             let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);           
             carrito = JSON.parse(localStorage.getItem("carrito"));
             if (carrito==null){
-              //inicilizo el carrito
+              //inicializo el carrito
               //agrego el elememto al carrito
               let cantidadAux= $("#art-"+articuloId).val();
               let cantidad=1; 
               if (cantidadAux>=1){
                 cantidad = cantidadAux;
               }
-              //console.log("cantidad:" + cantidad);
               carrito=[];
               console.log();
               item={"id" : articulo.id,
                      "precio": articulo.precio,
                      "descripcion": articuloDescripcion,
                      "codigo": articuloCodigo,
-                      "cantidad": cantidad,
-                    "url": articulo.url
+                     "cantidad": cantidad,
+                     "url": articulo.url
                   }
               carrito.push(item);              
               localStorage.setItem("carrito", JSON.stringify(carrito));
