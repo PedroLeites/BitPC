@@ -1,0 +1,30 @@
+#buscador-container {
+  background-color: #0d0d0d;
+  color: white;
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 10px;
+}
+
+#buscador-container a {
+  text-decoration: none;
+  color: white;
+  display: inline-flex;
+  padding: 10px 15px;
+}
+
+.ul-nav > li {
+  float: left;
+}
+
+.ul-nav li ul {
+  display: none;
+  position: absolute;
+}
+
+.ul-nav li:hover > ul {
+  display: block;
+  background-color: #0d0d0d;
+  border-bottom: solid white 1px;
+}

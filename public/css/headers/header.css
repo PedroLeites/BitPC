@@ -1,6 +1,6 @@
 #header-principal {
   display: flex;
-  width: 100%;
+  width: auto;
   height: auto;
   padding: 10px;
   justify-content: space-between;
