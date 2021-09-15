@@ -26,10 +26,10 @@
           $(this).on("click", function(){    
             console.log('hace click');    
             let articuloId = $(this).data("articuloId");
+            let articuloNombre = $(this).data("articuloNombre");
             let articuloDescripcion = $(this).data("articuloDescripcion");
-            let articuloCodigo = $(this).data("articuloCodigo");
             console.log('Articulo ID: '+articuloId);
-            let articulo= $listaArticulos.find(articulo => articulo.id ==articuloId);          
+            let articulo= $listaArticulos.find(articulo => articulo.id == articuloId);          
             carrito = JSON.parse(localStorage.getItem("carrito"));
             if (carrito==null){
               //inicilizo el carrito
@@ -42,10 +42,10 @@
               carrito=[];
               console.log();
               item={"id" : articulo.id,
-                     "precio": articulo.precio,
-                     "descripcion": articuloDescripcion,
-                     "codigo": articuloCodigo,
-                      "cantidad": cantidad,
+                    "nombre": articuloNombre,
+                    "precio": articulo.precio,
+                    "descripcion": articuloDescripcion,
+                    "cantidad": cantidad,
                     "url": articulo.url
                   }
               carrito.push(item);              
@@ -59,13 +59,12 @@
                 cantidad = cantidadAux;
               }
               item={"id" : articulo.id,
-                     "precio": articulo.precio,
-                     "descripcion": articuloDescripcion,
-                     "codigo": articuloCodigo,
-                      "cantidad": cantidad,
-                      "url": articulo.url
-                    
-                    }
+                    "nombre": articuloNombre,
+                    "precio": articulo.precio,
+                    "descripcion": articuloDescripcion,
+                    "cantidad": cantidad,
+                    "url": articulo.url
+                  }
               let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
               if (itemCarrito==undefined){
                 carrito.push(item);
