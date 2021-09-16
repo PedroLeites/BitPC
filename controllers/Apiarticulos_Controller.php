@@ -27,7 +27,7 @@ class Apiarticulos_Controller extends Controller
 
         $listaArticulos = $this->model->listar();
         $respuesta = [
-            "Articulos disponibles" => $listaArticulos,
+            "articulosDisponibles" => $listaArticulos,
             "totalResultados" => count($listaArticulos),
         ];
         $this->view->respuesta = json_encode($respuesta);

@@ -1,6 +1,6 @@
 (function($) {
   $(document).ready(function() {
-      alert('index carrito');
+      //alert('index carrito');
       let carrito = JSON.parse(localStorage.getItem("carrito"));
       carrito.forEach(element => { 
         let insert = `<div class=""
@@ -8,7 +8,7 @@
         <div class="">
           <img class="" src="${element.url}" alt=""/>
           <div class=">
-            <h5 class="">ID:${element.id} ${element.codigo}</h5>
+            <h5 class="">ID:${element.id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${element.nombre}</h5>
             <p class="">${element.descripcion}</p>
             <p class="">$ ${element.precio}</p>
             <input id="cant-${element.id}" class=""

@@ -4,7 +4,7 @@
     let carrito;
     if (carritoStr){
       carrito = JSON.parse(carritoStr);
-      console.log("entro");
+      //console.log("entro");
     }
       let $listaArticulos=[];
       let url= $("#url").val();
@@ -18,16 +18,19 @@
               data: data
           })
           .done(function (data) { 
-            $listaArticulos=data.datos;
-            console.log(data);
+            //$listaArticulos=data.datos;
+            $listaArticulos=data.articulosDisponibles;
+            //console.log($listaArticulos);
            })
           .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });
-          $(".btnAgregar").each(function(index) {            
+          $(".btnAgregar").each(function(index) { 
+        
           $(this).on("click", function(){    
-            console.log('hace click');    
             let articuloId = $(this).data("articuloId");
             let articuloNombre = $(this).data("articuloNombre");
             let articuloDescripcion = $(this).data("articuloDescripcion");
+            console.log("lista de articuls\n");
+            console.log($listaArticulos);
             console.log('Articulo ID: '+articuloId);
             let articulo= $listaArticulos.find(articulo => articulo.id == articuloId);          
             carrito = JSON.parse(localStorage.getItem("carrito"));
@@ -40,11 +43,11 @@
                 cantidad = cantidadAux;
               }
               carrito=[];
-              console.log();
+              console.log($listaArticulos);
               item={"id" : articulo.id,
-                    "nombre": articuloNombre,
+                    "nombre": articulo.nombre,
                     "precio": articulo.precio,
-                    "descripcion": articuloDescripcion,
+                    "descripcion": articulo.descripcion,
                     "cantidad": cantidad,
                     "url": articulo.url
                   }
@@ -59,26 +62,20 @@
                 cantidad = cantidadAux;
               }
               item={"id" : articulo.id,
-                    "nombre": articuloNombre,
+                    "nombre": articulo.nombre,
                     "precio": articulo.precio,
-                    "descripcion": articuloDescripcion,
+                    "descripcion": articulo.descripcion,
                     "cantidad": cantidad,
                     "url": articulo.url
-                  }
+              }
               let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
               if (itemCarrito==undefined){
                 carrito.push(item);
                 localStorage.setItem("carrito", JSON.stringify(carrito));
                 $("#cantidadElemCarrito").text(carrito.length);
               } 
-              
-            }
+            }//end else
           });//end item click
       });//end item click items foreach
-
-          
-
-
-
   });//end ready
 })(jQuery);

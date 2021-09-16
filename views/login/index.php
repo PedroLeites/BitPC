@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
   <title>Login</title>
 </head>
 <body>
@@ -31,5 +32,6 @@
         </div>
         </form>
     </div>
+    <?php require 'views/footer.php';?>
 </body>
 </html>

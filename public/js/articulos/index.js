@@ -1,6 +1,6 @@
 (function($, param) {
   $(document).ready(function() {
-      console.log("funciona");
+      //console.log("funciona");
       const items = document.querySelectorAll(".btnEliminar");
       items.forEach(item => {
         item.addEventListener("click", function(){
@@ -27,12 +27,9 @@
           .done(function (data) { console.log(data);
             $("#filaart-"+articuloId).remove()})
           .fail(function (jqXHR, textStatus, errorThrown) { serrorFunction(); });
-
           } else {
-            console.log("entro eslse");
+            //console.log("entro eslse");
           }
-
-
         });//end item click
       });//end item click items foreach  
   });  

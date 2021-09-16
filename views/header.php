@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/header.css">
-<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
-<link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+
 <div id="header-principal">
   <nav>
   <div id="menu-container">

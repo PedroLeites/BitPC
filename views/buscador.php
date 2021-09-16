@@ -25,7 +25,7 @@
       <a href="<?php echo constant('URL'); ?>carrito">
         <span class="iconify" data-icon="bx:bxs-cart"></span>
         <b>Carrito</b>
-        <span id="CantidadElemCarrito">0</span>
+        <span id="cantidadElemCarrito">0</span>
       </a>
     </li>
     </ul>
