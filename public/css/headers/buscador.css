@@ -2,7 +2,7 @@
   background-color: #0d0d0d;
   color: white;
   display: flex;
-  width: auto;
+  width: 100%;
   height: auto;
   padding: 10px;
 }
@@ -26,5 +26,5 @@
 .ul-nav li:hover > ul {
   display: block;
   background-color: #0d0d0d;
-  border-bottom: solid white 1px;
+  border-bottom: solid white 2px;
 }

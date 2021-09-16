@@ -6,6 +6,7 @@
 </head>
 <body>
     <?php require_once 'views/header.php';?>
+    <?php require_once 'views/buscador.php';?>
     <div>
     <div>
         <div>

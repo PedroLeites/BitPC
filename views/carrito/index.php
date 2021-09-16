@@ -9,6 +9,7 @@
 <body>
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
   <?php require_once 'views/header.php';?>
+  <?php require_once 'views/buscador.php';?>
   <h1>Articulos en el carrito</h1>
 
   <!-- importo jQuery-->

@@ -5,6 +5,7 @@
 </head>
 <body>
   <?php require 'views/header.php';?>
+  <?php require_once 'views/buscador.php';?>
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
 <div>
     <div>

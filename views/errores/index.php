@@ -7,6 +7,7 @@
 </head>
 <body>
     <?php require 'views/header.php';?>
+    <?php require_once 'views/buscador.php';?>
     <div>
         <h1>
         <?php echo $this->mensaje; ?>

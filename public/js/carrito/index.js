@@ -33,7 +33,7 @@
             console.log("-----------------");
             let carrito= JSON.parse(carritoStr);
             console.log(carrito);
-            let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
+            let itemCarrito= carrito.find(articulo => articulo.id == articuloId);
             carrito.forEach(function(art, index, object) {
               if(art.id == articuloId){
                 object.splice(index, 1);
