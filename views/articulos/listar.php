@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>BIT PC - Tienda</title>
+    <link rel="stylesheet" href="<?=constant('URL');?>public/css/articulos/listar.css">
 </head>
 <body>
 <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
@@ -38,7 +39,7 @@
 
     <?php require 'views/footer.php';?>
     <!-- importo jQuery-->
-    <script src="<?php echo constant('URL'); ?>/public/js/articulos/listar.js"></script>
+    <script src="<?php echo constant('URL'); ?>public/js/articulos/listar.js"></script>
 
 </body>
 </html>
