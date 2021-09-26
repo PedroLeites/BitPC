@@ -1,9 +1,10 @@
 <?php
 class Articulo
 {
-    public $id;
-    public $nombre;
-    public $descripcion;
-    public $precio;
-    public $url;
+    public $IDProd;
+    public $IDD;
+    public $NomProd;
+    public $Descripcion;
+    public $Precio;
+    public $stock;
 }
