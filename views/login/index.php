@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
+<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/icons/all.min.css">
 <!DOCTYPE html>
 <html lang="es">
 <head>

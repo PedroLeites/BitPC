@@ -1,8 +1,8 @@
 #header-principal {
-  display: flex;
+  display: inline;
   width: auto;
   height: auto;
-  padding: 10px;
+  padding: 5px;
   justify-content: space-between;
 }
 

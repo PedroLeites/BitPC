@@ -1,12 +1,12 @@
-<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/buscador.css">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
-<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/icons/all.min.css">
+<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/buscador.css">
 <div id="buscador-container">
   <ul class="ul-nav">
      <li>
       <a href=""><b>Productos por categoría</b></a>
       <ul id="categorias">
-        <li><a href="">Ver Todos</a></li>
+        <li><a href="<?php echo constant('URL'); ?>articulos/listar">Ver Todos</a></li>
         <li><a href="">Computadoras</a></li>
         <li><a href="">Perisféricos</a></li>
         <li><a href="">Componentes</a></li>
@@ -23,8 +23,7 @@
     <ul>
     <li>
       <a href="<?php echo constant('URL'); ?>carrito">
-        <span class="iconify" data-icon="bx:bxs-cart"></span>
-        <b>Carrito</b>
+        <i class="fa-solid fa-cart-shopping"></i>
         <span id="cantidadElemCarrito">0</span>
       </a>
     </li>
