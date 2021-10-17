@@ -1,60 +1,107 @@
-#header-principal {
-  display: inline;
-  width: auto;
-  height: auto;
-  padding: 5px;
-  justify-content: space-between;
-}
-
-#menu-container {
-  height: 50px;
-  display: flex;
-}
-
-#menu-container ul {
-  padding: 5px;
-  list-style: none;
-  display: flex;
-  text-align: center;
-}
-
-#menu-container li a {
-  width: 80%;
-  height: fit-content;
-  color: #0d0d0d;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: inline-block;
-  margin-left: 100px;
-}
-
-#menu-container li a:hover {
-  color: rgb(98, 95, 95);
-}
-
-#logo-container {
+.menu {
+  background-color: #fff;
+  height: 75px;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#user-menu {
-  width: 70%;
-  height: 50px;
+#logo {
+  padding: 0 80px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.menu_items {
   display: flex;
-  margin-left: 200px;
-  padding-top: 5px;
+  list-style: none;
+  margin-right: 30px;
 }
 
-#user-menu a {
-  width: 80%;
-  height: fit-content;
-  color: #0d0d0d;
+.menu_items li {
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.menu_items li a {
+  padding: 7px 13px;
   text-decoration: none;
-  padding: 10px 15px;
-  display: inline-block;
+  font-size: 18px;
+  display: block;
+  text-transform: uppercase;
+  color: #0d0d0d;
 }
 
-#user-menu a:hover {
-  color: rgb(98, 95, 95);
+.menu_items li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.btn_menu {
+  margin-right: 30px;
+  font-size: 25px;
+  color: #0d0d0d;
+  cursor: pointer;
+  display: none;
+}
+
+ul.show {
+  top: 65px;
+}
+
+@media screen and (max-width: 952px) {
+  .menu_items li a {
+    font-size: 16px;
+  }
+  #logo {
+    padding-left: 35px;
+  }
+}
+
+@media screen and (max-width: 858px) {
+  .menu {
+    height: 65px;
+  }
+  .btn_menu {
+    display: inline-flex;
+  }
+  .menu_items {
+    position: fixed;
+    width: 100vw;
+    height: calc(100% - 65px);
+    background-color: #0d0d0d;
+    top: -100vh;
+    text-align: center;
+    transition: all 0.4s;
+    flex-direction: column;
+  }
+  .menu_items li {
+    margin: 30px 0 0 0;
+    line-height: 30px;
+  }
+  .menu_items li:hover {
+    background: none;
+  }
+  .menu_items li a {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .menu_items li a:hover {
+    color: #005b97;
+  }
+  #logo {
+    padding-left: 35px;
+  }
+}
+
+@media screen and (max-width: 858px) and (orientation: landscape) {
+  .menu_items li {
+    margin: 5px 0 0 0;
+  }
+  .menu_items {
+    overflow: scroll;
+    height: calc(100% - 65px);
+  }
 }

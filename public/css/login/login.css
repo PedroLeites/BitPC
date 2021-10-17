@@ -67,5 +67,6 @@ p {
 
 #registro-link:hover {
   font-weight: 600;
+  text-decoration: underline;
   color: #005b97;
 }

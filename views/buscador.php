@@ -21,7 +21,7 @@
     <ul>
     <li>
       <a href="<?php echo constant('URL'); ?>carrito">
-        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="iconify" data-icon="fa-solid:shopping-cart"></span>
         <span id="cantidadElemCarrito">0</span>
       </a>
     </li>

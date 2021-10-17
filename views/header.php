@@ -1,17 +1,13 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/header.css">
-<div id="header-principal">
-  <nav>
-  <div id="menu-container">
-  <div id="logo-container">
-     <a href="<?php echo constant('URL'); ?>index"><img src="<?php echo constant('URL'); ?>public/img/logos/logo-nav.png" height="auto" width="200px"></a>
-   </div>
-   <ul>
-      <li><a href="<?php echo constant('URL'); ?>articulos"><b>Administrar Articulos</b></a></li>
-    </ul>
-    <div id="user-menu">
-    <?php
-
+<nav class="menu">
+  <div id="logo">
+    <a href="<?php echo constant('URL'); ?>index"><img src="<?php echo constant('URL'); ?>public/img/logos/logo-nav.png" height="auto" width="200px"></a>
+  </div>
+<?php
 if (isset($_SESSION["estalogueado"])) {
     $estaLogueado = $_SESSION["estalogueado"];
 } else {
@@ -20,15 +16,23 @@ if (isset($_SESSION["estalogueado"])) {
 $estaLogueado = isset($_SESSION["estalogueado"]) ? $_SESSION["estalogueado"] : false;
 if ($estaLogueado) {
     ?><?php $nombre = $_SESSION["nombre"];?>
-        <a href="#"><?php echo $nombre; ?></a>
-        <a href="<?php echo constant('URL'); ?>login/salir">Salir</a>
-  <?php } else {
+      <ul class="menu_items">
+        <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
+        <li><a href="#"><?php echo $nombre; ?></a></li>
+        <li><a href="<?php echo constant('URL'); ?>login/salir">Salir</a></li>
+      </ul>
+    <?php } else {
     ?>
-          <a class="" href="<?php echo constant('URL'); ?>login"><b>Iniciar Sesión</b></a>
-          <a class="" href="<?php echo constant('URL'); ?>"><b>Registrarse</b></a>
-<?php }
+      <ul class="menu_items">
+        <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
+        <li><a class="" href="<?php echo constant('URL'); ?>login">Iniciar Sesión</a></a></li>
+        <li><a class="" href="<?php echo constant('URL'); ?>">Registrarse</a></li>
+      </ul>
+    <?php }
 ;?>
-   </div>
-   </div>
+    <span class="btn_menu">
+      <span class="iconify" data-icon="bx:bx-menu"></span>
+    </span>
   </nav>
 </div>
+<script src="<?php echo constant('URL'); ?>public/js/headers/header.js"></script>
