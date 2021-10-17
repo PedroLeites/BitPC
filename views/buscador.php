@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
-<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/icons/all.min.css">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/buscador.css">
 <div id="buscador-container">
   <ul class="ul-nav">

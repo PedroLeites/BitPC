@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
-<link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/icons/all.min.css">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/header.css">
 <div id="header-principal">
   <nav>
@@ -25,7 +24,7 @@ if ($estaLogueado) {
         <a href="<?php echo constant('URL'); ?>login/salir">Salir</a>
   <?php } else {
     ?>
-          <a class="" href="<?php echo constant('URL'); ?>login"><b>Ingresar</b></a>
+          <a class="" href="<?php echo constant('URL'); ?>login"><b>Iniciar Sesión</b></a>
           <a class="" href="<?php echo constant('URL'); ?>"><b>Registrarse</b></a>
 <?php }
 ;?>
