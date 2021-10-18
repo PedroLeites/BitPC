@@ -1,44 +1,39 @@
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/footer/footer.css">
 <footer>
-<div class="container_footer">
   <div class="row">
-    <div class="logo_pc"">
-      <img src="<?php echo constant('URL'); ?>public/img/logos/logo-footer.png" alt="">
+    <div class="logo_footer"">
+      <img src="<?php echo constant('URL'); ?>public/img/logos/logo-footer.png" height="auto" width="100px">
     </div>
     <div class="desc">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique velit nobis possimus quidem quos. Perspiciatis quisquam ad sit sequi sapiente, odio voluptate, nam possimus ipsum itaque quasi ea tenetur dolores.</p>
+      <p>BIT PC es una empresa dedicada a la venta de insumos informáticos</p>
     </div>
     <div class="redes">
-      <ul>
-        <li>Face</li>
-        <li>Instagram</li>
-        <li>TikTok</li>
-      </ul>
+      <a href=""><span class="iconify" data-icon="akar-icons:facebook-fill"></span></a>
+      <a href=""><span class="iconify" data-icon="akar-icons:instagram-fill"></span></a>
+      <a href=""><span class="iconify" data-icon="bx:bxl-tiktok"></span></a>
     </div>
   </div>
   <div class="row">
     <h2>CONTÁCTENOS</h2>
-    <ul>
-      <li>Av. Artigas, 15900 Las Piedras, Departamento de Canelones</li>
-      <li>23691032</li>
-      <li>093343923</li>
-      <li>bitpc@gmail.com</li>
-    </ul>
+      <a href=""><span class="iconify" data-icon="entypo:location-pin"></span> Av. Artigas, 15900 Las Piedras, Departamento de Canelones</a>
+      <a href=""><span class="iconify" data-icon="foundation:telephone"></span> 23691032</a>
+      <a href=""><span class="iconify" data-icon="akar-icons:whatsapp-fill"></span> 093343923</a>
+      <a href=""><span class="iconify" data-icon="fontisto:email"></span> bitpc@gmail.com</a>
   </div>
   <div class="row">
-    <div class="mapa"></div>
+    <h2>MAPA</h2>
+    <div class="mapa">
+    </div>
   </div>
   <div class="row">
-    <div class="code-logo">
-      <img src="<?php echo constant('URL'); ?>public/img/logos/code-footer.png" alt="">
+    <div class="logo_footer">
+      <img src="<?php echo constant('URL'); ?>public/img/logos/code-footer.png" height="auto" width="100px">
     </div>
     <div class="desc">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, omnis inventore ullam consequuntur libero possimus totam modi? Placeat architecto, assumenda inventore ab ex reiciendis, praesentium, debitis atque maiores hic exercitationem.
+      <p>Página web creada por BIT Code SRC</p>
     </div>
   </div>
-</div>
 </footer>
-
 <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
 <script src="<?php echo constant('URL'); ?>public/js/main/main.js"></script>
 <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>

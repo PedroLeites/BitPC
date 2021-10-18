@@ -6,6 +6,7 @@
   background-size: cover;
   overflow: hidden;
   animation: slider 30s infinite;
+  margin-bottom: 50px;
 }
 
 .slider img {
