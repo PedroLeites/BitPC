@@ -8,7 +8,7 @@
 <body>
   <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
-  <h1>INICIO</h1>
+  <div class="slider"></div>
   <?php require 'views/footer.php';?>
 
 </body>

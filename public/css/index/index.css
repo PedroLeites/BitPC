@@ -1,1 +1,28 @@
+.slider {
+  width: 100vw;
+  margin: auto;
+  height: 500px;
+  background: url(../../img/slider/slider1.jpg);
+  background-size: cover;
+  overflow: hidden;
+  animation: slider 30s infinite;
+}
 
+@keyframes slider {
+  25% {
+    background: url(../../img/slider/slider2.jpg);
+    background-size: cover;
+  }
+  50% {
+    background: url(../../img/slider/slider3.jpg);
+    background-size: cover;
+  }
+  75% {
+    background: url(../../img/slider/slider4.jpg);
+    background-size: cover;
+  }
+  100% {
+    background: url(../../img/slider/slider4.jpg);
+    background-size: cover;
+  }
+}
