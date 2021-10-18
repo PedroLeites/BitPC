@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
   <link href="<?php echo constant('URL'); ?>public/css/index/index.css" rel="stylesheet" type="text/css" media="all">
   <title>BIT PC</title>
 </head>

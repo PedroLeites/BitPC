@@ -1,6 +1,6 @@
 .menu {
   background-color: #fff;
-  height: 75px;
+  height: 80px;
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -61,7 +61,7 @@ ul.show {
 
 @media screen and (max-width: 858px) {
   .menu {
-    height: 65px;
+    height: 80px;
   }
   .btn_menu {
     display: inline-flex;
