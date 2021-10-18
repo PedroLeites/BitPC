@@ -19,14 +19,14 @@ if ($estaLogueado) {
       <ul class="menu_items">
         <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
         <li><a href="#"><?php echo $nombre; ?></a></li>
-        <li><a href="<?php echo constant('URL'); ?>login/salir">Salir</a></li>
+        <li><a href="<?php echo constant('URL'); ?>login/salir"><span class="iconify-inline" data-icon="mdi:logout" style="color: black;"></span>Salir</a></li>
       </ul>
     <?php } else {
     ?>
       <ul class="menu_items">
         <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
-        <li><a class="" href="<?php echo constant('URL'); ?>login">Iniciar Sesión</a></a></li>
-        <li><a class="" href="<?php echo constant('URL'); ?>">Registrarse</a></li>
+        <li><a class="" href="<?php echo constant('URL'); ?>login"><span class="iconify-inline" data-icon="entypo:login" style="color: black;"></span>Iniciar Sesión</a></a></li>
+        <li><a class="" href="<?php echo constant('URL'); ?>"><span class="iconify-inline" data-icon="bx:bxs-user-plus" style="color: black;"></span></span>Registrarse</a></li>
       </ul>
     <?php }
 ;?>
