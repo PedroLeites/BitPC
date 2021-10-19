@@ -11,7 +11,7 @@
         <h1><?php echo $this->resultadoLogin; ?></h1>
     </div>
     <div id="form-container">
-        <h1>Iniciar Sesión</h1>
+        <h1>Ingrese sus datos</h1>
         <form id="form-login" action="<?php echo constant('URL'); ?>login/ingresar" method="post">
             <input class="input-login" type="text" id="username" name="nombre" placeholder="Correo Electrónico">
             <input class="input-login" type="password" id="password" name="pass" placeholder="Contraseña">

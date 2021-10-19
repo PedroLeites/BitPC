@@ -11,7 +11,7 @@
   <?php require 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <div id="form-container">
-        <h1>Crear Cuenta</h1>
+        <h1>Ingrese sus datos</h1>
         <form id="form-registro" action="<?php echo constant('URL'); ?>" method="post">
             <input class="input-form" type="mail" id="email" name="email" placeholder="Correo Electrónico">
             <input class="input-form2" type="text" id="nombre" name="name" placeholder="Nombre">
