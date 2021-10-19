@@ -16,7 +16,7 @@ h1 {
 #form-registro {
   width: 100%;
   max-width: 500px;
-  height: 300px;
+  height: 350px;
   padding: 0px;
   border: 2px solid #005b97;
   padding: 3px;
@@ -26,9 +26,21 @@ h1 {
   margin-top: 15px;
 }
 
-.input-registro {
+.input-form {
   font-size: 20px;
   width: 80%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  margin-top: 20px;
+  outline: none;
+  margin-left: 50px;
+}
+
+.input-form2 {
+  font-size: 20px;
+  width: 35%;
   padding: 10px;
   border: none;
   border-bottom: 1px solid black;
