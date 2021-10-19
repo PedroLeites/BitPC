@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>BIT PC - Log In</title>
+<title>BIT PC - LogIn</title>
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/login/login.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
             <input class="input-login" type="text" id="username" name="nombre" placeholder="Correo Electrónico">
             <input class="input-login" type="password" id="password" name="pass" placeholder="Contraseña">
             <button type="submit">Iniciar Sesión</button>
-            <p>¿No tienes una cuenta? <a id="registro-link" href="">Regístrate</a></p>
+            <p>¿No tienes una cuenta? <a id="registro-link" href="<?php echo constant('URL'); ?>registro">Regístrate</a></p>
         </form>
     </div>
     <?php require 'views/footer.php';?>

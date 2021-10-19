@@ -26,7 +26,7 @@ if ($estaLogueado) {
       <ul class="menu_items">
         <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
         <li><a class="" href="<?php echo constant('URL'); ?>login"><span class="iconify-inline" data-icon="entypo:login" style="color: black;"></span>Iniciar Sesión</a></a></li>
-        <li><a class="" href="<?php echo constant('URL'); ?>"><span class="iconify-inline" data-icon="bx:bxs-user-plus" style="color: black;"></span></span>Registrarse</a></li>
+        <li><a class="" href="<?php echo constant('URL'); ?>registro"><span class="iconify-inline" data-icon="bx:bxs-user-plus" style="color: black;"></span></span>Registrarse</a></li>
       </ul>
     <?php }
 ;?>
