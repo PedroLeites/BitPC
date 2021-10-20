@@ -4,19 +4,20 @@
   margin: auto;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 50px;
 }
 
 h1 {
   text-align: center;
   color: #0d0d0d;
-  font-size: 40px;
+  font-size: 30px;
+  margin-top: 15px;
 }
 
 #form-login {
   width: 100%;
   max-width: 500px;
-  height: 300px;
+  height: 325px;
   padding: 0px;
   border: 2px solid #005b97;
   padding: 3px;
@@ -24,6 +25,7 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+  border-radius: 20px;
 }
 
 .input-login {
@@ -31,7 +33,7 @@ h1 {
   width: 80%;
   padding: 10px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #0d0d0d;
   margin: 0 auto;
   margin-top: 20px;
   outline: none;
@@ -43,15 +45,17 @@ button {
   width: 40%;
   color: #ffffff;
   font-size: 20px;
-  background: #0d0d0d;
+  background: #005b97;
   padding: 15px 20px;
   cursor: pointer;
   margin-top: 25px;
   margin-left: 150px;
+  border-radius: 20px;
 }
 
 button:hover {
-  background-color: #005b97;
+  background-color: #ff3900;
+  transition: 0.1s;
 }
 
 p {

@@ -1,5 +1,5 @@
 .container {
-  background-color: #0d0d0d;
+  background-color: #005b97;
   height: 55px;
   width: 100%;
   display: flex;
@@ -28,6 +28,9 @@ li {
   color: #fff;
   text-decoration: none;
   display: block;
+  width: 190px;
+  margin-top: 5px;
+  padding: 5px;
 }
 
 .menu_nav li p {
@@ -44,7 +47,6 @@ li {
 }
 
 .menu_nav li a:hover {
-  background-color: #005b97;
   border-bottom: solid white 2px;
   transition: 0.1s;
 }
@@ -61,8 +63,7 @@ li {
 
 .menu_nav li:hover > ul {
   display: block;
-  background-color: #0d0d0d;
-  border-bottom: solid white 2px;
+  background-color: #005b97;
 }
 
 .productos_container {
@@ -71,14 +72,14 @@ li {
   height: 100%;
   align-items: center;
   display: flex;
+  width: 500px;
 }
 
-.productos_container:hover {
-  background-color: #005b97;
-}
+/*.productos_container:hover {
+}*/
 
 .busqueda_container {
-  margin-right: 80px;
+  margin-right: 325px;
 }
 
 .busqueda_container input {
@@ -94,7 +95,7 @@ li {
 }
 
 .btn_buscar {
-  background-color: #827681;
+  background-color: #ff3900;
   position: absolute;
   display: inline-block;
   width: 40px;
@@ -119,7 +120,7 @@ li {
 }
 
 .cantidadElemCarrito {
-  background-color: #827681;
+  background-color: #ff3900;
   padding: 10px 10px;
   width: 30px;
   height: 30px;

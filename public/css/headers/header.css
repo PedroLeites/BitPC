@@ -1,6 +1,6 @@
 .menu {
   background-color: #fff;
-  height: 80px;
+  height: 90px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -30,12 +30,12 @@
   font-size: 18px;
   display: block;
   text-transform: uppercase;
-  color: #0d0d0d;
+  color: #005b97;
 }
 
-.menu_items li:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
+.menu_items li a:hover {
+  color: #ff3900;
+  transition: 0.1s;
 }
 
 .btn_menu {
