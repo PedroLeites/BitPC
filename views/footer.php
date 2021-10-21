@@ -2,15 +2,15 @@
 <footer>
   <div class="row">
     <div class="logo_footer"">
-      <img src="<?php echo constant('URL'); ?>public/img/logos/logo-footer.png" height="auto" width="100px">
+      <img src="<?php echo constant('URL'); ?>public/img/logos/logo-footer.png">
     </div>
     <div class="desc">
       <p>BIT PC es una empresa dedicada a la venta de insumos informáticos</p>
     </div>
     <div class="redes">
-      <a href=""><span class="iconify" data-icon="akar-icons:facebook-fill"></span></a>
-      <a href=""><span class="iconify" data-icon="akar-icons:instagram-fill"></span></a>
-      <a href=""><span class="iconify" data-icon="bx:bxl-tiktok"></span></a>
+      <a href="https://www.facebook.com/people/Bit-PC/100073611537474/" target="_blank"><span class="iconify social fb" data-icon="akar-icons:facebook-fill"></span></a>
+      <a href="https://www.instagram.com/bitpc.uy/?hl=es" target="_blank"><span class="iconify social ig" data-icon="akar-icons:instagram-fill"></span></a>
+      <a href="https://www.tiktok.com/@bitpc.uy?" target="_blank"><span class="iconify social tk" data-icon="bx:bxl-tiktok"></span></a>
     </div>
   </div>
   <div class="row">
@@ -20,17 +20,13 @@
       <a href=""><span class="iconify" data-icon="akar-icons:whatsapp-fill"></span> 093343923</a>
       <a href=""><span class="iconify" data-icon="fontisto:email"></span> bitpc@gmail.com</a>
   </div>
-  <div class="row">
-    <h2>MAPA</h2>
-    <div class="mapa">
-    </div>
   </div>
   <div class="row">
     <div class="logo_footer">
       <img src="<?php echo constant('URL'); ?>public/img/logos/code-footer.png" height="auto" width="100px">
     </div>
     <div class="desc">
-      <p>Página web creada por BIT Code SRC</p>
+      <p>Página web creada por BIT Code SRL</p>
     </div>
   </div>
 </footer>

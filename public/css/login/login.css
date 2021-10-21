@@ -1,10 +1,15 @@
+body {
+  background: url(../../img/fondos/fondo-form.jpg);
+  background-size: contain;
+}
+
 #form-container {
   width: 1200px;
   height: 600px;
   margin: auto;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 h1 {
@@ -26,6 +31,7 @@ h1 {
   align-items: center;
   margin-top: 15px;
   border-radius: 20px;
+  background-color: #ffffff;
 }
 
 .input-login {
