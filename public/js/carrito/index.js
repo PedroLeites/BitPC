@@ -21,7 +21,7 @@
         $("#carritoid").after(insert);
       });
       $("body").on("click",".btnEliminar" ,function(){
-        console.log("entro");
+        //console.log("entro");
         let articuloId= $(this).data("articuloId");
         console.log(articuloId);
         const confirm = window.confirm("Deseas eliminar el elemento?");
@@ -29,24 +29,47 @@
           $("#art-"+articuloId).remove();
           let carritoStr = localStorage.getItem("carrito");
           if (carritoStr){
-            console.log(carritoStr);
-            console.log("-----------------");
+            /*console.log(carritoStr);
+            console.log("-----------------");*/
             let carrito= JSON.parse(carritoStr);
-            console.log(carrito);
+            //console.log(carrito);
             let itemCarrito= carrito.find(articulo => articulo.id == articuloId);
             carrito.forEach(function(art, index, object) {
               if(art.id == articuloId){
                 object.splice(index, 1);
                 localStorage.setItem("carrito", JSON.stringify(carrito));
-                console.log("probando");
-                
-                
-                
               }
               $("#cantidadElemCarrito").text(carrito.length);
-          });
-          }
-        }
-      }); 
+          }); //end carrito.foreach
+          } //end if carritoStr
+        } //end if confirm
+      }); //end body
+      
+      //http://localhost/proyectofinal3bj/BitPC/apicarrito/completarCarrito
+      $("#btnConfirmarPedido").on("click", function(){
+        console.log("confirmar pedido");
+        let url= $("#url").val();
+        let urlReq = url+"apicarrito/completarCarrito";
+        console.log(urlReq);
+        /*console.log("CARRITO");
+        console.log(carrito);*/
+        let headers = {"Content-Type":"application/json;charset=utf-8"};
+        let data = {"lista" : carrito , "usuario_id" : 2};
+          $.ajax({
+            url: urlReq,
+            header: headers,
+            type: 'POST',
+            data: JSON.stringify(data)
+          })
+          .done(function (data) {
+            //pedido agregado con exito
+            //console.log(data);
+            //limpiar carrito
+            localStorage.setItem("carrito", JSON.stringify([]));
+            $("#cantidadElemCarrito").text(0);
+            location.reload();
+          })
+          .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo"); });
+      }); //end btnConfirmarPedido
   });  
 })(jQuery);

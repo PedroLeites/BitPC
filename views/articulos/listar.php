@@ -6,6 +6,7 @@
 </head>
 <body>
 <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
+<!-- <input type="hidden" value="http://localhost/proyectofinal3bj/BitPC/apicarrito/completarCarrito" id="url"> -->
     <?php require 'views/header.php';?>
     <?php require_once 'views/buscador.php';?>
     <div>

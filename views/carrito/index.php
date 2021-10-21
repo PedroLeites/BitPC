@@ -11,6 +11,10 @@
   <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <h1 id="carritoid">Articulos en el carrito</h1>
+  <div class="carrito_articulos"></div>
+  <div class="btn_pedido">
+    <button class="btn_completarPedido" id="btnConfirmarPedido">Confirmar Pedido</button>
+  </div>
 
   <?php require_once 'views/footer.php';?>
   <!-- importo el javascript-->
