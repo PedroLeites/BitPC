@@ -59,7 +59,8 @@
             url: urlReq,
             header: headers,
             type: 'POST',
-            data: JSON.stringify(data)
+            data: JSON.stringify(data),
+            dataType: 'json'
           })
           .done(function (data) {
             //pedido agregado con exito
