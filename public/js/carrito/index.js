@@ -64,11 +64,15 @@
           })
           .done(function (data) {
             //pedido agregado con exito
-            //console.log(data);
             //limpiar carrito
             localStorage.setItem("carrito", JSON.stringify([]));
             $("#cantidadElemCarrito").text(0);
             location.reload();
+            //mostrar el resultado del pedido
+            $("#carritoid").html(`<h1 id="carritoid"></h1>`);
+            console.log(data.resultado);
+            $("#resultadoPedido").css("display" , "flex")
+            $("#numeroPedido").text(data.resultado);
           })
           .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo"); });
       }); //end btnConfirmarPedido

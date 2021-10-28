@@ -15,7 +15,23 @@
   <div class="btn_pedido">
     <button class="btn_completarPedido" id="btnConfirmarPedido">Confirmar Pedido</button>
   </div>
-
+  <div>
+      <div id="resultadoPedido" style="display:none">
+        <div>
+          <h1>Resultado del pedido</h1>
+          <?php if ($this->respuesta) {;?>
+          <div role="alert">
+            Pedido confirmado <span id="numeroPedido"></span>
+          </div>
+          <?php } else {;?>
+          <div role="alert">
+            Error al confirmar el pedido
+          </div>
+          <?php }
+;?>
+        </div>
+      </div>
+    </div>
   <?php require_once 'views/footer.php';?>
   <!-- importo el javascript-->
   <script src="<?php echo constant('URL'); ?>public/js/carrito/index.js"></script>

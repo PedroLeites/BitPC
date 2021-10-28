@@ -75,9 +75,6 @@ li {
   width: 500px;
 }
 
-/*.productos_container:hover {
-}*/
-
 .busqueda_container {
   margin-right: 325px;
 }
@@ -100,8 +97,11 @@ li {
   display: inline-block;
   width: 40px;
   height: 40px;
+  margin: auto;
   line-height: 40px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   -moz-border-radius: 0 100px 100px 0;
   -webkit-border-radius: 0 100px 100px 0;
@@ -111,8 +111,9 @@ li {
 .btn_buscar a {
   font-size: 25px;
   color: #fff;
+  margin: 0 auto;
   text-align: center;
-  padding-top: 5px;
+  align-items: center;
 }
 
 .carrito_container {
@@ -124,6 +125,7 @@ li {
   padding: 10px 10px;
   width: 30px;
   height: 30px;
+  margin: auto;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -131,10 +133,11 @@ li {
   display: inline;
   padding-bottom: 20px;
   text-align: center;
-  margin-left: 5px;
 }
 
 #cantidadElemCarrito {
+  margin: 0 auto;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }

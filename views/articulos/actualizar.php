@@ -8,19 +8,19 @@
 <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
     <?php require 'views/header.php';?>
     <?php require_once 'views/buscador.php';?>
-    <divh>
+    <div>
       <div>
         <div>
           <h1>Resultado actulalizar</h1>
           <?php if ($this->respuesta) {;?>
-      <div role="alert">
-        Articulo actualizado con exito
-      </div>
-      <?php } else {
-    ;?><div role="alert">
-    Error al actualizar
-  </div>
-<?php }
+          <div role="alert">
+            Articulo actualizado con exito
+          </div>
+          <?php } else {;?>
+          <div role="alert">
+            Error al actualizar
+          </div>
+          <?php }
 ;?>
         </div>
       </div>
