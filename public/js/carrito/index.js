@@ -18,12 +18,12 @@
           </div>
           </div>
         </div><?php }`
-        $("#carritoid").after(insert);
+        $("#carritoid").append(insert);
       });
       $("body").on("click",".btnEliminar" ,function(){
         //console.log("entro");
         let articuloId= $(this).data("articuloId");
-        console.log(articuloId);
+        //console.log(articuloId);
         const confirm = window.confirm("Deseas eliminar el elemento?");
         if (confirm){
           $("#art-"+articuloId).remove();
@@ -46,11 +46,12 @@
       }); //end body
       
       //http://localhost/proyectofinal3bj/BitPC/apicarrito/completarCarrito
-      $("#btnConfirmarPedido").on("click", function(){
-        console.log("confirmar pedido");
+      $("#btnConfirmarPedido").on("click", function(event){
+        event.preventDefault();
+        //console.log("confirmar pedido");
         let url= $("#url").val();
         let urlReq = url+"apicarrito/completarCarrito";
-        console.log(urlReq);
+        //console.log(urlReq);
         /*console.log("CARRITO");
         console.log(carrito);*/
         let headers = {"Content-Type":"application/json;charset=utf-8"};
@@ -63,18 +64,21 @@
             dataType: 'json'
           })
           .done(function (data) {
+            console.log(data);
+            //console.log('exito');
             //pedido agregado con exito
             //limpiar carrito
             localStorage.setItem("carrito", JSON.stringify([]));
             $("#cantidadElemCarrito").text(0);
-            location.reload();
+            //location.reload();
             //mostrar el resultado del pedido
-            $("#carritoid").html(`<h1 id="carritoid"></h1>`);
-            console.log(data.resultado);
-            $("#resultadoPedido").css("display" , "flex")
+            $("#carritoid").html(`<div id="carritoid"></div>`);
+            //console.log(data.resultado);
+            $("#resPedOk").css("display" , "flex")
             $("#numeroPedido").text(data.resultado);
+            $("#btnConfirmarPedido").css({"display": "none"});
           })
-          .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo"); });
-      }); //end btnConfirmarPedido
+          .fail(function (jqXHR, textStatus, errorThrown) {console.log(textStatus); });
+      }); //end btnConfirmarPedido"fallo")
   });  
 })(jQuery);

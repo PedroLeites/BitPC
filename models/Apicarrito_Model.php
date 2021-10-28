@@ -10,10 +10,11 @@ class Apicarrito_Model extends Model
 
     public function completarCarrito($lista, $usuario)
     {
+        $salida = new StdClass;
         $pdo = $this->db->connect();
         $pdo->beginTransaction();
         try {
-            $fecha = date('Y-m-d h:i:s', time());
+            $fecha = date('Y-m-d H:i:s', time());
             $query = $pdo->prepare('insert into pedido (usuario_id, fecha) VALUES (:idUsuario, :fecha)');
             $query->bindParam(':idUsuario', $usuario);
             $query->bindParam(':fecha', $fecha);
@@ -35,11 +36,16 @@ class Apicarrito_Model extends Model
                 $query->execute();
             }
             $pdo->commit();
-            return true;
+
+            $salida->pedidoId = $lastInsertId;
+            $salida->res = true;
+            return $salida;
             // Si hay una exception, vuelve a insertar
         } catch (PDOException $e) {
             $pdo->rollBack();
-            return false;
+            $salida->pedidoId = -1;
+            $salida->res = false;
+            return $salida;
             // finally para liberar espacio
         } finally {
             $pdo = null;

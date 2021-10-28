@@ -28,16 +28,18 @@ class Apicarrito_Controller extends Controller
             //array_push($lista, $articulo);
         }
         //Defino los resultados de las request
-        $resultado = $this->model->completarCarrito($lista, $usuario);
         $respuesta = [];
-        if ($resultado == true) {
-            http_response_code(200);
+        $resultado = $this->model->completarCarrito($lista, $usuario);
+        if ($resultado->res) {
+            http_response_code(201);
             $respuesta = [
                 "datos" => $lista,
-                "totalResultados" => count($lista),
+                "pedidoId" => $resultado->pedidoId,
                 "usuario" => $usuario,
+                "pedRes" => $resultado->res,
                 "respuesta" => "Pedido Completado",
             ];
+            $this->view->respuesta = $respuesta;
         } else {
             http_response_code(400);
             $respuesta = json_encode([

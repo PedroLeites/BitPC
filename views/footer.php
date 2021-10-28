@@ -18,7 +18,7 @@
       <a href=""><span class="iconify" data-icon="entypo:location-pin"></span> Av. Artigas, 15900 Las Piedras, Departamento de Canelones</a>
       <a href=""><span class="iconify" data-icon="foundation:telephone"></span> 23691032</a>
       <a href=""><span class="iconify" data-icon="akar-icons:whatsapp-fill"></span> 093343923</a>
-      <a href=""><span class="iconify" data-icon="fontisto:email"></span> bitpc@gmail.com</a>
+      <a href=""><span class="iconify" data-icon="fontisto:email"></span> bitpc2021@gmail.com</a>
   </div>
   </div>
   <div class="row">

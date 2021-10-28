@@ -10,25 +10,23 @@
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
   <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
-  <h1 id="carritoid">Articulos en el carrito</h1>
-  <div class="carrito_articulos"></div>
+  <h1>Articulos en el carrito</h1>
+  <div id="carritoid"></div>
   <div class="btn_pedido">
     <button class="btn_completarPedido" id="btnConfirmarPedido">Confirmar Pedido</button>
   </div>
   <div>
-      <div id="resultadoPedido" style="display:none">
+
         <div>
           <h1>Resultado del pedido</h1>
-          <?php if ($this->respuesta) {;?>
-          <div role="alert">
+          <div role="alert" id="resPedOk" style="display:none">
             Pedido confirmado <span id="numeroPedido"></span>
           </div>
-          <?php } else {;?>
-          <div role="alert">
+
+          <div role="alert" id="resPedError">
             Error al confirmar el pedido
           </div>
-          <?php }
-;?>
+
         </div>
       </div>
     </div>

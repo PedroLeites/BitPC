@@ -6,8 +6,8 @@ class Carrito_Controller extends Controller
     public function __construct()
     {
 
-        $cambio = "a eliminar";
         parent::__construct();
+        $cambio = "a eliminar";
         $this->view->mensaje = "";
     }
 
