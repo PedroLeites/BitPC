@@ -37,7 +37,7 @@ class Apicarrito_Controller extends Controller
                 "pedidoId" => $resultado->pedidoId,
                 "usuario" => $usuario,
                 "pedRes" => $resultado->res,
-                "respuesta" => "Pedido Completado",
+                "respuesta" => "Pedido Completado con Éxito",
             ];
             $this->view->respuesta = $respuesta;
         } else {

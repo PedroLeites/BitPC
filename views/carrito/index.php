@@ -15,21 +15,26 @@
   <div class="btn_pedido">
     <button class="btn_completarPedido" id="btnConfirmarPedido">Confirmar Pedido</button>
   </div>
-  <div>
-
-        <div>
-          <h1>Resultado del pedido</h1>
-          <div role="alert" id="resPedOk" style="display:none">
-            Pedido confirmado <span id="numeroPedido"></span>
-          </div>
-
-          <div role="alert" id="resPedError">
-            Error al confirmar el pedido
-          </div>
-
-        </div>
+  <div id="resPedido" style="display:none">
+    <div>
+      <h2>Resultado del Pedido</h2>
+      <div role="alert">
+        Pedido Completado con Éxito <br>
+        Número de Pedido: <span id="numPedido"></span>
       </div>
     </div>
+  </div>
+  <!--<div id="resPed">
+    <div>
+      <h1>Resultado del pedido</h1>
+      <div role="alert" id="resPedOk" style="display:none">
+        Pedido confirmado <span id="numeroPedido"></span>
+      </div>
+      <div role="alert" id="resPedError">
+        Error al confirmar el pedido
+      </div>
+    </div>
+  </div>-->
   <?php require_once 'views/footer.php';?>
   <!-- importo el javascript-->
   <script src="<?php echo constant('URL'); ?>public/js/carrito/index.js"></script>
