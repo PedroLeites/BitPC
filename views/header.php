@@ -18,6 +18,7 @@ if ($estaLogueado) {
     ?><?php $nombre = $_SESSION["nombre"];?>
       <ul class="menu_items">
         <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
+        <li><a href="<?php echo constant('URL'); ?>pedidos">Administrar Pedidos</a></li>
         <li><a href="#"><?php echo $nombre; ?></a></li>
         <li><a href="<?php echo constant('URL'); ?>login/salir"><span class="iconify" data-icon="mdi:logout"></span> Salir</a></li>
       </ul>
@@ -25,6 +26,7 @@ if ($estaLogueado) {
     ?>
       <ul class="menu_items">
         <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
+        <li><a href="<?php echo constant('URL'); ?>pedidos">Administrar Pedidos</a></li>
         <li><a class="" href="<?php echo constant('URL'); ?>login"><span class="iconify" data-icon="entypo:login"></span> Iniciar Sesión</a></a></li>
         <li><a class="" href="<?php echo constant('URL'); ?>registro"><span class="iconify" data-icon="bx:bxs-user-plus"></span> Registrarse</a></li>
       </ul>

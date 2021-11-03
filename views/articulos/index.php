@@ -4,7 +4,7 @@
   <title>Articulos</title>
 </head>
 <body>
-  <?php require 'views/header.php';?>
+  <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
 <div>
@@ -45,8 +45,7 @@ foreach ($this->articulos as $row) {
         </div>
     </div>
 </div>
-<!-- importo la libreria jquery-->
-    <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
+    <?php require_once 'views/footer.php';?>
     <!-- importo el javascript-->
     <script src="<?php echo constant('URL'); ?>/public/js/articulos/index.js"></script>
 </body>
