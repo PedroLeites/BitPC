@@ -42,6 +42,6 @@ foreach ($this->articulos as $row) {
 </div>
     <?php require_once 'views/footer.php';?>
     <!-- importo el javascript-->
-    <!--<script src="<?php echo constant('URL'); ?>/public/js/articulos/index.js"></script>-->
+    <script src="<?php echo constant('URL'); ?>/public/js/pedidos/index.js"></script>
 </body>
 </html>
