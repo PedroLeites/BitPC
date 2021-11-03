@@ -73,15 +73,13 @@ class Articulos_Model extends Model
             $query->bindParam(':id', $articulo->id);
             $resultado = $query->execute();
             $filasAf = $query->rowCount();
-            if ($filasAf == 0) {
-                $resultado = false;
-            }
+            /*if ($filasAf == 0) { $resultado = false;}*/
             //$str = "valor";
             //$resultado = $query->fetch(); // return (PDOStatement) or false on failure
             //$query->close();
             return $resultado;
         } catch (PDOException $e) {
-            return var_dump($e);
+            return false;
         } finally {
             $pdo = null;
         }

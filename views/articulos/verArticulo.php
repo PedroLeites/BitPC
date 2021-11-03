@@ -15,7 +15,7 @@
           <h1>Editar Articulo</h1>
         </div>
     </div>
-      <form id="form01" action="<?php echo constant('URL'); ?>articulos/actualizar" method="post">
+      <form id="form01" action="<?php echo constant('URL'); ?>articulos/actualizar" method="post" enctype="multipart/form-data">
       <div>
           <label for="articuloId">Id</label>
           <input type="text"
@@ -45,6 +45,13 @@
           name="precio"
           value="<?=$this->articulo->precio;?>">
       </div>
+      <div>
+          <label for="articuloFoto">URL de la Foto</label>
+          <input type="file"
+          id="articuloFoto"
+          name="img">
+      </div>
+      <div id="imgP"></div>
       <div>
         <button id="btnEnviarForm" type="submit">Guardar</button>
       </div>

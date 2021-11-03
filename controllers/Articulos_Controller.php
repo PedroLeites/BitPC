@@ -33,7 +33,7 @@ class Articulos_Controller extends Controller
     public function actualizar($param = null)
     {
         //var_dump($_POST);
-        $resultado = false;
+        $resultado = true;
         try {
             $articulo = new Articulo();
             $articulo->id = $_POST['articuloId'];
@@ -43,6 +43,12 @@ class Articulos_Controller extends Controller
             $precio = floatval($precioSF);
             $articulo->precio = number_format((float) $precio, 2, '.', '');
             $resultado = $this->model->actualizar($articulo);
+            $pathImg = $_FILES['img']['tmp_name'];
+            $tmpName = $_FILES['img']['name'];
+            $array = explode(".", $tmpName);
+            $ext = $array[count($array) - 1];
+            $ruta = 'public/img/articulos' . $articulo->id . "." . $ext;
+            move_uploaded_file($pathImg, $ruta);
         } catch (\Throwable $th) {
             $resultado = false;
         }

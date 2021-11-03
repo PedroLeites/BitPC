@@ -37,11 +37,25 @@
 
     $("#btnEnviarForm").click(function(e) {
       e.preventDefault();
-      console.log("funciona");
       if (true){
         $("#form01").submit();
       }          
     });//end enviar Form post
+
+    //previsualización de la foto
+    //$("#articuloFoto").change(function(e){
+    $("input[type=file]").change(function(e){
+      let input = e.target;
+      let reader = new FileReader();
+      reader.onload = function(){
+        console.log(dataURL);
+        //var output = document.getElementById('output');
+        //output.src = dataURL;
+        //$("#imgP").html("<img src='" +dataURL+ "' />");
+        $("#imgP").html(`<img src="${dataURL}" />`);
+      };
+      reader.readAsDataURL(input.files[0]);
+    });
 
 
 
