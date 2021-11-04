@@ -24,7 +24,7 @@ class Articulos_Model extends Model
                 $item->nombre = $row['nombre'];
                 $item->descripcion = $row['descripcion'];
                 $item->precio = $row['precio'];
-                $item->url = $row['url_foto'] ?? $urlDefecto;
+                $item->url = isset($row['url_foto']) ? constant('URL') . $row['url_foto'] : $urlDefecto;
                 //$item->url = isset($row['url_foto']) ? $row['url_foto'] : $urlDefecto;
                 /*if (isset($row['url'])) {
                 $item->url = $row['url_foto'];

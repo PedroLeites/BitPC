@@ -16,7 +16,7 @@
         let insert = `<div class=""
         id="art-${element.id}">
         <div class="">
-          <img class="" src="${imgUrl}" alt=""/>
+          <img class="" src="${element.url}" alt=""/>
           <div class=">
             <h5 class="">ID:${element.id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${element.nombre}</h5>
             <p class="">${element.descripcion}</p>

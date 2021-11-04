@@ -20,6 +20,7 @@
           .done(function (data) { 
             //$listaArticulos=data.datos;
             $listaArticulos=data.articulosDisponibles;
+            console.log($listaArticulos);
             //console.log($listaArticulos);
            })
           .fail(function (jqXHR, textStatus, errorThrown) {console.log("fallo");  });
