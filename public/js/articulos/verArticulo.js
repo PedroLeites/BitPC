@@ -48,6 +48,7 @@
       let input = e.target;
       let reader = new FileReader();
       reader.onload = function(){
+        let dataURL = reader.result;
         console.log(dataURL);
         //var output = document.getElementById('output');
         //output.src = dataURL;

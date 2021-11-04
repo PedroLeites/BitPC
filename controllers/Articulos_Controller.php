@@ -42,12 +42,13 @@ class Articulos_Controller extends Controller
             $precioSF = $_POST['precio'];
             $precio = floatval($precioSF);
             $articulo->precio = number_format((float) $precio, 2, '.', '');
-            $resultado = $this->model->actualizar($articulo);
             $pathImg = $_FILES['img']['tmp_name'];
             $tmpName = $_FILES['img']['name'];
             $array = explode(".", $tmpName);
             $ext = $array[count($array) - 1];
-            $ruta = 'public/img/articulos' . $articulo->id . "." . $ext;
+            $ruta = 'public/img/articulos/' . $articulo->id . "." . $ext;
+            $articulo->url = $ruta;
+            $resultado = $this->model->actualizar($articulo);
             move_uploaded_file($pathImg, $ruta);
         } catch (\Throwable $th) {
             $resultado = false;

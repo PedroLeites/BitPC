@@ -7,10 +7,16 @@
         $("#btnConfirmarPedido").css("display","none");
       }     
       carrito.forEach(element => { 
+        /*let imgUrl = element.url;
+        let urlBase= $("#url").val();  
+        if (!element.url.includes('svg+xml')) {
+          imgUrl = urlBase . imgUrl;
+          console.log(imgUrl);
+        }*/
         let insert = `<div class=""
         id="art-${element.id}">
         <div class="">
-          <img class="" src="${element.url}" alt=""/>
+          <img class="" src="${imgUrl}" alt=""/>
           <div class=">
             <h5 class="">ID:${element.id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${element.nombre}</h5>
             <p class="">${element.descripcion}</p>
