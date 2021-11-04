@@ -43,14 +43,6 @@
           } //end if carritoStr
         } //end if confirm
       }); //end body
-
-      /*function btnConfirmarPedido() {
-        console.log("oculto");
-        let cantidad = getElementById('cantidadElemCarrito').value;
-        if (cantidad = 0) {
-          document.getElementById('btnConfirmarPedido').css({"display": "none"});
-        }
-      }*/
       
       //http://localhost/proyectofinal3bj/BitPC/apicarrito/completarCarrito
       $("#btnConfirmarPedido").on("click", function(event){
