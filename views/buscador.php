@@ -3,7 +3,8 @@
   <div class="productos_container">
     <ul class="menu_nav">
       <li>
-        <p id="p">Productos por Categoría<span class="iconify" data-icon="entypo:triangle-down"></span><p>
+        <p id="p">Productos por Categoría<span class="iconify" data-icon="entypo:triangle-down"></span>
+        <p>
         <ul class="submenu_productos">
           <li><a href="<?php echo constant('URL'); ?>articulos/listar">Ver Todos</a></li>
           <li><a href="">Computadoras</a></li>

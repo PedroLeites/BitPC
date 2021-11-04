@@ -2,6 +2,10 @@
   $(document).ready(function() {
       $("#resPedido").css("display" , "none")
       let carrito = JSON.parse(localStorage.getItem("carrito"));
+      console.log(carrito);
+      if (!carrito || carrito.length==0) {
+        $("#btnConfirmarPedido").css("display","none");
+      }     
       carrito.forEach(element => { 
         let insert = `<div class=""
         id="art-${element.id}">
