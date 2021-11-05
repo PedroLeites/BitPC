@@ -30,7 +30,7 @@ class Articulos_Model extends Model
                 $item->url = $row['url_foto'];
                 } else {
                 $item->url = $urlDefecto;
-                }  Pendiente publicar articulos con imagenes
+                }
                  */
                 //$item->url = isset($row['url']) ? $row['url'] : $urlDefecto;
                 array_push($items, $item);
