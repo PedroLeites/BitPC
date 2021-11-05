@@ -80,9 +80,9 @@ CREATE TABLE `articulos` (
   `NomProd` varchar(30) NOT NULL,
   `Descripcion` varchar(60) NOT NULL,
   `Precio` int NOT NULL,
-  `stock` int NOT NULL,
-  `categoria` enum('computadoras','perifericos','Componentes') DEFAULT NULL,
-  `estado` enum('Activo','Desactivado') DEFAULT NULL,
+  `Stock` int NOT NULL,
+  `Estado` enum('activo','desactivado') DEFAULT NULL,
+  `Categoria` enum('Computadoras','Perifericos','Componentes') DEFAULT NULL,
   PRIMARY KEY (`IDProd`,`IDD`),
   KEY `IDD` (`IDD`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -94,7 +94,7 @@ CREATE TABLE `articulos` (
 
 LOCK TABLES `articulos` WRITE;
 /*!40000 ALTER TABLE `articulos` DISABLE KEYS */;
-INSERT INTO `articulos` VALUES (1,1,'placa','gigabyte',2000,10,'Componentes','Activo'),(2,1,'mouse','dell',1500,2,'perifericos','Activo'),(3,2,'monitor','ViewSonic',3000,5,'perifericos','Activo'),(4,3,'partalantes','Genius',1300,4,'perifericos','Activo');
+INSERT INTO `articulos` VALUES (1,1,'placa','gigabyte',2000,10,NULL,NULL),(2,1,'mouse','dell',1500,7,NULL,NULL),(3,2,'monitor','ViewSonic',3000,5,NULL,NULL),(4,3,'partalantes','Genius',1300,4,NULL,NULL);
 /*!40000 ALTER TABLE `articulos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +189,7 @@ CREATE TABLE `personas` (
   `Correo` varchar(64) NOT NULL,
   `Contrasena` varchar(16) NOT NULL,
   `Nombre` varchar(10) NOT NULL,
-  `apellido` varchar(10) NOT NULL,
+  `Apellido` varchar(10) NOT NULL,
   `FechaNac` date NOT NULL,
   `Calle` varchar(30) NOT NULL,
   `NPuerta` int NOT NULL,
@@ -292,4 +292,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-23 20:39:48
+-- Dump completed on 2021-11-05 18:46:31

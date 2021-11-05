@@ -22,33 +22,47 @@
           id="articuloId"
           name="id"
           disabled
-          value="<?php echo $this->articulo->id; ?>">
+          value="<?php echo $this->articulos->$IDProd; ?>">
       </div>
       <div>
           <label for="articuloNombre">Nombre</label>
           <input type="text"
           id="articuloNombre"
           name="nombre"
-          value="<?=$this->articulo->nombre;?>">
+          value="<?=$this->Articulos->$NomProd;?>">
       </div>
       <div>
           <label for="articuloDescripcion">Descripcion</label>
           <input type="text"
           id="articuloDescripcion"
           name="descripcion"
-          value="<?=$this->articulo->descripcion;?>">
+          value="<?=$this->articulos->Descripcion;?>">
       </div>
       <div>
-          <label for="articuloPrecio">Precio</label>
+          <label for="articuloPrecio">Stock</label>
           <input type="text"
           id="articuloPrecio"
           name="precio"
-          value="<?=$this->articulo->precio;?>">
+          value="<?=$this->articulos->Stock;?>">
+      </div>
+      <div>
+          <label for="articuloPrecio">Estado</label>
+          <input type="text"
+          id="articuloPrecio"
+          name="precio"
+          value="<?=$this->articulos->Estado;?>">
+      </div>
+      <div>
+          <label for="articuloPrecio">Categoria</label>
+          <input type="text"
+          id="articuloPrecio"
+          name="precio"
+          value="<?=$this->articulos->Categoria;?>">
       </div>
       <div>
         <button id="btnEnviarForm" type="submit">Guardar</button>
       </div>
-      <input type="hidden" value="<?php echo $this->articulo->id; ?>" id="articuloId" name="articuloId">
+      <input type="hidden" value="<?php echo $this->articulos->$IDProd; ?>" IDProd="IDProd" name="IDProd">
       </form>
     </div>
 

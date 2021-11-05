@@ -133,7 +133,7 @@ class Apiarticulos_Controller extends Controller
         $articulo = $this->model->ver($id);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [
-            "IDProd" => $articulo->IDProd,
+            "IDProd" => $articulos->IDProd,
             "datos" => $articulos,
             "verboHTTP" => $verboHTTP,
         ];

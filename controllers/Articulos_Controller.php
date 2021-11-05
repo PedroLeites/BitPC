@@ -35,9 +35,9 @@ class Articulos_Controller extends Controller
         //var_dump($_POST);
         $resultado = false;
         try {
-            $articulo = new Articulo();
-            $articulo->id = $_POST['articuloId'];
-            $articulo->nombre = $_POST['nombre'];
+            $articulos = new Articulos();
+            $articulos->id = $_POST['articuloId'];
+            $articulos->nombre = $_POST['nombre'];
             $articulo->descripcion = $_POST['descripcion'];
             $precioSF = $_POST['precio'];
             $precio = floatval($precioSF);

@@ -1,12 +1,11 @@
 <?php
-class Articulo
+class articulos
 {
     public $IDProd;
-    public $IDD;
     public $NomProd;
     public $Descripcion;
     public $Precio;
-    public $stock;
-    public $estado;
-    public $categoria;
+    public $Stock;
+    public $Estado;
+    public $Categoria;
 }

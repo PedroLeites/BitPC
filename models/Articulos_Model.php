@@ -21,7 +21,7 @@ class Articulos_Model extends Model
             while ($row = $query->fetch()) {
                 $item = new Articulos();
                 $item->IDProd = $row['IDProd'];
-                $item->nombre = $row['NomProd'];
+                $item->NomProd = $row['NomProd'];
                 $item->Descripcion = $row['Descripcion'];
                 $item->Precio = $row['Precio'];
                 $item->Stock = $row['Stock'];
@@ -46,7 +46,7 @@ class Articulos_Model extends Model
     {
         $articulo = null;
         try {
-            $query = $this->db->connect()->prepare('SELECT IDProd, NomProd, Descripcion, Precio, Stock, Estado, Categoria FROM productos WHERE id=:IDProd');
+            $query = $this->db->connect()->prepare('SELECT IDProd, NomProd, Descripcion, Precio, Stock, Estado, Categoria FROM articulos WHERE id=:IDProd');
             $query->bindValue(':IDProd', $IDProd);
             //$query->execute(['nombre' => $nombre]);
             $query->execute();
