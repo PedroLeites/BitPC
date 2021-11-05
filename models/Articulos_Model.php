@@ -19,14 +19,14 @@ class Articulos_Model extends Model
             //$urlDefecto = constant('URL') . '/public/imagenes/articulos/imagenDefecto.svg';
             $query = $this->db->connect()->query('SELECT IDProd, NomProd, Descripcion, Precio, Stock, Estado, Categoria FROM articulos');
             while ($row = $query->fetch()) {
-                $item = new Articulo();
-                $item->id = $row['IDProd'];
+                $item = new Articulos();
+                $item->IDProd = $row['IDProd'];
                 $item->nombre = $row['NomProd'];
-                $item->descripcion = $row['Descripcion'];
-                $item->precio = $row['Precio'];
-                $item->stock = $row['Stock'];
-                $item->estado = $row['Estado'];
-                $item->categoria = $row['Categoria'];
+                $item->Descripcion = $row['Descripcion'];
+                $item->Precio = $row['Precio'];
+                $item->Stock = $row['Stock'];
+                $item->Estado = $row['Estado'];
+                $item->Categoria = $row['Categoria'];
                 //$item->url = isset($row['url']) ? $row['url'] : $urlDefecto;
                 /*if (isset($row['url'])) {
                 $item->url = $row['url'];
@@ -42,45 +42,45 @@ class Articulos_Model extends Model
         }
     }
 
-    public function verArticulo($id)
+    public function verArticulo($IDProd)
     {
         $articulo = null;
         try {
-            $query = $this->db->connect()->prepare('SELECT IDProd, IDD, NomProd, Descripcion, Precio, Stock, Estado, Categoria FROM productos WHERE id=:IDProd');
-            $query->bindValue(':id', $id);
+            $query = $this->db->connect()->prepare('SELECT IDProd, NomProd, Descripcion, Precio, Stock, Estado, Categoria FROM productos WHERE id=:IDProd');
+            $query->bindValue(':IDProd', $IDProd);
             //$query->execute(['nombre' => $nombre]);
             $query->execute();
             while ($row = $query->fetch()) {
-                $articulo = new Articulo();
-                $articulo->id = $row['IDProd'];
-                $articulo->nombre = $row['NomProd'];
-                $articulo->descripcion = $row['Descripcion'];
-                $articulo->precio = $row['Precio'];
-                $articulo->stock = $row['Stock'];
-                $articulo->estado = $row['Estado'];
-                $articulo->categoria = $row['Categoria'];
+                $articulos = new Articulos();
+                $articulos->IDProd = $row['IDProd'];
+                $articulos->NomProd = $row['NomProd'];
+                $articulos->Descripcion = $row['Descripcion'];
+                $articulos->Precio = $row['Precio'];
+                $articulos->Stock = $row['Stock'];
+                $articulos->Estado = $row['Estado'];
+                $articulos->Categoria = $row['Categoria'];
             }
 
         } catch (PDOException $e) {
             var_dump($e);
         }
-        return $articulo;
+        return $articulos;
     } //end ver
 
-    public function actualizar($articulo)
+    public function actualizar($articulos)
     {
 
         $resultado = false;
         $pdo = $query = $this->db->connect();
         try {
-            $query = $pdo->prepare('UPDATE articulos SET nombre=:NomProd, descripcion=:Descripcion, precio= :Precio, stock=:Stock, estado= :Estado, categoria= :Categoria WHERE id= :IDProd');
-            $query->bindParam(':nombre', $articulo->nombre);
-            $query->bindParam(':descripcion', $articulo->descripcion);
-            $query->bindParam(':precio', $articulo->precio);
-            $query->bindParam(':stock', $articulo->stock);
-            $query->bindParam(':estado', $articulo->estado);
-            $query->bindParam(':categoria', $articulo->categoria);
-            $query->bindParam(':id', $articulo->id);
+            $query = $pdo->prepare('UPDATE articulos SET NomProd=:NomProd, Descripcion=:Descripcion, Precio= :Precio, Stock=:Stock, Estado= :Estado, Categoria= :Categoria WHERE IDProd= :IDProd');
+            $query->bindParam(':NomProd', $articulos->NomProd);
+            $query->bindParam(':Descripcion', $articulos->Descripcion);
+            $query->bindParam(':Precio', $articulos->Precio);
+            $query->bindParam(':Stock', $articulos->Stock);
+            $query->bindParam(':Estado', $articulos->Estado);
+            $query->bindParam(':Categoria', $articulos->Categoria);
+            $query->bindParam(':IDProd', $articulos->IDProd);
             $resultado = $query->execute();
             $filasAf = $query->rowCount();
             if ($filasAf == 0) {

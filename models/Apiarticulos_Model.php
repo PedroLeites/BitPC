@@ -19,14 +19,14 @@ class Apiarticulos_Model extends Model
             $urlDefecto = constant('URL') . '/public/imagenes/articulos/imagenDefecto.svg';
             $query = $this->db->connect()->query('SELECT id,nombre,descripcion,precio,stock,estado,categoria FROM articulos');
             while ($row = $query->fetch()) {
-                $item = new Articulo();
-                $item->id = $row['id'];
-                $item->nombre = $row['nombre'];
-                $item->descripcion = $row['descripcion'];
-                $item->precio = $row['precio'];
-                $item->stock = $row['stock'];
-                $item->estado = $row['estado'];
-                $item->categoria = $row['categoria'];
+                $item = new Articulos();
+                $item->IDProd = $row['IDProd'];
+                $item->NomProd = $row['NomProd'];
+                $item->Descripcion = $row['Descripcion'];
+                $item->Precio = $row['Precio'];
+                $item->Stock = $row['Stock'];
+                $item->Estado = $row['Estado'];
+                $item->Categoria = $row['Categoria'];
 
                 $item->url = isset($row['url']) ? $row['url'] : $urlDefecto;
                 array_push($items, $item);
@@ -37,28 +37,28 @@ class Apiarticulos_Model extends Model
         }
     } //end listar
 
-    public function crear($articulo)
+    public function crear($articulos)
     {
 
         $pdo = $query = $this->db->connect();
         try {
-            $query = $pdo->prepare('insert into articulos (nombre, descripcion,precio, stock,estado,categoria) values (:nombre, :descripcion, :precio, :estado, :categoria)');
-            $query->bindParam(':nombre', $articulo->nombre);
-            $query->bindParam(':descripcion', $articulo->descripcion);
-            $query->bindParam(':precio', $articulo->precio);
-            $query->bindParam(':stock', $articulo->stock);
-            $query->bindParam(':estado', $articulo->estado);
-            $query->bindParam(':categoria', $articulo->categoria);
+            $query = $pdo->prepare('insert into articulos (NomProd, Descripcion,Precio, Stock, Estado, Categoria) values (:NomProd, :Descripcion, :Precio, :Stock, :Estado, :Categoria)');
+            $query->bindParam(':NomProd', $articulos->nombre);
+            $query->bindParam(':Descripcion', $articulos->Descripcion);
+            $query->bindParam(':Precio', $articulos->Precio);
+            $query->bindParam(':Stock', $articulos->Stock);
+            $query->bindParam(':Estado', $articulos->Estado);
+            $query->bindParam(':Categoria', $articulos->Categoria);
             $lastInsertId = 0;
             if ($query->execute()) {
-                $lastInsertId = $pdo->lastInsertId();
+                $lastInsertIDProd = $pdo->lastInsertIdProd();
             } else {
                 //Pueden haber errores, como clave duplicada
-                $lastInsertId = -1;
+                $lastInsertIDProd = -1;
                 //echo $consulta->errorInfo()[2];
             }
             //$query->close();
-            return $lastInsertId;
+            return $lastInsertIDProd;
         } catch (PDOException $e) {
             return -1;
         } finally {
@@ -70,14 +70,14 @@ class Apiarticulos_Model extends Model
 
         $pdo = $query = $this->db->connect();
         try {
-            $query = $pdo->prepare('insert into productos (nombre, descripcion,precio,) values (:nombre, :descripcion, :precio)');
-            foreach ($lista as $key => $articulo) {
-                $query->bindParam(':nombre', $articulo->nombre);
-                $query->bindParam(':descripcion', $articulo->descripcion);
-                $query->bindParam(':precio', $articulo->precio);
-                $query->bindParam(':stock', $articulo->stock);
-                $query->bindParam(':estado', $articulo->estado);
-                $query->bindParam(':categoria', $articulo->categoria);
+            $query = $pdo->prepare('insert into productos (NomProd, Descripcion,Precio,Stock, Estado, Categoria) values (:NomProd, :Descripcion, :Precio, :Stock, :Estado, :Categoria)');
+            foreach ($lista as $key => $articulos) {
+                $query->bindParam(':NomProd', $articulos->NomProd);
+                $query->bindParam(':Descripcion', $articulos->Descripcion);
+                $query->bindParam('Precio', $articulos->Precio);
+                $query->bindParam(':Stock', $articulos->Stock);
+                $query->bindParam(':Estado', $articulos->Estado);
+                $query->bindParam(':Categoria', $articulos->Categoria);
                 $query->execute();
             }
             //$query->close();
@@ -92,13 +92,13 @@ class Apiarticulos_Model extends Model
     //read select
     //update update
     //delete delete
-    public function borrar($id)
+    public function borrar($IDProd)
     {
         $resultado = false;
         $pdo = $query = $this->db->connect();
         try {
-            $query = $pdo->prepare('delete from productos where id=:id');
-            $query->bindParam(':id', $id);
+            $query = $pdo->prepare('delete from articulos where IDProd=:IDProd');
+            $query->bindParam(':IDProd', $IDProd);
             if ($query->execute()) {
                 $resultado = true;
             }
@@ -111,20 +111,20 @@ class Apiarticulos_Model extends Model
         }
     } //end crearm
 
-    public function actualizar($articulo)
+    public function actualizar($articulos)
     {
 
         $resultado = false;
         $pdo = $query = $this->db->connect();
         try {
-            $query = $pdo->prepare('UPDATE articulos SET nombre=:nombre, descripcion=:descripcion, precio= :precio, stock= :stock, estado= :estado, categoria= :categoria WHERE id = :id');
-            $query->bindParam(':nombre', $articulo->nombre);
-            $query->bindParam(':descripcion', $articulo->descripcion);
-            $query->bindParam(':precio', $articulo->precio);
-            $query->bindParam(':stock', $articulo->stock);
-            $query->bindParam(':estado', $articulo->estado);
-            $query->bindParam(':categoria', $articulo->categoria);
-            $query->bindParam(':id', $articulo->id);
+            $query = $pdo->prepare('UPDATE articulos SET NomProd=:NomProd, Descripcion=:Descripcion, Precio= :Precio, Stock= :Stock, Estado= :Estado, Categoria= :Categoria WHERE IDProd = :IDProd');
+            $query->bindParam(':NomProd', $articulos->NomProd);
+            $query->bindParam(':Descripcion', $articulos->Descripcion);
+            $query->bindParam(':Precio', $articulos->Precio);
+            $query->bindParam(':Stock', $articulos->Stock);
+            $query->bindParam(':Estado', $articulos->Estado);
+            $query->bindParam(':Categoria', $articulos->Categoria);
+            $query->bindParam(':IDProd', $articulos->IDProd);
             $lastInsertId = 0;
             $resultado = $query->execute();
             //$query->close();
@@ -136,28 +136,28 @@ class Apiarticulos_Model extends Model
         }
     } //end actualizar
 
-    public function ver($id)
+    public function ver($IDProd)
     {
         $articulo = null;
         try {
-            $query = $this->db->connect()->prepare('SELECT id, nombre,descripcion,precio, stock, estado, categoria FROM articulos WHERE id=:nnn');
-            $query->bindValue(':nnn', $id);
+            $query = $this->db->connect()->prepare('SELECT IDProd, NomProd, Descripcion, Precio, Stock, Estado, Categoria FROM articulos WHERE id=:nnn');
+            $query->bindValue(':nnn', $IDProd);
             //$query->execute(['nombre' => $nombre]);
             $query->execute();
             while ($row = $query->fetch()) {
-                $articulo = new Articulo();
-                $articulo->id = $row['id'];
-                $articulo->nombre = $row['nombre'];
-                $articulo->descripcion = $row['descripcion'];
-                $articulo->precio = $row['precio'];
-                $articulo->stock = $row['stock'];
-                $articulo->estado = $row['estado'];
-                $articulo->categoria = $row['categoria'];
+                $articulos = new Articulos();
+                $articulos->idprod = $row['IDProd'];
+                $articulos->NomProd = $row['NomProd'];
+                $articulos->Descripcion = $row['Descripcion'];
+                $articulos->Precio = $row['Precio'];
+                $articulos->Stock = $row['Stock'];
+                $articulos->Estado = $row['Estado'];
+                $articulos->Categoria = $row['Categoria'];
             }
         } catch (PDOException $e) {
             var_dump($e);
         }
-        return $articulo;
+        return $articulos;
     } //end ver
 
 } //end Model
