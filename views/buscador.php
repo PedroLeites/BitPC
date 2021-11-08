@@ -8,8 +8,8 @@
         <ul class="submenu_productos">
           <li><a href="<?php echo constant('URL'); ?>articulos/listar">Ver Todos</a></li>
           <li><a href="">Computadoras</a></li>
-          <li><a href="">Perisféricos</a></li>
-          <li><a href="">Componentes</a></li>
+          <li><a href="">Accesorios</a></li>
+          <li><a href="">Componentes de PC</a></li>
         </ul>
       </li>
     </ul>
