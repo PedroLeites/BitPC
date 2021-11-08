@@ -1,10 +1,10 @@
 <?php
 return array(
-    'Sing in' => 'Iniciar Sesión',
-    'Sing up' => 'Registrarse',
-    'Products by Category' => 'Productos por Categoría',
-    'View All' => 'Ver Todos',
+    'Sing_in' => 'Iniciar Sesión',
+    'Sing_up' => 'Registrarse',
+    'Products_by_Category' => 'Productos por Categoría',
+    'View_All' => 'Ver Todos',
     'Computers' => 'Computadoras',
     'Accessories' => 'Accesorios',
-    'PC Components' => 'Componentes de PC',
+    'PC_Components' => 'Componentes de PC',
 );
