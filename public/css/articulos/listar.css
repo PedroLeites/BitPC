@@ -1,0 +1,15 @@
+.col {
+  display: flex;
+  width: 100%;
+  background-color: green;
+}
+
+.card {
+  background-color: red;
+  width: 300px;
+  display: inline-block;
+}
+
+.prodimg {
+  width: 5px;
+}

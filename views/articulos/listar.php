@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <title>BIT PC - Tienda</title>
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/articulos/listar.css">
 </head>
 
 <body>
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
-  <!-- <input type="hidden" value="http://localhost/proyectofinal3bj/BitPC/apicarrito/completarCarrito" id="url"> -->
   <?php require 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <div>
@@ -25,17 +25,15 @@
     ?>
       <div class="col">
         <div class="card">
-          <div>
-            <!--<h5>ID: <?=$value->id;?>-->
-            <img src="<?php echo $articulo->url; ?>" alt="<?php echo $articulo->descripcion; ?>" />
-            <p class=""> <?=$value->nombre;?></p>
-            <p class=""> <?=$articulo->descripcion;?></p>
-            <p class="">$ <?=$articulo->precio;?></p>
-            <input id="art-<?=$articulo->id;?>" value="1" type="number"></p>
-            <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
-          </div>
-        </div><!-- end card -->
-      </div><!-- end col --><?php }
+          <!--ID: <?=$value->id;?>-->
+          <img calss="prodimg" src="<?php echo $articulo->url; ?>" alt="<?php echo $articulo->descripcion; ?>" />
+          <p class=""> <?=$value->nombre;?></p>
+          <p class=""> <?=$articulo->descripcion;?></p>
+          <p class="">$ <?=$articulo->precio;?></p>
+          <input id="art-<?=$articulo->id;?>" value="1" type="number"></p>
+          <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
+        </div>
+      </div><?php }
 ;?>
     </div>
   </div>

@@ -1,21 +1,28 @@
+<?php
+
+require_once 'traduccion/Translate.php';
+use \SimpleTranslation\Translate;
+
+?>
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/buscador.css">
 <div class="container">
   <div class="productos_container">
     <ul class="menu_nav">
       <li>
-        <p id="p">Productos por Categoría<span class="iconify" data-icon="entypo:triangle-down"></span>
+        <p id="p"><?php echo Translate::__('Products_by_Category'); ?><span class="iconify"
+            data-icon="entypo:triangle-down"></span>
         <p>
         <ul class="submenu_productos">
-          <li><a href="<?php echo constant('URL'); ?>articulos/listar">Ver Todos</a></li>
-          <li><a href="">Computadoras</a></li>
-          <li><a href="">Accesorios</a></li>
-          <li><a href="">Componentes de PC</a></li>
+          <li><a href="<?php echo constant('URL'); ?>articulos/listar"><?php echo Translate::__('View_All'); ?></a></li>
+          <li><a href=""><?php echo Translate::__('Computers'); ?></a></li>
+          <li><a href=""><?php echo Translate::__('Accessories'); ?></a></li>
+          <li><a href=""><?php echo Translate::__('PC_Components'); ?></a></li>
         </ul>
       </li>
     </ul>
   </div>
   <div class="busqueda_container">
-    <input type="text" placeholder="Buscar productos">
+    <input type="text" placeholder="<?php echo Translate::__('Search'); ?>">
     <div class="btn_buscar">
       <a href=""><span class="iconify" data-icon="ci:search"></span></a>
     </div>
@@ -33,3 +40,4 @@
     </ul>
   </div>
 </div>
+<!-- echo Translate::__(''); -->

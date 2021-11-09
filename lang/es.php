@@ -7,4 +7,8 @@ return array(
     'Computers' => 'Computadoras',
     'Accessories' => 'Accesorios',
     'PC_Components' => 'Componentes de PC',
+    'Search' => 'Buscar productos',
+    'DescBIT' => 'BIT PC es una empresa dedicada a la venta de insumos informáticos',
+    'Contact' => 'Contáctenos',
+    'DescCode' => 'Página web creada por BIT Code SRL',
 );

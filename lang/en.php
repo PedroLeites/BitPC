@@ -7,4 +7,8 @@ return array(
     'Computers' => 'Computers',
     'Accessories' => 'Accessories',
     'PC_Components' => 'PC Components',
+    'Search' => 'Look for products',
+    'DescBIT' => 'BIT PC is a company dedicated to the sale of computer supplies.',
+    'Contact' => 'Contact Us',
+    'DescCode' => 'Website created by BIT Code SRL',
 );
