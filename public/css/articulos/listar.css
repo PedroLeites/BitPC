@@ -1,15 +1,15 @@
 .col {
+  background: grey;
+  width: 100vw;
+  margin: 0 auto;
   display: flex;
-  width: 100%;
-  background-color: green;
+  flex-wrap: wrap; /* especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas*/
+  justify-content: space-between; /* Distribuir items uniformemente
+El primer item al inicio, el último al final   https://developer.mozilla.org/es/docs/Web/CSS/justify-content*/
 }
 
 .card {
-  background-color: red;
   width: 300px;
-  display: inline-block;
-}
-
-.prodimg {
-  width: 5px;
+  background: white;
+  margin: 20px;
 }

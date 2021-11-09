@@ -9,6 +9,6 @@ return array(
     'PC_Components' => 'Componentes de PC',
     'Search' => 'Buscar productos',
     'DescBIT' => 'BIT PC es una empresa dedicada a la venta de insumos informáticos',
-    'Contact' => 'Contáctenos',
+    'Contact' => 'CONTÁCTENOS',
     'DescCode' => 'Página web creada por BIT Code SRL',
 );
