@@ -32,7 +32,7 @@ class Controller
         if (file_exists($url)) {
             require $url;
 
-            $modelName = ucfirst($model) . '_Model';
+            $modelName   = ucfirst($model) . '_Model';
             $this->model = new $modelName();
         }
     }
