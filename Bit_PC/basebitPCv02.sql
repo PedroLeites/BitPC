@@ -18,6 +18,9 @@
 --
 -- Table structure for table `administran`
 --
+drop Database bit_pc;
+CREATE Database bit_pc;
+use bit_pc;
 
 DROP TABLE IF EXISTS `administran`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

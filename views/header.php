@@ -20,8 +20,8 @@ if (isset($_SESSION["estalogueado"])) {
 }
 $estaLogueado = isset($_SESSION["estalogueado"]) ? $_SESSION["estalogueado"] : false;
 if ($estaLogueado) {
-    ?><?php $nombre = $_SESSION["nombre"];?>
-        <a href="#"><?php echo $nombre; ?></a>
+    ?><?php $Nombre = $_SESSION["Nombre"];?>
+        <a href="#"><?php echo $Nombre; ?></a>
         <a href="<?php echo constant('URL'); ?>login/salir">Salir</a>
   <?php } else {
     ?>

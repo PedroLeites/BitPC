@@ -11,7 +11,7 @@
     <div>
         <div>
             <h1>Ingreso correcto</h1>
-            <h2>Bienvenido <?php echo $nombre; ?></h2>
+            <h2>Bienvenido <?php echo $Nombre; ?></h2>
         </div>
     </div>
     </div>
