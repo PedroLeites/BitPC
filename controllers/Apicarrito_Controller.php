@@ -15,16 +15,16 @@ class Apicarrito_Controller extends Controller
         //convierto el json en un array asociativo de php
         $datos = json_decode($json);
         $listaArticulos = $datos->lista;
-        $usuario = $datos->usuario_id;
+        $personas = $datos->ID;
         //lista = array();
         $lista = [];
         //Crea el objeto carrito con la lista de articulos
         foreach ($listaArticulos as $key => $obj) {
-            $articulo = new Carrito();
-            $articulo->id = $obj->id;
-            $articulo->cantidad = $obj->cantidad;
-            $articulo->precio = $obj->precio;
-            $lista[] = $articulo;
+            $articulos = new Carrito();
+            $articulos->ID = $obj->ID;
+            $articulos->Cantidad = $obj->Cantidad;
+            $articulos->Precio = $obj->Precio;
+            $lista[] = $articulos;
             //array_push($lista, $articulo);
         }
         //Defino los resultados de las request

@@ -8,31 +8,37 @@ class Apicarrito_Model extends Model
         parent::__construct();
     }
 
-    public function completarCarrito($lista, $usuario)
+    public function completarCarrito($lista, $personas)
     {
         $salida = new StdClass;
         $pdo = $this->db->connect();
         $pdo->beginTransaction();
         try {
+
             $fecha = date('Y-m-d H:i:s', time());
-            $query = $pdo->prepare('insert into pedido (usuario_id, fecha) VALUES (:idUsuario, :fecha)');
-            $query->bindParam(':idUsuario', $usuario);
-            $query->bindParam(':fecha', $fecha);
-            $lastInsertId = 0;
+            $query = $pdo->prepare('insert into pedido (ID, FechaNac) VALUES (:ID, :FechaNac)');
+            $query->bindParam(':ID', $personas);
+            $query->bindParam(':FechaNac', $fechaNac);
+            $lastInsertID = 0;
+
             if ($query->execute()) {
-                $lastInsertId = $pdo->lastInsertId();
+                $lastInsertID = $pdo->lastInsertId();
             } else {
                 //por si hay errores
-                $lastInsertId = -1;
+                $lastInsertID = -1;
             }
             // inserto en la base de datos
-            $query = $pdo->prepare('insert into item (articulo_id, cantidad, precio, pedido_id) VALUES (:articulo_id, :cantidad, :precio, :pedido_id)');
+            $query = $pdo->prepare('insert into item (IDProd, NomProd,Descripcion,Precio, Stock, Estado, Categoria, IDPedidos) VALUES (:IDProd, :NomProd, :Descripcion, :Precio, :Stock, :Estado, :Categoria, :IDPedidos)');
             // le paso los parámetros a lista
-            foreach ($lista as $key => $articulo) {
-                $query->bindParam(':articulo_id', $articulo->id);
-                $query->bindParam(':cantidad', $articulo->cantidad);
-                $query->bindParam(':precio', $articulo->precio);
-                $query->bindParam(':pedido_id', $lastInsertId);
+            foreach ($lista as $key => $articulos) {
+                $query->bindParam(':IDProd', $articulos->IDProd);
+                $query->bindParam(':NomProd', $articulos->NomProd);
+                $query->bindParam(':Descripcion', $articulos->Descripcion);
+                $query->bindParam(':Precio', $articulos->Precio);
+                $query->bindParam(':Stock', $articulos->Stock);
+                $query->bindParam(':Estado', $articulos->Estado);
+                $query->bindParam(':Categorias', $articulos->Categorias);
+                $query->bindParam(':IDPedidos', $lastInsertIDPedidos);
                 $query->execute();
             }
             $pdo->commit();

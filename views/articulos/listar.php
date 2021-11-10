@@ -22,6 +22,7 @@
     $articulo = new Articulo();
     $articulo = $value;
 
+<<<<<<< HEAD
     ?>
       <div class="col">
         <div class="card">
@@ -36,6 +37,28 @@
           </div>
         </div><!-- end card -->
       </div><!-- end col --><?php }
+=======
+      <div>
+      <?php foreach ($this->articulos as $key => $value) {;
+
+    ?><div>
+      <div>
+        <img src="<?=$value->url;?>"/>
+        <div>
+          <h5>ID: <?=$value->IDProd;?> <?=$value->$NomProd;?></h5>
+          <p class=""><?=$value->Descripcion;?></p>
+          <p class="">$ <?=$value->Precio;?></p>
+          <p class="">$ <?=$value->Stock;?></p>
+          <p class="">$ <?=$value->Estado;?></p>
+          <p class="">$ <?=$value->Categoria;?></p>
+          <input IDProd="art-<?=$value->IDProd;?>"
+          value="1" type="number"
+          ></p>
+          <button class="btnAgregar" type="button" data-articulos-IDProd="<?php echo $value->IDProd; ?>">Agregar</button>
+        </div>
+      </div><!-- end card -->
+    </div><!-- end col --><?php }
+>>>>>>> axel
 ;?>
     </div>
   </div>

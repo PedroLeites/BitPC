@@ -42,15 +42,15 @@ class Apiarticulos_Controller extends Controller
         //convierto en un array asociativo de php
         $obj = json_decode($json);
 
-        $articulo = new Articulo();
-        $articulo->nombre = $obj->nombre;
-        $articulo->descripcion = $obj->descripcion;
-        $articulo->precio = $obj->precio;
+        $articulos = new Articulos();
+        $articulos->NomProd = $obj->NomProd;
+        $articulos->Descripcion = $obj->Descripcion;
+        $articulos->Precio = $obj->Precio;
         //$articulo->fecha = $obj->fecha;
         //array_push($listaArticulos, $articulo);
         //$items[] = $item;
 
-        $resultado = $this->model->crear($articulo);
+        $resultado = $this->model->crear($articulos);
         //$articulo->id = $obj->id;
         //$articulo->nombre = $obj->nombre;
         //$articulos = $this->model->get();
@@ -58,7 +58,7 @@ class Apiarticulos_Controller extends Controller
         //$listaObjetos = json_encode($listaArticulos);
 
         $respuesta = [
-            "ArituloId" => $resultado,
+            "IDProd" => $resultado,
         ];
         $this->view->respuesta = json_encode($respuesta);
 
@@ -75,18 +75,18 @@ class Apiarticulos_Controller extends Controller
         $listaArticulos = json_decode($json);
         $lista = [];
         foreach ($listaArticulos as $key => $obj) {
-            $articulo = new Articulo();
-            $articulo->nombre = $obj->nombre;
-            $articulo->descripcion = $obj->descripcion;
-            $articulo->precio = $obj->precio;
+            $articulos = new Articulos();
+            $articulos->NomProd = $obj->NomProd;
+            $articulos->Descripcion = $obj->Descripcion;
+            $articulos->Precio = $obj->Precio;
             //$lista[] = $articulo;
-            array_push($lista, $articulo);
+            array_push($lista, $articulos);
         }
 
         $resultado = $this->model->crearm($lista);
 
         $respuesta = [
-            "ArituloId" => $resultado,
+            "IDProd" => $resultado,
         ];
         $this->view->respuesta = json_encode($respuesta);
         $this->view->render('api/articulos/crearm');
@@ -96,10 +96,10 @@ class Apiarticulos_Controller extends Controller
     public function borrar($param)
     {
         $id = $param[0];
-        $resultado = $this->model->borrar($id);
+        $resultado = $this->model->borrar($IDProd);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [
-            "ArituloId" => $id,
+            "IDProd" => $IDProd,
             "resultado" => $resultado,
             "verboHTTP" => $verboHTTP,
         ];
@@ -111,15 +111,15 @@ class Apiarticulos_Controller extends Controller
     {
         $json = file_get_contents('php://input');
         $obj = json_decode($json);
-        $articulo = new Articulo();
-        $articulo->id = $obj->id;
-        $articulo->nombre = $obj->nombre;
-        $articulo->descripcion = $obj->descripcion;
-        $articulo->precio = $obj->precio;
-        $resultado = $this->model->actualizar($articulo);
+        $articulos = new Articulos();
+        $articulos->IDProd = $obj->IDProd;
+        $articulos->NomProd = $obj->NomProd;
+        $articulos->Descripcion = $obj->Descripcion;
+        $articulos->Precio = $obj->Precio;
+        $resultado = $this->model->actualizar($articulos);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [
-            "ArituloId" => $articulo->id,
+            "IDProd" => $articulos->IDProd,
             "resultado" => $resultado,
             "verboHTTP" => $verboHTTP,
         ];
@@ -133,8 +133,8 @@ class Apiarticulos_Controller extends Controller
         $articulo = $this->model->ver($id);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [
-            "ArituloId" => $articulo->id,
-            "datos" => $articulo,
+            "IDProd" => $articulos->IDProd,
+            "datos" => $articulos,
             "verboHTTP" => $verboHTTP,
         ];
         $this->view->respuesta = json_encode($respuesta);

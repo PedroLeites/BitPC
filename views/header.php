@@ -15,14 +15,10 @@ if (isset($_SESSION["estalogueado"])) {
 }
 $estaLogueado = isset($_SESSION["estalogueado"]) ? $_SESSION["estalogueado"] : false;
 if ($estaLogueado) {
-    ?><?php $nombre = $_SESSION["nombre"];?>
-      <ul class="menu_items">
-        <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
-        <li><a href="<?php echo constant('URL'); ?>pedidos">Administrar Pedidos</a></li>
-        <li><a href="#"><?php echo $nombre; ?></a></li>
-        <li><a href="<?php echo constant('URL'); ?>login/salir"><span class="iconify" data-icon="mdi:logout"></span> Salir</a></li>
-      </ul>
-    <?php } else {
+    ?><?php $Nombre = $_SESSION["Nombre"];?>
+        <a href="#"><?php echo $Nombre; ?></a>
+        <a href="<?php echo constant('URL'); ?>login/salir">Salir</a>
+  <?php } else {
     ?>
       <ul class="menu_items">
         <li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>
