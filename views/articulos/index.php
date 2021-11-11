@@ -31,18 +31,20 @@
               <?php
 
 foreach ($this->articulos as $row) {
-    $articulo = new Articulo();
-    $articulo = $row;?>
-              <tr id="filaart-<?php echo $articulo->id; ?>">
-                <td><?php echo $articulo->id; ?></td>
-                <td><?php echo $articulo->nombre; ?></td>
-                <td><?php echo $articulo->descripcion; ?></td>
-                <td><?php echo $articulo->precio; ?></td>
-                <td><img src="<?php echo $articulo->url; ?>" alt="<?php echo $articulo->descripcion; ?>" /></td>
-                <td><a href="<?php echo constant('URL') . 'articulos/verArticulo/' . $articulo->id; ?>">Actualizar</a>
+    $articulos = new Articulos();
+    $articulos = $row;?>
+              <tr id="filaart-<?php echo $articulos->id; ?>">
+                <td><?php echo $articulos->IDProd; ?></td>
+                <td><?php echo $articulos->NomProd; ?></td>
+                <td><?php echo $articulos->Descripcion; ?></td>
+                <td><?php echo $articulos->Stock; ?></td>
+                <td><?php echo $articulos->Estado; ?></td>
+                <td><?php echo $articulos->Categoria; ?></td>
+                <td><img src="<?php echo $articulos->url; ?>" alt="<?php echo $articulos->Descripcion; ?>" /></td>
+                <td><a href="<?php echo constant('URL') . 'articulos/verArticulo/' . $articulos->id; ?>">Actualizar</a>
                 </td>
-                <td><button class="btnEliminar" data-articulo="<?php echo $articulo->id; ?>"
-                    id="art<?php echo $articulo->id; ?>">Eliminar</button></td>
+                <td><button class="btnEliminar" data-articulo="<?php echo $articulos->id; ?>"
+                    id="art<?php echo $articulos->id; ?>">Eliminar</button></td>
               </tr>
               <?php }?>
             </tbody>

@@ -8,4 +8,5 @@ class articulos
     public $Stock;
     public $Estado;
     public $Categoria;
+    public $URL_Foto;
 }

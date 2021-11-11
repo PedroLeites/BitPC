@@ -1,5 +1,5 @@
 <?php
-require_once 'entidades/articulo.php';
+require_once 'entidades/articulos.php';
 
 class Articulos_Controller extends Controller
 {
@@ -22,11 +22,11 @@ class Articulos_Controller extends Controller
     public function verArticulo($param = null)
     {
         $idArticulo = $param[0];
-        $articulo = $this->model->verArticulo($idArticulo);
+        $articulos = $this->model->verArticulo($idArticulo);
 
         $_SESSION["id_articulo"] = $idArticulo;
 
-        $this->view->articulo = $articulo;
+        $this->view->articulos = $articulo;
         $this->view->render('articulos/verArticulo');
     }
 
@@ -36,19 +36,24 @@ class Articulos_Controller extends Controller
         $resultado = true;
         try {
             $articulos = new Articulos();
-            $articulos->id = $_POST['articuloId'];
-            $articulos->nombre = $_POST['nombre'];
-            $articulo->descripcion = $_POST['descripcion'];
-            $precioSF = $_POST['precio'];
+            $articulos->IDProd = $_POST['IDProd'];
+            $articulos->Nombre = $_POST['Nombre'];
+            $articulos->Descripcion = $_POST['Descripcion'];
+            $articulos->Precio = $_POST['Precio'];
+            $articulos->Stock = $_POST['Stock'];
+            $articulos->Estado = $_POST['Estado'];
+            $articulos->Categoria = $_POST['Categoria'];
+            $articulos->URL_Foto = $_POST['URL_Foto'];
+            $precioSF = $_POST['Precio'];
             $precio = floatval($precioSF);
-            $articulo->precio = number_format((float) $precio, 2, '.', '');
+            $articulos->Precio = number_format((float) $Precio, 2, '.', '');
             $pathImg = $_FILES['img']['tmp_name'];
             $tmpName = $_FILES['img']['name'];
             $array = explode(".", $tmpName);
             $ext = $array[count($array) - 1];
-            $ruta = 'public/img/articulos/' . $articulo->id . "." . $ext;
-            $articulo->url = $ruta;
-            $resultado = $this->model->actualizar($articulo);
+            $ruta = 'public/img/articulos/' . $articulos->IDProd . "." . $ext;
+            $articulos->url = $ruta;
+            $resultado = $this->model->actualizar($articulos);
             move_uploaded_file($pathImg, $ruta);
         } catch (\Throwable $th) {
             $resultado = false;

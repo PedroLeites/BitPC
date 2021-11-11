@@ -86,6 +86,7 @@ CREATE TABLE `articulos` (
   `Stock` int NOT NULL,
   `Estado` enum('activo','desactivado') DEFAULT NULL,
   `Categoria` enum('Computadoras','Perifericos','Componentes') DEFAULT NULL,
+  `URL_Foto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`IDProd`,`IDD`),
   KEY `IDD` (`IDD`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

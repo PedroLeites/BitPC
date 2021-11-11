@@ -45,7 +45,12 @@ class Apiarticulos_Controller extends Controller
         $articulos = new Articulos();
         $articulos->NomProd = $obj->NomProd;
         $articulos->Descripcion = $obj->Descripcion;
+        $articulos->Stock = $obj->Stock;
+        $articulos->Estado = $obj->Estado;
         $articulos->Precio = $obj->Precio;
+        $articulos->Categoria = $obj->Categoria;
+        $articulos->URL_Foto = $obj->URL_Foto;
+
         //$articulo->fecha = $obj->fecha;
         //array_push($listaArticulos, $articulo);
         //$items[] = $item;
@@ -79,6 +84,10 @@ class Apiarticulos_Controller extends Controller
             $articulos->NomProd = $obj->NomProd;
             $articulos->Descripcion = $obj->Descripcion;
             $articulos->Precio = $obj->Precio;
+            $articulos->Stock = $obj->Stock;
+            $articulos->Estado = $obj->Estado;
+            $articulos->Categoria = $obj->Categoria;
+            $articulos->URL_Foto = $obj->URL_Foto;
             //$lista[] = $articulo;
             array_push($lista, $articulos);
         }
@@ -116,6 +125,10 @@ class Apiarticulos_Controller extends Controller
         $articulos->NomProd = $obj->NomProd;
         $articulos->Descripcion = $obj->Descripcion;
         $articulos->Precio = $obj->Precio;
+        $articulos->Stock = $obj->Stock;
+        $articulos->Estado = $obj->Estado;
+        $articulos->Categoria = $obj->Categoria;
+        $articulos->URL_Foto = $obj->URL_Foto;
         $resultado = $this->model->actualizar($articulos);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [

@@ -7,6 +7,6 @@ define('URL', 'http://' . $_SERVER['HTTP_HOST'] . '/proyectofinal3bj/BitPC/');
 define('HOST', 'localhost');
 define('PORT', '3306');
 define('DB', 'BIT_PC');
-define('USER', 'AxelMendez');
-define('PASSWORD', '09876');
+define('USER', 'usuario03');
+define('PASSWORD', 'usuario03');
 define('CHARSET', 'utf8mb4');

@@ -27,18 +27,18 @@
           $(".btnAgregar").each(function(index) { 
         
           $(this).on("click", function(){    
-            let articuloId = $(this).data("articuloId");
+            let IDProd = $(this).data("articuloId");
             let articuloNombre = $(this).data("articuloNombre");
             let articuloDescripcion = $(this).data("articuloDescripcion");
             console.log("lista de articuls\n");
             console.log($listaArticulos);
-            console.log('Articulo ID: '+articuloId);
-            let articulo= $listaArticulos.find(articulo => articulo.id == articuloId);          
+            console.log('Articulo ID: '+IDProd);
+            let articulo= $listaArticulos.find(articulo => articulo.id == IDProd);          
             carrito = JSON.parse(localStorage.getItem("carrito"));
             if (carrito==null){
               //inicilizo el carrito
               //agrego el elememto al carrito
-              let cantidadAux= $("#art-"+articuloId).val();
+              let cantidadAux= $("#art-"+IDProd).val();
               let cantidad=1; 
               if (cantidadAux>=1){
                 cantidad = cantidadAux;
@@ -57,21 +57,21 @@
               $("#cantidadElemCarrito").text(carrito.length);
             } else{
               //ya tienen por lo menos un item
-              let cantidadAux= $("#art-"+articuloId).val();
+              let cantidadAux= $("#art-"+IDProd).val();
               let cantidad=1; 
               if (cantidadAux>=1){
                 cantidad = cantidadAux;
               }
-              item={"id" : articulo.id,
-                    "nombre": articulo.nombre,
-                    "precio": articulo.precio,
-                    "descripcion": articulo.descripcion,
-                    "cantidad": cantidad,
-                    "url": articulo.url
+              item={"IDProd" : articulos.IDProd,
+                    "Nombre": articulos.NomProd,
+                    "Precio": articulos.Precio,
+                    "Descripcion": articulos.Descripcion,
+                    "Stock": Stock,
+                    "url": articulos.url
               }
-              let itemCarrito= carrito.find(articulo => articulo.id ==articuloId);
+              let itemCarrito= carrito.find(articulo => articulos.id ==IDProd);
               if (itemCarrito==undefined){
-                carrito.push(item);
+                carrito.push(articulos);
                 localStorage.setItem("carrito", JSON.stringify(carrito));
                 $("#cantidadElemCarrito").text(carrito.length);
               } 

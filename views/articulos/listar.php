@@ -19,46 +19,26 @@
     </div>
     <div>
       <?php foreach ($this->articulos as $key => $value) {
-    $articulo = new Articulo();
-    $articulo = $value;
+    $articulos = new Articulos();
+    $articulos = $value;
 
-<<<<<<< HEAD
     ?>
-      <div class="col">
-        <div class="card">
+        <div class="col">
+          <div class="card">
           <div>
-            <!--<h5>ID: <?=$value->id;?>-->
-            <img src="<?php echo $articulo->url; ?>" alt="<?php echo $articulo->descripcion; ?>" />
-            <p class=""> <?=$value->nombre;?></p>
-            <p class=""> <?=$articulo->descripcion;?></p>
-            <p class="">$ <?=$articulo->precio;?></p>
-            <input id="art-<?=$articulo->id;?>" value="1" type="number"></p>
-            <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
+          <!--<h5>ID: <?=$articulos->IDProd;?>-->
+          <img src="<?php echo $articulos->URL; ?>" alt="<?php echo $articulos->Descripcion; ?>" />
+          <p class=""> <?=$articulos->NomProd;?></p>
+          <p class=""> <?=$articulos->Descripcion;?></p>
+          <p class="">$ <?=$articulos->Precio;?></p>
+          <p class=""> <?=$articulos->Stock;?></p>
+          <p class=""> <?=$articulos->Estado;?></p>
+          <p class=""> <?=$articulos->Categoria;?></p>
+          <input IDProd="art-<?=$articulos->IDProd;?>" value="1" type="number"></p>
+            <button class="btnAgregar" type="button" data-articulo-id="<?php echo $articulos->IDProd; ?>">Agregar</button>
           </div>
         </div><!-- end card -->
       </div><!-- end col --><?php }
-=======
-      <div>
-      <?php foreach ($this->articulos as $key => $value) {;
-
-    ?><div>
-      <div>
-        <img src="<?=$value->url;?>"/>
-        <div>
-          <h5>ID: <?=$value->IDProd;?> <?=$value->$NomProd;?></h5>
-          <p class=""><?=$value->Descripcion;?></p>
-          <p class="">$ <?=$value->Precio;?></p>
-          <p class="">$ <?=$value->Stock;?></p>
-          <p class="">$ <?=$value->Estado;?></p>
-          <p class="">$ <?=$value->Categoria;?></p>
-          <input IDProd="art-<?=$value->IDProd;?>"
-          value="1" type="number"
-          ></p>
-          <button class="btnAgregar" type="button" data-articulos-IDProd="<?php echo $value->IDProd; ?>">Agregar</button>
-        </div>
-      </div><!-- end card -->
-    </div><!-- end col --><?php }
->>>>>>> axel
 ;?>
     </div>
   </div>

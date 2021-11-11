@@ -17,12 +17,12 @@ class Login_Controller extends Controller
 
     public function ingresar()
     {
-        $nombre = $_POST['nombre'];
+        $nombre = $_POST['Nombre'];
         $pass = $_POST['pass'];
-        $exitoLogin = $this->model->ingresar($nombre, $pass);
+        $exitoLogin = $this->model->ingresar($Nombre, $pass);
         if ($exitoLogin) {
             $_SESSION["estalogueado"] = true;
-            $_SESSION["nombre"] = $nombre;
+            $_SESSION["Nombre"] = $Nombre;
             $this->view->render('login/ingresar');
         } else {
             $this->view->resultadoLogin = "Nombre de usuario o contraseña incorrectos";
@@ -33,7 +33,7 @@ class Login_Controller extends Controller
     public function salir()
     {
         $_SESSION["estalogueado"] = false;
-        unset($_SESSION["nombre"]);
+        unset($_SESSION["Nombre"]);
         $this->view->render('index/index');
     }
 }

@@ -5,8 +5,8 @@
       items.forEach(item => {
         item.addEventListener("click", function(){
           
-          let articuloId = this.dataset.articulo;
-          console.log(articuloId);
+          let IDProd = this.dataset.articulos;
+          console.log(IDProd);
           console.log(param);
 
           const confirm = window.confirm("Deseas eliminar el elemento?");
@@ -14,7 +14,7 @@
             console.log("entro if");
             //solitud ajax, 
             let url= $("#url").val();
-            let urlReq =url+"apiarticulos/borrar/"+articuloId;
+            let urlReq =url+"apiarticulos/borrar/"+IDProd;
             console.log("url: "+urlReq);
             let headers = {"Content-Type":"application/json;charset=utf-8"};
             let data = {};

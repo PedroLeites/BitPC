@@ -28,7 +28,7 @@ class Apicarrito_Model extends Model
                 $lastInsertID = -1;
             }
             // inserto en la base de datos
-            $query = $pdo->prepare('insert into item (IDProd, NomProd,Descripcion,Precio, Stock, Estado, Categoria, IDPedidos) VALUES (:IDProd, :NomProd, :Descripcion, :Precio, :Stock, :Estado, :Categoria, :IDPedidos)');
+            $query = $pdo->prepare('insert into item (IDProd, NomProd,Descripcion,Precio, Stock, Estado, Categoria, IDPedidos, URL_Foto) VALUES (:IDProd, :NomProd, :Descripcion, :Precio, :Stock, :Estado, :Categoria, :URL_Foto, :IDPedidos)');
             // le paso los parámetros a lista
             foreach ($lista as $key => $articulos) {
                 $query->bindParam(':IDProd', $articulos->IDProd);
@@ -37,19 +37,20 @@ class Apicarrito_Model extends Model
                 $query->bindParam(':Precio', $articulos->Precio);
                 $query->bindParam(':Stock', $articulos->Stock);
                 $query->bindParam(':Estado', $articulos->Estado);
-                $query->bindParam(':Categorias', $articulos->Categorias);
+                $query->bindParam(':Categoria', $articulos->Categoria);
+                $query->bindParam(':URL_Foto', $articulos->URL_Foto);
                 $query->bindParam(':IDPedidos', $lastInsertIDPedidos);
                 $query->execute();
             }
             $pdo->commit();
 
-            $salida->pedidoId = $lastInsertId;
+            $salida->IDPedidos = $lastInsertId;
             $salida->res = true;
             return $salida;
             // Si hay una exception, vuelve a insertar
         } catch (PDOException $e) {
             $pdo->rollBack();
-            $salida->pedidoId = -1;
+            $salida->IDPedidos = -1;
             $salida->res = false;
             return $salida;
             // finally para liberar espacio

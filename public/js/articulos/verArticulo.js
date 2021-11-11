@@ -4,15 +4,15 @@
       $("#enviarForm").click(function() {
         //alert('hola');
         //console.log("enviarFormulario");
-        var id = $("#articuloId").val();
-        var codigo = $("#articuloNombre").val();
-        var descripcion = $("#articuloDescripcion").val();
-        var precio = $("#articuloPrecio").val();
+        var id = $("#articulosIDProd").val();
+        var codigo = $("#articulosNomProd").val();
+        var descripcion = $("#articulosDescripcion").val();
+        var precio = $("#articulosPrecio").val();
         var objeto = {
-        "id": id,
-        "nombre": nombre,
-        "descripcion" : descripcion,
-        "precio": precio,}
+        "IDProd": IDProd,
+        "Nombre": NomProd,
+        "Descripcion" : Descripcion,
+        "Precio": Precio,}
         //console.log(objeto);
         const confirm = window.confirm("Deseas actualizar el elemento?");
         if (confirm){

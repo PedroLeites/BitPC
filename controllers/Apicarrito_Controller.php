@@ -22,20 +22,25 @@ class Apicarrito_Controller extends Controller
         foreach ($listaArticulos as $key => $obj) {
             $articulos = new Carrito();
             $articulos->ID = $obj->ID;
-            $articulos->Cantidad = $obj->Cantidad;
+            $articulos->NomProd = $obj->NomProd;
+            $articulos->Descripcion = $obj->Descripcion;
             $articulos->Precio = $obj->Precio;
+            $articulos->Stock = $obj->Stock;
+            $articulos->Estado = $obj->Estado;
+            $articulos->Categoria = $obj->Categoria;
+            $articulos->URL_Foto = $obj->URL_Foto;
             $lista[] = $articulos;
             //array_push($lista, $articulo);
         }
         //Defino los resultados de las request
         $respuesta = [];
-        $resultado = $this->model->completarCarrito($lista, $usuario);
+        $resultado = $this->model->completarCarrito($lista, $personas);
         if ($resultado->res) {
             http_response_code(201);
             $respuesta = [
                 "datos" => $lista,
-                "pedidoId" => $resultado->pedidoId,
-                "usuario" => $usuario,
+                "IDPedidos" => $resultado->IDPedidos,
+                "Personas" => $personas,
                 "pedRes" => $resultado->res,
                 "respuesta" => "Pedido Completado con Éxito",
             ];

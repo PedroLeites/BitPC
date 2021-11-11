@@ -1,5 +1,5 @@
 <?php
-require_once 'entidades/articulo.php';
+require_once 'entidades/articulos.php';
 
 class Carrito_Controller extends Controller
 {

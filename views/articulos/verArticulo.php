@@ -20,64 +20,24 @@
     <form id="form01" action="<?php echo constant('URL'); ?>articulos/actualizar" method="post"
       enctype="multipart/form-data">
       <div>
-<<<<<<< HEAD
         <label for="articuloId">Id</label>
-        <input type="text" id="articuloId" name="id" disabled value="<?php echo $this->articulo->id; ?>">
+        <input type="text" id="IDProd" name="id" disabled value="<?php echo $this->articulos->IDProd; ?>">
       </div>
       <div>
         <label for="articuloNombre">Nombre</label>
-        <input type="text" id="articuloNombre" name="nombre" value="<?=$this->articulo->nombre;?>">
+        <input type="text" id="articulosNombre" name="nombre" value="<?=$this->articulos->NomProd;?>">
       </div>
       <div>
         <label for="articuloDescripcion">Descripcion</label>
-        <input type="text" id="articuloDescripcion" name="descripcion" value="<?=$this->articulo->descripcion;?>">
+        <input type="text" id="articulosDescripcion" name="Descripcion" value="<?=$this->articulos->Descripcion;?>">
       </div>
       <div>
         <label for="articuloPrecio">Precio</label>
-        <input type="text" id="articuloPrecio" name="precio" value="<?=$this->articulo->precio;?>">
-=======
-          <label for="articuloId">Id</label>
-          <input type="text"
-          id="articuloId"
-          name="id"
-          disabled
-          value="<?php echo $this->articulos->$IDProd; ?>">
+        <input type="text" id="articulosPrecio" name="Precio" value="<?=$this->articulos->Precio;?>">
       </div>
       <div>
-          <label for="articuloNombre">Nombre</label>
-          <input type="text"
-          id="articuloNombre"
-          name="nombre"
-          value="<?=$this->Articulos->$NomProd;?>">
-      </div>
-      <div>
-          <label for="articuloDescripcion">Descripcion</label>
-          <input type="text"
-          id="articuloDescripcion"
-          name="descripcion"
-          value="<?=$this->articulos->Descripcion;?>">
-      </div>
-      <div>
-          <label for="articuloPrecio">Stock</label>
-          <input type="text"
-          id="articuloPrecio"
-          name="precio"
-          value="<?=$this->articulos->Stock;?>">
-      </div>
-      <div>
-          <label for="articuloPrecio">Estado</label>
-          <input type="text"
-          id="articuloPrecio"
-          name="precio"
-          value="<?=$this->articulos->Estado;?>">
-      </div>
-      <div>
-          <label for="articuloPrecio">Categoria</label>
-          <input type="text"
-          id="articuloPrecio"
-          name="precio"
-          value="<?=$this->articulos->Categoria;?>">
->>>>>>> axel
+        <label for="articuloPrecio">Cantidad</label>
+        <input type="text" id="articulosStock" name="Stock" value="<?=$this->articulos->Stock;?>">
       </div>
       <div>
         <label for="articuloFoto">URL de la Foto</label>
