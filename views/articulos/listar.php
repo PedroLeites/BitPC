@@ -14,7 +14,7 @@
   <div>
     <h1>Tienda Productos</h1>
   </div>
-  <div>
+  <div id="general">
     <?php foreach ($this->articulos as $key => $value) {
     $articulo = new Articulo();
     $articulo = $value;
@@ -29,8 +29,8 @@
         <p class="">$ <?=$articulo->precio;?></p>
         <input id="art-<?=$articulo->id;?>" value="1" type="number"></p>
         <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
-      </div>
-    </div>
+      </div><!-- card  -->
+    </div><!-- COL  -->
     <?php }
 ;?>
   </div>
