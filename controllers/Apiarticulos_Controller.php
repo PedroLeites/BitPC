@@ -18,7 +18,6 @@ class Apiarticulos_Controller extends Controller
             "totalResultados" => count($listaArticulos),
         ];
         $this->view->respuesta = json_encode($respuesta);
-
         $this->view->render('api/articulos/listar');
     }
 

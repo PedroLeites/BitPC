@@ -1,23 +1,26 @@
 <?php
 use Firebase\JWT\JWT;
 
+require_once 'vendor/autoload.php';
+require_once 'config/secrets.php';
+
 class Auth
 {
-    private static $secret_key = 'Sdw1s9x8@';
-    private static $encrypt    = ['HS256'];
-    private static $aud        = null;
+    //const $secret_key = ;
+    private static $encrypt = ['HS256'];
+    private static $aud     = null;
 
     public static function SignIn($data)
     {
         $time = time();
 
         $token = [
-            'exp' => $time + (120 * 60),
+            'exp' => $time + (120 * 60 * 10),
             'aud' => self::Aud(),
             'data' => $data,
         ];
 
-        return JWT::encode($token, self::$secret_key);
+        return JWT::encode($token, constant('SECRET_JWT'));
     }
 
     public static function Check($token)
@@ -28,7 +31,7 @@ class Auth
 
         $decode = JWT::decode(
             $token,
-            self::$secret_key,
+            constant('SECRET_JWT'),
             self::$encrypt
         );
 
@@ -41,7 +44,7 @@ class Auth
     {
         return JWT::decode(
             $token,
-            self::$secret_key,
+            constant('SECRET_JWT'),
             self::$encrypt
         )->data;
     }

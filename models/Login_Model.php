@@ -9,23 +9,26 @@ class Login_Model extends Model
     public function ingresar($nombre, $pass)
     {
 
-        $tieneAcceso = false;
+        $salida      = new StdClass;
+        $salida->res = false;
         try {
-            $query = $this->db->connect()->prepare('SELECT password FROM usuarios WHERE nombre=:nombre');
+            $query = $this->db->connect()->prepare('SELECT id,password, rol FROM usuarios WHERE nombre=:nombre');
             $query->bindValue(':nombre', $nombre);
             //$query->execute(['nombre' => $nombre]);
             $query->execute();
             $paswordStr = "";
             while ($row = $query->fetch()) {
-                $paswordStr = $row['password'];
+                $paswordStr          = $row['password'];
+                $salida->id          = $row['id'];
+                $salida->rol = $row['rol'];
             }
             if ($paswordStr == $pass) {
-                $tieneAcceso = true;
+                $salida->res = true;
             }
         } catch (PDOException $e) {
             var_dump($e);
         }
-        return $tieneAcceso;
+        return $salida;
 
     }
 }

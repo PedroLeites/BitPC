@@ -11,9 +11,22 @@ class Articulos_Controller extends Controller
     //http://localhost/proyectofinal3bj/BitPC/articulos
     public function render()
     {
-        $articulos             = $this->model->get();
-        $this->view->articulos = $articulos;
-        $this->view->render('articulos/index');
+        try {
+            //code...
+            $tokenAux = $_SESSION["token"];
+            $token    = substr($tokenAux, 7, strlen($tokenAux));
+            Auth::Check($token);
+            $role = Auth::GetData($token)->rol;
+            if ($role != 'admin') {
+                throw new Exception("no tiene autorizacion");
+            }
+            $articulos             = $this->model->get();
+            $this->view->articulos = $articulos;
+            $this->view->render('articulos/index');
+        } catch (\Throwable $th) {
+            //throw $th;
+            $this->view->render('errores/index');
+        }
     }
 
     public function verArticulo($param = null)

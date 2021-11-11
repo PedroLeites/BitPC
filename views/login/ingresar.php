@@ -7,6 +7,7 @@
 </head>
 
 <body>
+  <input type="hidden" value="<?php echo $this->token; ?>" id="token">
   <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <div>
@@ -18,6 +19,7 @@
     </div>
   </div>
   <?php require_once 'views/footer.php';?>
+  <script src="<?php echo constant('URL'); ?>public/js/login/ingresar.js"></script>
 </body>
 
 </html>

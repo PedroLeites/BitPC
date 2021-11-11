@@ -1,3 +1,4 @@
 .vscode/*
 public/imagenes/*
 vendor/*
+config/secrets.php

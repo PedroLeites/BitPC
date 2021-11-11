@@ -10,6 +10,7 @@ use \SimpleTranslation\Translate;
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/main.css">
 <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/headers/header.css">
 <div>
+  <input type="hidden" value="<?php echo constant('URL'); ?>" id="url000">
   <nav class="menu">
     <div id="logo">
       <a href="<?php echo constant('URL'); ?>index"><img
@@ -28,7 +29,8 @@ if ($estaLogueado) {
       <!--<li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>-->
       <!--<li><a href="<?php echo constant('URL'); ?>pedidos">Administrar Pedidos</a></li>-->
       <li><a href="#"><?php echo $nombre; ?></a></li>
-      <li><a href="<?php echo constant('URL'); ?>login/salir"><span class="iconify" data-icon="mdi:logout"></span>
+      <li><a href="<?php echo constant('URL'); ?>login/salir" id="btnSalir"><span class="iconify"
+            data-icon="mdi:logout"></span>
           Salir</a></li>
       <li><a href="<?php echo constant('URL'); ?>idioma"><span class="iconify" data-icon="carbon:language"></span>
           Cambiar Idioma</a></li>
@@ -54,4 +56,5 @@ if ($estaLogueado) {
   </nav>
 </div>
 <script src="<?php echo constant('URL'); ?>public/js/headers/header.js"></script>
+<script src="<?php echo constant('URL'); ?>public/js/login/salir.js"></script>
 <!-- echo Translate::__(''); -->
