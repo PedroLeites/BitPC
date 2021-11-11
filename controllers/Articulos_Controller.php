@@ -1,5 +1,8 @@
 <?php
 require_once 'entidades/articulo.php';
+require_once 'utils/Utils.php';
+require_once 'vendor/autoload.php';
+require_once 'auth/Auth.php';
 
 class Articulos_Controller extends Controller
 {
@@ -23,8 +26,9 @@ class Articulos_Controller extends Controller
             $articulos             = $this->model->get();
             $this->view->articulos = $articulos;
             $this->view->render('articulos/index');
-        } catch (\Throwable $th) {
+        } catch (Exception $th) {
             //throw $th;
+            $this->view->mensaje = "no autorizado";
             $this->view->render('errores/index');
         }
     }
