@@ -12,7 +12,7 @@
   <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
-  <input type="hidden" value="<?=$this->idioma;?>" id="idioma">
+  <input type="hidden" value="<?=$this->idioma;?>" id="idiomaId">
   <div>
     <h1>Idioma cambiado con exito <?=$this->idioma;?></h1>
   </div>

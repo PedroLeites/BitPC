@@ -13,10 +13,10 @@ class Idioma_Controller extends Controller
 
     public function cambiarIdioma()
     {
-        $idioma = $_POST['idioma'] ?? "es";
-        setcookie("idioma", $idioma, time() + 60 * 60 * 24 * 365, "/");
+        $idioma02 = $_POST['idioma'] ?? "es";
+        setcookie("idioma", $idioma02, time() + 60 * 60 * 24 * 365, "/");
         //var_dump($_POST);
-        $this->view->idioma = $idioma;
+        $this->view->idioma = $idioma02;
         $this->view->render('idioma/cambiarIdioma');
     }
 

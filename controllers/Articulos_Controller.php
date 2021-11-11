@@ -5,16 +5,13 @@ class Articulos_Controller extends Controller
 {
     public function __construct()
     {
-
-        $cambio = "a eliminar";
         parent::__construct();
-        $this->view->mensaje = "";
     }
 
     //http://localhost/proyectofinal3bj/BitPC/articulos
     public function render()
     {
-        $articulos = $this->model->get();
+        $articulos             = $this->model->get();
         $this->view->articulos = $articulos;
         $this->view->render('articulos/index');
     }
@@ -22,7 +19,7 @@ class Articulos_Controller extends Controller
     public function verArticulo($param = null)
     {
         $idArticulo = $param[0];
-        $articulo = $this->model->verArticulo($idArticulo);
+        $articulo   = $this->model->verArticulo($idArticulo);
 
         $_SESSION["id_articulo"] = $idArticulo;
 
@@ -35,20 +32,20 @@ class Articulos_Controller extends Controller
         //var_dump($_POST);
         $resultado = true;
         try {
-            $articulo = new Articulo();
-            $articulo->id = $_POST['articuloId'];
-            $articulo->nombre = $_POST['nombre'];
+            $articulo              = new Articulo();
+            $articulo->id          = $_POST['articuloId'];
+            $articulo->nombre      = $_POST['nombre'];
             $articulo->descripcion = $_POST['descripcion'];
-            $precioSF = $_POST['precio'];
-            $precio = floatval($precioSF);
-            $articulo->precio = number_format((float) $precio, 2, '.', '');
-            $pathImg = $_FILES['img']['tmp_name'];
-            $tmpName = $_FILES['img']['name'];
-            $array = explode(".", $tmpName);
-            $ext = $array[count($array) - 1];
-            $ruta = 'public/img/articulos/' . $articulo->id . "." . $ext;
-            $articulo->url = $ruta;
-            $resultado = $this->model->actualizar($articulo);
+            $precioSF              = $_POST['precio'];
+            $precio                = floatval($precioSF);
+            $articulo->precio      = number_format((float) $precio, 2, '.', '');
+            $pathImg               = $_FILES['img']['tmp_name'];
+            $tmpName               = $_FILES['img']['name'];
+            $array                 = explode(".", $tmpName);
+            $ext                   = $array[count($array) - 1];
+            $ruta                  = 'public/img/articulos/' . $articulo->id . "." . $ext;
+            $articulo->url         = $ruta;
+            $resultado             = $this->model->actualizar($articulo);
             move_uploaded_file($pathImg, $ruta);
         } catch (\Throwable $th) {
             $resultado = false;

@@ -14,6 +14,8 @@
       <div>
         <h1>Lista de Articulos (ADMINS)</h1>
       </div>
+      <div><a href="<?php echo constant('URL'); ?>/articulos/crear">Crear Artículo</a></div>
+
       <div>
         <div>
           <table>
@@ -23,7 +25,7 @@
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Precio</th>
-                <th></th>
+                <th>Imagen</th>
                 <th></th>
               </tr>
             </thead>
