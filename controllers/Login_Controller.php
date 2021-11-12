@@ -17,9 +17,9 @@ class Login_Controller extends Controller
 
     public function ingresar()
     {
-        $nombre = $_POST['Nombre'];
-        $pass = $_POST['pass'];
-        $exitoLogin = $this->model->ingresar($Nombre, $pass);
+        $Nombre = $_POST['Nombre'];
+        $Contrasena = $_POST['Contrasena'];
+        $exitoLogin = $this->model->ingresar($Nombre, $Contrasena);
         if ($exitoLogin) {
             $_SESSION["estalogueado"] = true;
             $_SESSION["Nombre"] = $Nombre;

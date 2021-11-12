@@ -28,12 +28,12 @@
         
           $(this).on("click", function(){    
             let IDProd = $(this).data("articuloId");
-            let articuloNombre = $(this).data("articuloNombre");
-            let articuloDescripcion = $(this).data("articuloDescripcion");
+            let articuloNombre = $(this).data("articulosNomProd");
+            let articuloDescripcion = $(this).data("articulosDescripcion");
             console.log("lista de articuls\n");
             console.log($listaArticulos);
             console.log('Articulo ID: '+IDProd);
-            let articulo= $listaArticulos.find(articulo => articulo.id == IDProd);          
+            let articulo= $listaArticulos.find(articulos => articulos.IDProd == IDProd);          
             carrito = JSON.parse(localStorage.getItem("carrito"));
             if (carrito==null){
               //inicilizo el carrito
@@ -45,12 +45,12 @@
               }
               carrito=[];
               console.log($listaArticulos);
-              item={"id" : articulo.id,
-                    "nombre": articulo.nombre,
-                    "precio": articulo.precio,
-                    "descripcion": articulo.descripcion,
-                    "cantidad": cantidad,
-                    "url": articulo.url
+              item={"id" : articulos.IDProd,
+                    "nombre": articulos.NomProd,
+                    "precio": articulos.Precio,
+                    "descripcion": articulos.Descripcion,
+                    "cantidad": Stock,
+                    "url": articulos.url
                   }
               carrito.push(item);              
               localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -69,7 +69,7 @@
                     "Stock": Stock,
                     "url": articulos.url
               }
-              let itemCarrito= carrito.find(articulo => articulos.id ==IDProd);
+              let itemCarrito= carrito.find(articulo => articulos.IDProd ==IDProd);
               if (itemCarrito==undefined){
                 carrito.push(articulos);
                 localStorage.setItem("carrito", JSON.stringify(carrito));

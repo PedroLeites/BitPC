@@ -8,6 +8,8 @@
         var codigo = $("#articulosNomProd").val();
         var descripcion = $("#articulosDescripcion").val();
         var precio = $("#articulosPrecio").val();
+        var precio = $("#articulosPrecio").val();
+        var precio = $("#articulosPrecio").val();
         var objeto = {
         "IDProd": IDProd,
         "Nombre": NomProd,

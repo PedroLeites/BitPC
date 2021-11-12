@@ -142,8 +142,8 @@ class Apiarticulos_Controller extends Controller
 
     public function ver($param)
     {
-        $id = $param[0];
-        $articulo = $this->model->ver($id);
+        $IDProd = $param[0];
+        $articulos = $this->model->ver($IDProd);
         $verboHTTP = $_SERVER['REQUEST_METHOD'];
         $respuesta = [
             "IDProd" => $articulos->IDProd,

@@ -6,7 +6,7 @@ class Login_Model extends Model
         parent::__construct();
     }
 
-    public function ingresar($Nombre, $pass)
+    public function ingresar($Nombre, $Contrasena)
     {
 
         $tieneAcceso = false;
@@ -19,7 +19,7 @@ class Login_Model extends Model
             while ($row = $query->fetch()) {
                 $paswordStr = $row['Contrasena'];
             }
-            if ($paswordStr == $pass) {
+            if ($paswordStr == $Contrasena) {
                 $tieneAcceso = true;
             }
         } catch (PDOException $e) {

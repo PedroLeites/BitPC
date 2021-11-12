@@ -21,12 +21,12 @@ class Articulos_Controller extends Controller
 
     public function verArticulo($param = null)
     {
-        $idArticulo = $param[0];
-        $articulos = $this->model->verArticulo($idArticulo);
+        $IDProd = $param[0];
+        $articulos = $this->model->verArticulo($IDProd);
 
-        $_SESSION["id_articulo"] = $idArticulo;
+        $_SESSION["IDProd"] = $IDProd;
 
-        $this->view->articulos = $articulo;
+        $this->view->articulos = $articulos;
         $this->view->render('articulos/verArticulo');
     }
 

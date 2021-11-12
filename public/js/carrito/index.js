@@ -18,11 +18,11 @@
         <div class="">
           <img class="" src="${element.url}" alt=""/>
           <div class=">
-            <h5 class="">ID:${element.id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${element.nombre}</h5>
-            <p class="">${element.descripcion}</p>
-            <p class="">$ ${element.precio}</p>
-            <input id="cant-${element.id}" class=""
-            value="${element.cantidad}" type="number" disabled>
+            <h5 class="">ID:${element.IDProd} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${element.NomProd}</h5>
+            <p class="">${element.Descripcion}</p>
+            <p class="">$ ${element.Precio}</p>
+            <input id="cant-${element.IDProd}" class=""
+            value="${element.Stock}" type="number" disabled>
             </p>
             <button type="button" class="btnEliminar" data-articulo-id="${element.id}">Eliminar</button>
           </div>
@@ -31,16 +31,16 @@
         $("#carritoid").append(insert); 
       });
       $("body").on("click",".btnEliminar" ,function(){
-        let articuloId= $(this).data("articuloId");
+        let IDProd= $(this).data("articuloId");
         const confirm = window.confirm("Deseas eliminar el elemento?");
         if (confirm){
-          $("#art-"+articuloId).remove();
+          $("#art-"+ IDProd).remove();
           let carritoStr = localStorage.getItem("carrito");
           if (carritoStr){
             let carrito= JSON.parse(carritoStr);
-            let itemCarrito= carrito.find(articulo => articulo.id == articuloId);
+            let itemCarrito= carrito.find(articulos => articulos.IDProd == IDProd );
             carrito.forEach(function(art, index, object) {
-              if(art.id == articuloId){
+              if(art.id == IDProd){
                 object.splice(index, 1);
                 localStorage.setItem("carrito", JSON.stringify(carrito));
               }

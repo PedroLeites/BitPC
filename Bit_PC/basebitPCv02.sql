@@ -195,8 +195,7 @@ CREATE TABLE `personas` (
   `Nombre` varchar(10) NOT NULL,
   `Apellido` varchar(10) NOT NULL,
   `FechaNac` date NOT NULL,
-  `Calle` varchar(30) NOT NULL,
-  `NPuerta` int NOT NULL,
+  `Direccion` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `Correo` (`Correo`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
