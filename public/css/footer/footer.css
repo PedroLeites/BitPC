@@ -72,3 +72,69 @@ footer {
 .row a .tk:hover {
   color: #ee1d52;
 }
+
+/* Pop-Up/Ventana Modal para el mapa */
+.ventana {
+  width: 100%;
+  height: 100vh;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+}
+
+.ventana {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#btn-up:checked ~ .ventana {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contenedor {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  background: #ffff;
+  box-shadow: 1px 7px 25px black;
+  transition: all 500ms ease;
+  position: relative;
+  transform: translateY(-30%);
+}
+
+#btn-up:checked ~ .ventana .contenedor {
+  transform: translateY(0);
+}
+
+.contenedor header {
+  padding: 20px;
+  background: #1778f2;
+  color: #ffff;
+}
+
+.contenedor label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ffff;
+  cursor: pointer;
+}
+
+#btn-up {
+  display: none;
+}
+
+.up {
+  cursor: pointer;
+}
+
+#X {
+  color: #ff3900;
+  font-weight: 800;
+}
