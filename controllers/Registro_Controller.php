@@ -33,9 +33,12 @@ class Registro_Controller extends Controller
                 $password  = $_POST['password'];
                 // llamo al modelo
                 $resultado = $this->model->registrarse($correo, $nombre, $apellido, $fechanac, $direccion, $password);
-            } else {
-                $this->view->resultadoRegistro = "Debe compretar todos los campos del formulario";
-                $this->view->render('registro/index');
+                if ($resultado->resultado) {
+                    $this->view->render('registro/registrado');
+                } else {
+                    $this->view->resultadoRegistro = "Debe compretar todos los campos del formulario";
+                    $this->view->render('registro/index');
+                }
             }
         }
     }

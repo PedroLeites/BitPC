@@ -13,7 +13,7 @@
   <?php require 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <div id="form-container">
-    <form id="form-registro" action="<?php echo constant('URL'); ?>" method="post">
+    <form id="form-registro" action="<?php echo constant('URL'); ?>registro/registrado" method="post">
       <h1>Ingrese sus datos</h1>
       <input class="input-form" type="mail" id="email" name="correo" placeholder="Correo Electrónico">
       <input class="input-form2" type="text" id="nombre" name="nombre" placeholder="Nombre">
