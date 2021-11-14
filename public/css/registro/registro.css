@@ -1,3 +1,8 @@
+body {
+  background: url(../../img/fondos/fondo-form.jpg);
+  background-size: contain;
+}
+
 #form-container {
   width: 1200px;
   height: 600px;
@@ -26,6 +31,7 @@ h1 {
   align-items: center;
   margin-top: 15px;
   border-radius: 25px;
+  background-color: #ffffff;
 }
 
 .input-form {
@@ -51,7 +57,7 @@ h1 {
   margin-left: 50px;
 }
 
-/*.input-form input[type="date"]::before {
+/*.input-form[type="date"]::before {
   content: attr(placeholder);
 }*/
 
