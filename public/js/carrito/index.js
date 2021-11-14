@@ -17,13 +17,7 @@
       $("#btnConfirmarPedido").css("display", "none");
     }
     carrito.forEach((element) => {
-      /*let imgUrl = element.url;
-        let urlBase= $("#url").val();  
-        if (!element.url.includes('svg+xml')) {
-          imgUrl = urlBase . imgUrl;
-          console.log(imgUrl);
-        }*/
-      let insert = `<div class=""
+      /*let insert = `<div class=""
         id="art-${element.id}">
         <div class="">
           <img class="" src="${element.url}" alt=""/>
@@ -37,10 +31,49 @@
             <button type="button" class="btnEliminar" data-articulo-id="${element.id}">Eliminar</button>
           </div>
           </div>
-        </div><?php }`;
+        </div><?php }`;*/
+      var p = element.precio;
+      var c = element.cantidad;
+      var pc = p * c;
+      let insert = `<tr>
+          <td>${element.nombre}</td>
+          <td>$${element.precio}</td>
+          <td>${element.cantidad}</td>
+          <td>$${pc}</td>
+          <td><button type="button" class="btnEliminar" data-articulo-id="${element.id}">Eliminar</button></td>
+        </tr>`;
       $("#carritoid").append(insert);
     });
-    $("body").on("click", ".btnEliminar", function () {
+    /*
+    $(document).on('click', '.borrar', function (event) {
+    event.preventDefault();
+    $(this).closest('tr').remove();
+    });
+*/
+    $("body").on("click", ".btnEliminar", function (event) {
+      event.preventDefault();
+      let articuloId = $(this).data("articuloId");
+      const confirm = window.confirm("Deseas eliminar el elemento?");
+      if (confirm) {
+        $(this).closest("tr").remove();
+        $("#art-" + articuloId).remove();
+        let carritoStr = localStorage.getItem("carrito");
+        if (carritoStr) {
+          let carrito = JSON.parse(carritoStr);
+          let itemCarrito = carrito.find(
+            (articulo) => articulo.id == articuloId
+          );
+          carrito.forEach(function (art, index, object) {
+            if (art.id == articuloId) {
+              object.splice(index, 1);
+              localStorage.setItem("carrito", JSON.stringify(carrito));
+            }
+            $("#cantidadElemCarrito").text(carrito.length);
+          }); //end carrito.foreach
+        } //end if carritoStr
+      } //end if confirm
+    }); // fin body
+    /*$("body").on("click", ".btnEliminar", function () {
       let articuloId = $(this).data("articuloId");
       const confirm = window.confirm("Deseas eliminar el elemento?");
       if (confirm) {
@@ -60,7 +93,7 @@
           }); //end carrito.foreach
         } //end if carritoStr
       } //end if confirm
-    }); //end body
+    }); //end body*/
 
     //http://localhost/proyectofinal3bj/BitPC/apicarrito/completarCarrito
     $("#btnConfirmarPedido").on("click", function (event) {

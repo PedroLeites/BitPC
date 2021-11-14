@@ -13,7 +13,16 @@
   <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <h1>Articulos en el carrito</h1>
-  <div id="carritoid"></div>
+  <div id="carritoid">
+    <table>
+      <tr>
+        <th>Producto</th>
+        <th>Precio Unitario</th>
+        <th>Cantidad</th>
+        <th>Precio Total</th>
+      </tr>
+    </table>
+  </div>
   <div class="btn_pedido">
     <button class="btn_completarPedido" id="btnConfirmarPedido">Confirmar Pedido</button>
   </div>
