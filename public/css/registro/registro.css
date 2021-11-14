@@ -17,7 +17,7 @@ h1 {
 #form-registro {
   width: 100%;
   max-width: 500px;
-  height: 450px;
+  height: 540px;
   padding: 0px;
   border: 2px solid #005b97;
   padding: 3px;
@@ -40,6 +40,21 @@ h1 {
   margin-left: 50px;
 }
 
+.input-form[type="date"] {
+  font-size: 20px;
+  width: 80%;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #0d0d0d;
+  margin: 0 auto;
+  outline: none;
+  margin-left: 50px;
+}
+
+/*.input-form input[type="date"]::before {
+  content: attr(placeholder);
+}*/
+
 .input-form2 {
   font-size: 20px;
   width: 35%;
@@ -50,6 +65,14 @@ h1 {
   margin-top: 20px;
   outline: none;
   margin-left: 50px;
+}
+
+label {
+  font-size: 16px;
+  display: flex;
+  margin-left: 53px;
+  margin-top: 20px;
+  color: #0d0d0d;
 }
 
 button {

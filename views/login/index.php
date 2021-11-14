@@ -15,7 +15,7 @@
   <div id="form-container">
     <form id="form-login" action="<?php echo constant('URL'); ?>login/ingresar" method="post">
       <h1>Ingrese sus datos</h1>
-      <input class="input-login" type="text" id="username" name="nombre" placeholder="Correo Electrónico">
+      <input class="input-login" type="email" id="email" name="correo" placeholder="Correo Electrónico">
       <input class="input-login" type="password" id="password" name="pass" placeholder="Contraseña">
       <button type="submit">Iniciar Sesión</button>
       <p>¿No tienes una cuenta? <a id="registro-link" href="<?php echo constant('URL'); ?>registro">Regístrate</a></p>

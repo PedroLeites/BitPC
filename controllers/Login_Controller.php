@@ -8,7 +8,6 @@ class Login_Controller extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->view->mensaje        = "";
         $this->view->resultadoLogin = "";
     }
 
@@ -19,23 +18,24 @@ class Login_Controller extends Controller
 
     public function ingresar()
     {
-        $nombre = $_POST['nombre'];
+        // $nombre = $_POST['nombre'];
+        $correo = $_POST['correo'];
         $pass   = $_POST['pass'];
-        $res    = $this->model->ingresar($nombre, $pass);
+        $res    = $this->model->ingresar($correo, $pass);
         if ($res->res) {
             $token = Auth::SignIn([
                 'id' => $res->id,
-                'name' => $nombre,
+                'email' => $correo,
                 'rol' => $res->rol,
             ]);
             $_SESSION["estalogueado"] = true;
-            $_SESSION["nombre"]       = $nombre;
+            $_SESSION["email"]        = $correo;
             $_SESSION["rol"]          = $res->rol;
             $_SESSION["token"]        = $token;
             $this->view->token        = $token;
             $this->view->render('login/ingresar');
         } else {
-            $this->view->resultadoLogin = "Nombre de usuario o contraseña incorrectos";
+            $this->view->resultadoLogin = "Correo Electrónico o contraseña incorrectos";
             $this->view->render('login/index');
         }
     }

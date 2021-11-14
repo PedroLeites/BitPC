@@ -24,11 +24,11 @@ if (isset($_SESSION["estalogueado"])) {
 }
 $estaLogueado = isset($_SESSION["estalogueado"]) ? $_SESSION["estalogueado"] : false;
 if ($estaLogueado) {
-    ?><?php $nombre = $_SESSION["nombre"];?>
+    ?><?php $correo = $_SESSION["email"];?>
     <ul class="menu_items">
       <!--<li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>-->
       <!--<li><a href="<?php echo constant('URL'); ?>pedidos">Administrar Pedidos</a></li>-->
-      <li><a href="#"><?php echo $nombre; ?></a></li>
+      <li><a href="#"><?php echo $correo; ?></a></li>
       <li><a href="<?php echo constant('URL'); ?>login/salir" id="btnSalir"><span class="iconify"
             data-icon="mdi:logout"></span>
           Salir</a></li>
