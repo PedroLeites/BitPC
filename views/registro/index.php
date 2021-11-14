@@ -15,14 +15,14 @@
   <div id="form-container">
     <form id="form-registro" action="<?php echo constant('URL'); ?>" method="post">
       <h1>Ingrese sus datos</h1>
-      <input class="input-form" type="mail" id="email" name="email" placeholder="Correo Electrónico">
+      <input class="input-form" type="mail" id="email" name="correo" placeholder="Correo Electrónico">
       <input class="input-form2" type="text" id="nombre" name="nombre" placeholder="Nombre">
       <input class="input-form2" type="text" id="apellido" name="apellido" placeholder="Apellido">
       <label for="fechanac">Fecha de Nacimiento</label>
       <input class="input-form" type="date" id="fechanac" name="fechanac" value="Fecha de nacimiento">
       <input class="input-form" type="text" id="direccion" name="direccion" placeholder="Dirección">
       <input class="input-form" type="password" id="password" name="password" placeholder="Contraseña">
-      <button type="submit">Registrarse</button>
+      <button type="submit" name="registrarse">Registrarse</button>
       <p>¿Ya tienes una cuenta? <a id="login-link" href="<?php echo constant('URL'); ?>login">Inicia Sesión</a></p>
     </form>
   </div>
