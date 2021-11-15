@@ -1,0 +1,98 @@
+h1 {
+  color: #0d0d0d;
+  font-size: 30px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#carritoid {
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  color: #0d0d0d;
+  border-bottom: solid 1px #0d0d0d;
+}
+
+td {
+  background-color: #fff;
+  border-bottom: solid 1px #827681;
+}
+
+tr td:hover {
+  background-color: #369add;
+}
+
+.btnEliminar {
+  background-color: #ff3900;
+  border: none;
+  width: 40%;
+  height: 25%;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn_pedido {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnConfirmarPedido {
+  border: none;
+  width: 20%;
+  color: #ffffff;
+  font-size: 18px;
+  background: #005b97;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 40%;
+  margin-bottom: 10px;
+}
+
+#btnConfirmarPedido:hover {
+  background-color: #ff3900;
+  transition: 0.1s;
+}
+
+#resPedido {
+  background-color: green;
+  width: 100%;
+  max-width: 500px;
+  height: 100px;
+  padding: 0px;
+  border: 2px solid #005b97;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  margin-bottom: 150px;
+  margin-top: 15px;
+}
+
+#mensajePedido {
+  margin-bottom: 10px;
+  color: #0d0d0d;
+  font-size: 18px;
+}

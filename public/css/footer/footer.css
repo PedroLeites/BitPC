@@ -6,6 +6,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: auto;
+  margin-top: 130px;
 }
 
 .row {

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/carrito/carrito.css">
   <title>Carrito</title>
 </head>
 
@@ -12,14 +13,15 @@
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
   <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
-  <h1>Articulos en el carrito</h1>
+  <h1 id="hArticulos">Articulos en el carrito</h1>
   <div id="carritoid">
-    <table>
+    <table id="tablaCarrito">
       <tr>
         <th>Producto</th>
         <th>Precio Unitario</th>
         <th>Cantidad</th>
         <th>Precio Total</th>
+        <th></th>
       </tr>
     </table>
   </div>
@@ -28,8 +30,8 @@
   </div>
   <div id="resPedido" style="display:none">
     <div>
-      <h2>Resultado del Pedido</h2>
-      <div role="alert">
+      <h1>Resultado del Pedido</h1>
+      <div id="mensajePedido" role="alert">
         Pedido Completado con Éxito <br>
         Número de Pedido: <span id="numPedido"></span>
       </div>

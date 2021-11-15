@@ -42,7 +42,8 @@
           <td>$${pc}</td>
           <td><button type="button" class="btnEliminar" data-articulo-id="${element.id}">Eliminar</button></td>
         </tr>`;
-      $("#carritoid").append(insert);
+
+      $("#tablaCarrito").append(insert);
     });
     /*
     $(document).on('click', '.borrar', function (event) {
@@ -69,6 +70,7 @@
               localStorage.setItem("carrito", JSON.stringify(carrito));
             }
             $("#cantidadElemCarrito").text(carrito.length);
+            location.reload();
           }); //end carrito.foreach
         } //end if carritoStr
       } //end if confirm
@@ -101,6 +103,7 @@
       let url = $("#url").val();
       let urlReq = url + "apicarrito/completarCarrito";
       let headers = { "Content-Type": "application/json;charset=utf-8" };
+      let usuarioID = a;
       let data = { lista: carrito, usuario_id: 2 };
       $.ajax({
         url: urlReq,
@@ -120,6 +123,7 @@
           $("#resPedido").css({ display: "flex" });
           $("#numPedido").text(data.pedidoId);
           $("#btnConfirmarPedido").css({ display: "none" });
+          $("#hArticulos").css({ display: "none" });
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
           console.log(textStatus);
