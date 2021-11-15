@@ -3,6 +3,7 @@
 
 <head>
   <title>Articulos</title>
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/articulos/index.css">
 </head>
 
 <body>
@@ -14,9 +15,11 @@
       <div>
         <h1>Lista de Articulos (ADMINS)</h1>
       </div>
-      <div><a href="<?php echo constant('URL'); ?>/articulos/crear">Crear Artículo</a></div>
+      <div id="divCrear">
+        <a id="btnCrear" href="<?php echo constant('URL'); ?>/articulos/crear">Crear Artículo</a>
+      </div>
 
-      <div>
+      <div id="divtabla">
         <div>
           <table>
             <thead>
@@ -25,7 +28,9 @@
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Precio</th>
+                <th>Estado</th>
                 <th>Imagen</th>
+                <th></th>
                 <th></th>
               </tr>
             </thead>
@@ -39,9 +44,11 @@ foreach ($this->articulos as $row) {
                 <td><?php echo $articulo->id; ?></td>
                 <td><?php echo $articulo->nombre; ?></td>
                 <td><?php echo $articulo->descripcion; ?></td>
-                <td><?php echo $articulo->precio; ?></td>
-                <td><img src="<?php echo $articulo->url; ?>" alt="<?php echo $articulo->descripcion; ?>" /></td>
-                <td><a href="<?php echo constant('URL') . 'articulos/verArticulo/' . $articulo->id; ?>">Actualizar</a>
+                <td>$<?php echo $articulo->precio; ?></td>
+                <td><?php echo $articulo->estado; ?></td>
+                <td><img src="<?php echo $articulo->url; ?>" alt="<?php echo $articulo->url; ?>" /></td>
+                <td><a id="btnActualizar"
+                    href="<?php echo constant('URL') . 'articulos/verArticulo/' . $articulo->id; ?>">Actualizar</a>
                 </td>
                 <td><button class="btnEliminar" data-articulo="<?php echo $articulo->id; ?>"
                     id="art<?php echo $articulo->id; ?>">Eliminar</button></td>

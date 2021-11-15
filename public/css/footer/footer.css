@@ -136,6 +136,10 @@ footer {
 }
 
 #X {
-  color: #ff3900;
+  color: #fff;
+  font-weight: 800;
+}
+#X:hover {
+  color: red;
   font-weight: 800;
 }

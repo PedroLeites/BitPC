@@ -21,6 +21,7 @@
       <label for="fechanac">Fecha de Nacimiento</label>
       <input class="input-form" type="date" id="fechanac" name="fechanac" value="Fecha de nacimiento">
       <input class="input-form" type="text" id="direccion" name="direccion" placeholder="Dirección">
+      <input class="input-form" type="text" id="telefono" name="telefono" placeholder="Teléfono">
       <input class="input-form" type="password" id="password" name="password" placeholder="Contraseña">
       <button type="submit" name="registrarse">Registrarse</button>
       <p>¿Ya tienes una cuenta? <a id="login-link" href="<?php echo constant('URL'); ?>login">Inicia Sesión</a></p>

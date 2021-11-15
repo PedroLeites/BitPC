@@ -14,23 +14,25 @@ class Articulos_Controller extends Controller
     //http://localhost/proyectofinal3bj/BitPC/articulos
     public function render()
     {
-        try {
-            //code...
-            $tokenAux = $_SESSION["token"];
-            $token    = substr($tokenAux, 7, strlen($tokenAux));
-            Auth::Check($token);
-            $role = Auth::GetData($token)->rol;
-            if ($role != 'admin') {
-                throw new Exception("no tiene autorizacion");
-            }
-            $articulos             = $this->model->get();
-            $this->view->articulos = $articulos;
-            $this->view->render('articulos/index');
-        } catch (Exception $th) {
-            //throw $th;
-            $this->view->mensaje = "no autorizado";
-            $this->view->render('errores/index');
-        }
+        $articulos             = $this->model->get();
+        $this->view->articulos = $articulos;
+        $this->view->render('articulos/index');
+        /*try {
+    //code...
+    $tokenAux = $_SESSION["token"];
+    $token    = substr($tokenAux, 7, strlen($tokenAux));
+    Auth::Check($token);
+    $role = Auth::GetData($token)->rol;
+    if ($role != 'admin') {
+    throw new Exception("no tiene autorizacion");
+    }
+    $articulos             = $this->model->get();
+    $this->view->articulos = $articulos;
+    $this->view->render('articulos/index');
+    } catch (Exception $th) {
+    $this->view->mensaje = "no autorizado";
+    $this->view->render('errores/index');
+    }*/
     }
 
     public function verArticulo($param = null)
@@ -56,6 +58,7 @@ class Articulos_Controller extends Controller
             $precioSF              = $_POST['precio'];
             $precio                = floatval($precioSF);
             $articulo->precio      = number_format((float) $precio, 2, '.', '');
+            $articulo->estado      = $_POST['estado'];
             $pathImg               = $_FILES['img']['tmp_name'];
             $tmpName               = $_FILES['img']['name'];
             $array                 = explode(".", $tmpName);
@@ -80,6 +83,11 @@ class Articulos_Controller extends Controller
         $this->view->articulos = $articulos;
         //lista los articulos
         $this->view->render('articulos/listar');
+    }
+
+    public function crear(Type $var = null)
+    {
+        # code...
     }
 
 }

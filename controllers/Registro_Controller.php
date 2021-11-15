@@ -24,15 +24,17 @@ class Registro_Controller extends Controller
                 strlen($_POST['apellido']) >= 1 &&
                 strlen($_POST['fechanac']) >= 1 &&
                 strlen($_POST['direccion']) >= 1 &&
+                strlen($_POST['telefono']) >= 1 &&
                 strlen($_POST['password']) >= 1) {
                 $correo    = $_POST['correo'];
                 $nombre    = $_POST['nombre'];
                 $apellido  = $_POST['apellido'];
                 $fechanac  = $_POST['fechanac'];
                 $direccion = $_POST['direccion'];
+                $telefono  = $_POST['telefono'];
                 $password  = $_POST['password'];
                 // llamo al modelo
-                $resultado = $this->model->registrarse($correo, $nombre, $apellido, $fechanac, $direccion, $password);
+                $resultado = $this->model->registrarse($correo, $nombre, $apellido, $fechanac, $direccion, $telefono, $password);
                 if ($resultado->resultado) {
                     $this->view->render('registro/registrado');
                 } else {

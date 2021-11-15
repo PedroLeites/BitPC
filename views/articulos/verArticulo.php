@@ -36,6 +36,14 @@
         <input type="text" id="articuloPrecio" name="precio" value="<?=$this->articulo->precio;?>">
       </div>
       <div>
+        <label for="articuloEstado">Estado</label>
+        <select value="<?=$this->articulo->estado;?>" name="estado" id="articuloEstado">
+          <option disabled selected>Selecciona una opción</option>
+          <option value="activo">activo</option>
+          <option value="inactivo">inactivo</option>
+        </select>
+      </div>
+      <div>
         <label for="articuloFoto">URL de la Foto</label>
         <input type="file" id="articuloFoto" name="img">
       </div>
@@ -46,9 +54,7 @@
       <input type="hidden" value="<?php echo $this->articulo->id; ?>" id="articuloId" name="articuloId">
     </form>
   </div>
-
-  <!-- importo el jQuery-->
-  <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
+  <?php require_once 'views/footer.php';?>
   <!-- importo el javascript-->
   <script src="<?php echo constant('URL'); ?>/public/js/articulos/verArticulo.js"></script>
 
