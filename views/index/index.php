@@ -2,6 +2,12 @@
 <html lang="es">
 
 <head>
+  <?php
+
+require_once 'traduccion/Translate.php';
+use \SimpleTranslation\Translate;
+
+?>
   <meta charset="UTF-8">
   <link href="<?php echo constant('URL'); ?>public/css/index/index.css" rel="stylesheet" type="text/css" media="all">
   <title>BIT PC</title>
@@ -12,7 +18,7 @@
   <label for="btn-up" class="up"></label>
   <div class="ventana">
     <div class="contenedor">
-      <header>Ubicación del local</header>
+      <header><?php echo Translate::__('Map'); ?></header>
       <label id="X" for="btn-up">X</label>
       <div class="contenido">
         <iframe
@@ -31,3 +37,4 @@
 </body>
 
 </html>
+<!-- echo Translate::__(''); -->

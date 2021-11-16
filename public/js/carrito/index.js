@@ -40,7 +40,7 @@
           <td>$${element.precio}</td>
           <td>${element.cantidad}</td>
           <td>$${pc}</td>
-          <td><button type="button" class="btnEliminar" data-articulo-id="${element.id}">Eliminar</button></td>
+          <td><button type="button" class="btnEliminar" data-articulo-id="${element.id}"><span class="iconify" data-icon="carbon:shopping-cart-minus"></span></button></td>
         </tr>`;
 
       $("#tablaCarrito").append(insert);

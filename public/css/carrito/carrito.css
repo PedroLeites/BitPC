@@ -43,7 +43,7 @@ tr td:hover {
   width: 40%;
   height: 25%;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 22px;
   padding: 5px;
   cursor: pointer;
   border-radius: 5px;
@@ -74,7 +74,6 @@ tr td:hover {
 }
 
 #resPedido {
-  background-color: green;
   width: 100%;
   max-width: 500px;
   height: 100px;

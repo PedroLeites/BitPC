@@ -2,6 +2,12 @@
 <html lang="es">
 
 <head>
+  <?php
+
+require_once 'traduccion/Translate.php';
+use \SimpleTranslation\Translate;
+
+?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,27 +19,27 @@
   <input type="hidden" value="<?php echo constant('URL'); ?>" id="url">
   <?php require_once 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
-  <h1 id="hArticulos">Articulos en el carrito</h1>
+  <h1 id="hArticulos"><?php echo Translate::__('hCarrito'); ?></h1>
   <div id="carritoid">
     <table id="tablaCarrito">
       <tr>
-        <th>Producto</th>
-        <th>Precio Unitario</th>
-        <th>Cantidad</th>
-        <th>Precio Total</th>
+        <th><?php echo Translate::__('Articles'); ?></th>
+        <th><?php echo Translate::__('PriceUni'); ?></th>
+        <th><?php echo Translate::__('Cant'); ?></th>
+        <th><?php echo Translate::__('PriceTot'); ?></th>
         <th></th>
       </tr>
     </table>
   </div>
   <div class="btn_pedido">
-    <button class="btn_completarPedido" id="btnConfirmarPedido">Confirmar Pedido</button>
+    <button class="btn_completarPedido" id="btnConfirmarPedido"><?php echo Translate::__('btnPedido'); ?></button>
   </div>
   <div id="resPedido" style="display:none">
     <div>
-      <h1>Resultado del Pedido</h1>
+      <h1><?php echo Translate::__('hResPedido'); ?></h1>
       <div id="mensajePedido" role="alert">
-        Pedido Completado con Éxito <br>
-        Número de Pedido: <span id="numPedido"></span>
+        <?php echo Translate::__('ResPedido'); ?> <br>
+        <?php echo Translate::__('NumPed'); ?> <span id="numPedido"></span>
       </div>
     </div>
   </div>
@@ -54,3 +60,4 @@
 </body>
 
 </html>
+<!-- echo Translate::__(''); -->

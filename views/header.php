@@ -31,9 +31,9 @@ if ($estaLogueado) {
       <li><a href="#"><?php echo $correo; ?></a></li>
       <li><a href="<?php echo constant('URL'); ?>login/salir" id="btnSalir"><span class="iconify"
             data-icon="mdi:logout"></span>
-          Salir</a></li>
-      <li><a href="<?php echo constant('URL'); ?>idioma"><span class="iconify" data-icon="carbon:language"></span>
-          Cambiar Idioma</a></li>
+          <?php echo Translate::__('Log_out'); ?></a></li>
+      <li><a href="<?php echo constant('URL'); ?>idioma"><span class="iconify"
+            data-icon="carbon:language"></span><?php echo Translate::__('LangOp'); ?></a></li>
     </ul>
     <?php } else {
     ?>
@@ -46,7 +46,7 @@ if ($estaLogueado) {
             data-icon="bx:bxs-user-plus"></span><?php echo Translate::__('Sing_up'); ?></a></li>
       <li><a href="<?php echo constant('URL'); ?>idioma"><span class="iconify"
             data-icon="carbon:language"></span></span>
-          Cambiar Idioma</a></li>
+          <?php echo Translate::__('LangOp'); ?></a></li>
     </ul>
     <?php }
 ;?>
