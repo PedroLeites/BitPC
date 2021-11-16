@@ -14,25 +14,25 @@ class Articulos_Controller extends Controller
     //http://localhost/proyectofinal3bj/BitPC/articulos
     public function render()
     {
-        $articulos             = $this->model->get();
+        /*$articulos             = $this->model->get();
         $this->view->articulos = $articulos;
-        $this->view->render('articulos/index');
-        /*try {
-    //code...
-    $tokenAux = $_SESSION["token"];
-    $token    = substr($tokenAux, 7, strlen($tokenAux));
-    Auth::Check($token);
-    $role = Auth::GetData($token)->rol;
-    if ($role != 'admin') {
-    throw new Exception("no tiene autorizacion");
-    }
-    $articulos             = $this->model->get();
-    $this->view->articulos = $articulos;
-    $this->view->render('articulos/index');
-    } catch (Exception $th) {
-    $this->view->mensaje = "no autorizado";
-    $this->view->render('errores/index');
-    }*/
+        $this->view->render('articulos/index');*/
+        try {
+            //code...
+            $tokenAux = $_SESSION["token"];
+            $token    = substr($tokenAux, 7, strlen($tokenAux));
+            Auth::Check($token);
+            $role = Auth::GetData($token)->rol;
+            if ($role != 'admin') {
+                throw new Exception("no tiene autorizacion");
+            }
+            $articulos             = $this->model->get();
+            $this->view->articulos = $articulos;
+            $this->view->render('articulos/index');
+        } catch (Exception $th) {
+            $this->view->mensaje = "no autorizado";
+            $this->view->render('errores/index');
+        }
     }
 
     public function verArticulo($param = null)
@@ -85,9 +85,10 @@ class Articulos_Controller extends Controller
         $this->view->render('articulos/listar');
     }
 
-    public function crear(Type $var = null)
+    public function crear()
     {
         # code...
+        $articulo = new Articulo();
     }
 
 }

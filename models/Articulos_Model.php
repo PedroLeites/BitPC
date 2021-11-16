@@ -90,4 +90,9 @@ class Articulos_Model extends Model
             $pdo = null;
         }
     } //end actualizar
+
+    public function crear()
+    {
+        # code...
+    }
 }

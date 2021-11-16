@@ -46,6 +46,7 @@ class Apiarticulos_Controller extends Controller
         $articulo->nombre      = $obj->nombre;
         $articulo->descripcion = $obj->descripcion;
         $articulo->precio      = $obj->precio;
+        $articulo->estado      = $obj->estado;
         //$articulo->fecha = $obj->fecha;
         //array_push($listaArticulos, $articulo);
         //$items[] = $item;
@@ -62,7 +63,7 @@ class Apiarticulos_Controller extends Controller
         ];
         $this->view->respuesta = json_encode($respuesta);
 
-        $this->view->render('api/articulos/crearm');
+        $this->view->render('api/articulos/crear');
         //var_dump($this);
         //var_dump($this->view);
     } //end crear
