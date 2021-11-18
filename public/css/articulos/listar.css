@@ -1,3 +1,16 @@
+h1 {
+  color: #0d0d0d;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#general {
+  display: grid;
+  grid-column-gap: 50px;
+}
+
 .col {
   background: grey;
   width: 100vw;
@@ -7,6 +20,7 @@
   flex-flow: wrap;
   justify-content: space-between;
 }
+
 .card {
   width: 300px;
   background: white;

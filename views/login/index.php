@@ -22,9 +22,9 @@ use \SimpleTranslation\Translate;
     <form id="form-login" action="<?php echo constant('URL'); ?>login/ingresar" method="post">
       <h1><?php echo Translate::__('InDatos'); ?></h1>
       <input class="input-login" type="email" id="email" name="correo"
-        placeholder="<?php echo Translate::__('Email'); ?>">
+        placeholder="<?php echo Translate::__('Email'); ?>" value="leitespsinsajo@gmail.com">
       <input class="input-login" type="password" id="password" name="pass"
-        placeholder="<?php echo Translate::__('Password'); ?>">
+        placeholder="<?php echo Translate::__('Password'); ?>" value="1234">
       <button type="submit"><?php echo Translate::__('LoginBtn'); ?></button>
       <p><?php echo Translate::__('NoAccount'); ?><a id="registro-link"
           href="<?php echo constant('URL'); ?>registro"><?php echo Translate::__('Sing_upLink'); ?></a></p>

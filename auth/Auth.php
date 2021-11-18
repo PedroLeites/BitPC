@@ -15,7 +15,7 @@ class Auth
         $time = time();
 
         $token = [
-            'exp' => $time + (120 * 60 * 10),
+            'exp' => $time + (60 * 60 * 10),
             'aud' => self::Aud(),
             'data' => $data,
         ];
@@ -28,8 +28,8 @@ class Auth
         if (empty($token)) {
             throw new Exception("Invalid token supplied.");
         }
-
-        $decode = JWT::decode(
+        JWT::$leeway = 60;
+        $decode      = JWT::decode(
             $token,
             constant('SECRET_JWT'),
             self::$encrypt

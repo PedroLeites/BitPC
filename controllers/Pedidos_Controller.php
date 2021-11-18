@@ -12,10 +12,12 @@ class Pedidos_Controller extends Controller
 
     public function render()
     {
+        //$this->view->articulos = $this->model->get();
+        //$this->view->render('pedidos/index');
         try {
             //code...
-            $tokenAux = $_SESSION["token"];
-            $token    = substr($tokenAux, 7, strlen($tokenAux));
+            $token = $_SESSION["token"];
+            //$token    = substr($tokenAux, 7, strlen($tokenAux));
             Auth::Check($token);
             $role = Auth::GetData($token)->rol;
             if ($role != 'admin') {

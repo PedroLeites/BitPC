@@ -18,7 +18,6 @@
     <?php foreach ($this->articulos as $key => $value) {
     $articulo = new Articulo();
     $articulo = $value;
-
     ?>
     <div class="col">
       <div class="card">

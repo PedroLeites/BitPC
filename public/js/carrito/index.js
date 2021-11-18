@@ -104,7 +104,7 @@
       let urlReq = url + "apicarrito/completarCarrito";
       let headers = { "Content-Type": "application/json;charset=utf-8" };
       let usuarioID = a;
-      let data = { lista: carrito, usuario_id: 2 };
+      let data = { lista: carrito };
       $.ajax({
         url: urlReq,
         header: headers,

@@ -21,7 +21,8 @@ class Apicarrito_Controller extends Controller
             $tokenAux = Utils::obtenerToken();
             $token    = substr($tokenAux, 7, strlen($tokenAux));
             Auth::Check($token);
-            $role = Auth::GetData($token)->rol;
+            $role      = Auth::GetData($token)->rol;
+            $usuarioId = Auth::GetData($token)->id;
             if ($role != 'admin' && $role != 'cliente') {
                 throw new Exception("no tiene autorizacion");
             }
@@ -30,7 +31,7 @@ class Apicarrito_Controller extends Controller
             //convierto el json en un array asociativo de php
             $datos          = json_decode($json);
             $listaArticulos = $datos->lista;
-            $usuario        = $datos->usuario_id;
+            $usuario        = $usuarioId;
             //lista = array();
             $lista = [];
             //Crea el objeto carrito con la lista de articulos

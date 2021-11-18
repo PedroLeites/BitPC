@@ -3,10 +3,8 @@
 
 <head>
   <?php
-
 require_once 'traduccion/Translate.php';
 use \SimpleTranslation\Translate;
-
 ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,7 +39,6 @@ use \SimpleTranslation\Translate;
     </form>
   </div>
   <?php require 'views/footer.php';?>
-
 </body>
 
 </html>
