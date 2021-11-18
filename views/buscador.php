@@ -21,12 +21,15 @@ use \SimpleTranslation\Translate;
       </li>
     </ul>
   </div>
+
   <div class="busqueda_container">
     <input type="text" placeholder="<?php echo Translate::__('Search'); ?>">
     <div class="btn_buscar">
       <a href=""><span class="iconify" data-icon="ci:search"></span></a>
     </div>
   </div>
+
+
   <div class="carrito_container">
     <ul>
       <li>
@@ -40,4 +43,6 @@ use \SimpleTranslation\Translate;
     </ul>
   </div>
 </div>
+
+
 <!-- echo Translate::__(''); -->

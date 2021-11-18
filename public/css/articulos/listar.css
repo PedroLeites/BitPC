@@ -6,23 +6,25 @@ h1 {
   text-align: center;
 }
 
-#general {
+.grid-1 {
   display: grid;
-  grid-column-gap: 50px;
-}
-
-.col {
-  background: grey;
-  width: 100vw;
+  background: #fff;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  grid-gap: 0.5rem;
 }
 
-.card {
-  width: 300px;
-  background: white;
-  margin: 20px;
+/* items */
+
+/* specific item styles */
+
+.item-1 {
+  background: #b03532;
+}
+
+.item-1 img {
+  width: 100%;
+  height: auto;
 }
