@@ -16,32 +16,51 @@ class Registro_Controller extends Controller
 
     public function registrarse()
     {
-        // compruebo si se apretó el botón
-        if (isset($_POST['registrarse'])) {
-            // compruebo que los campos no estén vacíos
-            if (strlen($_POST['correo']) >= 1 &&
-                strlen($_POST['nombre']) >= 1 &&
-                strlen($_POST['apellido']) >= 1 &&
-                strlen($_POST['fechanac']) >= 1 &&
-                strlen($_POST['direccion']) >= 1 &&
-                strlen($_POST['telefono']) >= 1 &&
-                strlen($_POST['password']) >= 1) {
-                $correo    = $_POST['correo'];
-                $nombre    = $_POST['nombre'];
-                $apellido  = $_POST['apellido'];
-                $fechanac  = $_POST['fechanac'];
-                $direccion = $_POST['direccion'];
-                $telefono  = $_POST['telefono'];
-                $password  = $_POST['password'];
-                // llamo al modelo
-                $resultado = $this->model->registrarse($correo, $nombre, $apellido, $fechanac, $direccion, $telefono, $password);
-                if ($resultado->resultado) {
-                    $this->view->render('registro/registrado');
-                } else {
-                    $this->view->resultadoRegistro = "Debe compretar todos los campos del formulario";
-                    $this->view->render('registro/index');
-                }
+        try {
+            if (!isset($_POST['registrarse'])) {
+                throw new Exception("no se ha registrado");
             }
+            if (!isset($_POST['correo'])) {
+                throw new Exception("no se ha registrado");
+            }
+            if (!isset($_POST['nombre'])) {
+                throw new Exception("no se ha registrado");
+            }
+            if (!isset($_POST['apellido'])) {
+                throw new Exception("no se ha registrado");
+            }
+            if (!isset($_POST['fechanac'])) {
+                throw new Exception("no se ha registrado");
+            }
+            if (!isset($_POST['direccion'])) {
+                throw new Exception("no se ha registrado");
+            }
+            if (!isset($_POST['telefono'])) {
+                throw new Exception("no se ha registrado");
+            }
+            if (!isset($_POST['password'])) {
+                throw new Exception("no se ha registrado");
+            }
+            $correo    = $_POST['correo'];
+            $nombre    = $_POST['nombre'];
+            $apellido  = $_POST['apellido'];
+            $fechanac  = $_POST['fechanac'];
+            $direccion = $_POST['direccion'];
+            $telefono  = $_POST['telefono'];
+            $password  = $_POST['password'];
+            $resultado = $this->model->registrarse($correo, $nombre, $apellido, $fechanac, $direccion, $telefono, $password);
+            if ($resultado->resultado) {
+                $this->view->nombre = $nombre;
+                $this->view->render('registro/registrado');
+            } else {
+
+                $this->view->resultadoRegistro = "Debe compretar todos los campos del formulario";
+                $this->view->render('registro/index');
+            }
+        } catch (Exception $ex) {
+            //throw $th;
+            $this->view->error = $ex->getMessage();
         }
+        // compruebo si se apretó el botón
     }
 }

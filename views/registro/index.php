@@ -17,7 +17,7 @@ use \SimpleTranslation\Translate;
   <?php require 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
   <div id="form-container">
-    <form id="form-registro" action="<?php echo constant('URL'); ?>registro/registrado" method="post">
+    <form id="form-registro" action="<?php echo constant('URL'); ?>registro/registrarse" method="post">
       <h1><?php echo Translate::__('InDatos'); ?></h1>
       <input class="input-form" type="mail" id="email" name="correo"
         placeholder="<?php echo Translate::__('Email'); ?>">

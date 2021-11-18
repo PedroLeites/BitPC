@@ -12,7 +12,7 @@ class Login_Model extends Model
         $salida      = new StdClass;
         $salida->res = false;
         try {
-            $query = $this->db->connect()->prepare('SELECT id, email, nombre, password, rol FROM usuarios WHERE email=:correo');
+            $query = $this->db->connect()->prepare('SELECT id, email, nombre, pwd, rol FROM usuarios WHERE email=:correo');
             $query->bindValue(':correo', $correo);
             //$query->execute(['nombre' => $nombre]);
             $query->execute();

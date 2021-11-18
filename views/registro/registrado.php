@@ -13,7 +13,7 @@
   <?php require_once 'views/buscador.php';?>
   <div>
     <h1>¡Se ha registrado correctamente!</h1>
-    <h2>Bienvenid@ a BIT PC <?php echo $nombre; ?></h2>
+    <h2>Bienvenid@ a BIT PC <?php echo $this->nombre; ?></h2>
   </div>
   <?php require 'views/footer.php';?>
 </body>
