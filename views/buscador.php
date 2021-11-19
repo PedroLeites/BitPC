@@ -23,9 +23,9 @@ use \SimpleTranslation\Translate;
   </div>
 
   <div class="busqueda_container">
-    <input type="text" placeholder="<?php echo Translate::__('Search'); ?>">
-    <div class="btn_buscar">
-      <a href=""><span class="iconify" data-icon="ci:search"></span></a>
+    <input type="text" id="buscadortexto" placeholder="<?php echo Translate::__('Search'); ?>">
+    <div class="btn_buscar" id="clickBuscar">
+      <a href="#"><span class="iconify" data-icon="ci:search"></span></a>
     </div>
   </div>
 
@@ -43,6 +43,10 @@ use \SimpleTranslation\Translate;
     </ul>
   </div>
 </div>
+<form action="<?php echo constant('URL'); ?>articulos/buscar" method="post" id="searchForm" style="display: none;">
+  <input type="hidden" name="textoBuscador" value="" id="textoculto">
+  <input type="submit" value="enviar" id="btnSend">
+</form>
 
 
 <!-- echo Translate::__(''); -->

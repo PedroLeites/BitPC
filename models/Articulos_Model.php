@@ -95,4 +95,30 @@ class Articulos_Model extends Model
     {
         # code...
     }
+
+    public function buscar($texto)
+    {
+        $articulos = [];
+        try {
+            $query = $this->db->connect()->prepare('SELECT id, nombre, descripcion, precio, estado FROM productos WHERE nombre LIKE :e1 or descripcion LIKE :e2');
+            $txt01 = "%" . $texto . "%";
+            $query->bindParam(':e1', $txt01);
+            $query->bindParam(':e2', $txt01);
+            //$query->execute(['nombre' => $nombre]);
+            $query->execute();
+            while ($row = $query->fetch()) {
+                $articulo              = new Articulo();
+                $articulo->id          = $row['id'];
+                $articulo->nombre      = $row['nombre'];
+                $articulo->descripcion = $row['descripcion'];
+                $articulo->precio      = $row['precio'];
+                $articulo->estado      = $row['estado'];
+                $articulos[]           = $articulo;
+            }
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+        return $articulos;
+
+    }
 }

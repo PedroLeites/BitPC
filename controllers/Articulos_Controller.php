@@ -91,4 +91,17 @@ class Articulos_Controller extends Controller
         $articulo = new Articulo();
     }
 
+    public function buscar()
+    {
+        try {
+            $texto                 = $_POST['textoBuscador'];
+            $this->view->articulos = $resultado = $this->model->buscar($texto);
+        } catch (Exception $th) {
+            $resultado = false;
+        }
+        $this->view->respuesta = $resultado;
+        $this->view->render('articulos/buscar');
+
+    }
+
 }

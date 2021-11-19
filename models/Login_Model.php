@@ -18,7 +18,7 @@ class Login_Model extends Model
             $query->execute();
             $paswordStr = "";
             while ($row = $query->fetch()) {
-                $paswordStr  = $row['password'];
+                $paswordStr  = $row['pwd'];
                 $salida->id  = $row['id'];
                 $salida->rol = $row['rol'];
             }
