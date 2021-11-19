@@ -96,11 +96,25 @@ class Articulos_Controller extends Controller
         try {
             $texto                 = $_POST['textoBuscador'];
             $this->view->articulos = $resultado = $this->model->buscar($texto);
+
+            if ($_SESSION["estalogueado"] == true) {
+                $token = $_SESSION["token"];
+                Auth::Check($token);
+                $role = Auth::GetData($token)->rol;
+                if ($role == 'admin') {
+                    $this->view->respuesta = $resultado;
+                    $this->view->render('articulos/buscar');
+                } else {
+                    $this->view->respuesta = $resultado;
+                    $this->view->render('articulos/buscarProd');
+                }
+            } else {
+                $this->view->respuesta = $resultado;
+                $this->view->render('articulos/buscarProd');
+            }
         } catch (Exception $th) {
             $resultado = false;
         }
-        $this->view->respuesta = $resultado;
-        $this->view->render('articulos/buscar');
 
     }
 

@@ -13,10 +13,7 @@
       $("#textoculto").val(texto);
       if (texto) {
         console.log("entro");
-        //$("#searchForm").submit();
-        //$('input[type=submit]').click();
         $("#btnSend").click();
-        // $( "#searchForm" ).submit(function( event ) {
       }
     }
 
