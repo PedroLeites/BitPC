@@ -12,7 +12,7 @@ h1 {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
   grid-gap: 0.5rem;
 }
 
@@ -20,11 +20,40 @@ h1 {
 
 /* specific item styles */
 
-.item-1 {
-  background: #b03532;
+.card {
+  background: #e7e7e7;
+  width: 100%;
+  height: auto;
 }
 
-.item-1 img {
+.card img {
   width: 100%;
+  height: auto;
+}
+
+#btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card button {
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  background: #005b97;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 2px;
+  border-radius: 20px;
+}
+
+.card button:hover {
+  background: #ff3900;
+  transition: 0.1s;
+}
+
+.card input[type="number"] {
+  width: 40%;
   height: auto;
 }

@@ -25,7 +25,8 @@
       <p class=""> <?=$articulo->descripcion;?></p>
       <p class="">$ <?=$articulo->precio;?></p>
       <input id="art-<?=$articulo->id;?>" value="1" type="number"></p>
-      <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
+      <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>"><span class="iconify"
+          data-icon="carbon:shopping-cart-plus"></span></button>
     </div><!-- card  -->
 
     <?php }

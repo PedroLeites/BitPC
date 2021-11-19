@@ -96,8 +96,8 @@ class Articulos_Controller extends Controller
         try {
             $texto                 = $_POST['textoBuscador'];
             $this->view->articulos = $resultado = $this->model->buscar($texto);
-
-            if ($_SESSION["estalogueado"] == true) {
+            $estaLogueado          = isset($_SESSION["estalogueado"]) ? $_SESSION["estalogueado"] : false;
+            if ($estaLogueado == true) {
                 $token = $_SESSION["token"];
                 Auth::Check($token);
                 $role = Auth::GetData($token)->rol;

@@ -17,15 +17,18 @@
     $articulo = $value;
     ?>
 
-    <div class="item-1">
+    <div class="card">
       <!--ID: <?=$value->id;?>-->
       <img id="imgUnica" class="prodimg" src="<?php echo $articulo->url; ?>"
         alt="<?php echo $articulo->descripcion; ?>" />
       <p class=""> <?=$value->nombre;?></p>
       <p class=""> <?=$articulo->descripcion;?></p>
       <p class="">$ <?=$articulo->precio;?></p>
-      <input id="art-<?=$articulo->id;?>" value="1" type="number"></p>
-      <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>">Agregar</button>
+      <div id="btnContainer">
+        <input id="art-<?=$articulo->id;?>" value="1" type="number"></p>
+        <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>"><span class="iconify"
+            data-icon="carbon:shopping-cart-plus"></span></button>
+      </div>
     </div><!-- card  -->
 
     <?php }
