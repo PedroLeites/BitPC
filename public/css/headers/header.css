@@ -47,7 +47,8 @@
 .menu_items .perfil:hover > ul {
   display: block;
   background-color: #fff;
-  border: solid 1px #0d0d0d;
+  border: solid 2px #005b97;
+  border-radius: 5px;
 }
 
 .btn_menu {

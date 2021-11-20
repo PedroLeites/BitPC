@@ -9,9 +9,9 @@ use \SimpleTranslation\Translate;
   <div class="productos_container">
     <ul class="menu_nav">
       <li>
-        <p id="p"><?php echo Translate::__('Products_by_Category'); ?><span class="iconify"
+        <a><?php echo Translate::__('Products_by_Category'); ?><span class="iconify"
             data-icon="entypo:triangle-down"></span>
-        <p>
+        </a>
         <ul class="submenu_productos">
           <li><a href="<?php echo constant('URL'); ?>articulos/listar"><?php echo Translate::__('View_All'); ?></a></li>
           <li><a href=""><?php echo Translate::__('Computers'); ?></a></li>
@@ -31,16 +31,12 @@ use \SimpleTranslation\Translate;
 
 
   <div class="carrito_container">
-    <ul>
-      <li>
-        <a id="a" href="<?php echo constant('URL'); ?>carrito">
-          <span class="iconify" data-icon="fa-solid:shopping-cart"></span>
-          <div class="cantidadElemCarrito">
-            <span id="cantidadElemCarrito">0</span>
-          </div>
-        </a>
-      </li>
-    </ul>
+    <a id="a" href="<?php echo constant('URL'); ?>carrito">
+      <span class="iconify" data-icon="fa-solid:shopping-cart"></span>
+      <div class="cantidadElemCarrito">
+        <span id="cantidadElemCarrito">0</span>
+      </div>
+    </a>
   </div>
 </div>
 <form action="<?php echo constant('URL'); ?>articulos/buscar" method="post" id="searchForm" style="display: none;">
