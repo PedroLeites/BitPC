@@ -35,13 +35,14 @@ class Apiarticulos_Model extends Model
 
     public function crear($articulo)
     {
-
+        $urlDefecto = constant('URL') . 'public/img/articulos/imgDefecto.svg';
         $pdo = $query = $this->db->connect();
         try {
             $query = $pdo->prepare('insert into productos (nombre, descripcion, precio, estado) values (:nombre, :descripcion, :precio, :estado)');
             $query->bindParam(':nombre', $articulo->nombre);
             $query->bindParam(':descripcion', $articulo->descripcion);
             $query->bindParam(':precio', $articulo->precio);
+            $query->bindParam(':estado', $articulo->estado);
             $query->bindParam(':estado', $articulo->estado);
             $lastInsertId = 0;
             if ($query->execute()) {
@@ -59,6 +60,7 @@ class Apiarticulos_Model extends Model
             $pdo = null;
         }
     } //end crear
+
     public function crearm($lista)
     {
 

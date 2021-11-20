@@ -18,7 +18,7 @@
         <h1>Crear Articulo</h1>
       </div>
     </div>
-    <form id="form01" action="<?php echo constant('URL'); ?>articulos/crear" method="post"
+    <form id="formCrear" action="<?php echo constant('URL'); ?>articulos/crear" method="post"
       enctype="multipart/form-data">
       <div>
         <label for="articuloNombre">Nombre</label>
@@ -26,7 +26,7 @@
       </div>
       <div>
         <label for="articuloDescripcion">Descripcion</label>
-        <input type="text" id="articuloDescripcion" name="descripcion" value="">
+        <textarea name="descripcion" id="articuloDescripcion" cols="40" rows="20"></textarea>
       </div>
       <div>
         <label for="articuloPrecio">Precio</label>
@@ -35,16 +35,22 @@
       <div>
         <label for="articuloEstado">Estado</label>
         <select value="" name="estado" id="articuloEstado">
-          <option disabled selected>Selecciona una opción</option>
           <option value="activo">activo</option>
           <option value="inactivo">inactivo</option>
         </select>
       </div>
       <div>
-        <div>
-          <button id="btnEnviarForm" type="submit">Guardar</button>
-        </div>
-        <input type="hidden" value="<?php echo $this->articulo->id; ?>" id="articuloId" name="articuloId">
+        <label for="articuloStock">Stock</label>
+        <input type="text" id="articuloStock" name="stock" value="">
+      </div>
+      <div>
+        <label for="articuloFoto">URL de la Foto</label>
+        <input type="file" id="articuloFoto" name="img">
+      </div>
+      <div id="imgP"></div>
+      <div>
+        <button id="btnEnviarForm" type="submit">Guardar</button>
+      </div>
     </form>
   </div>
   <?php require_once 'views/footer.php';?>

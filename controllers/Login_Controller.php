@@ -18,6 +18,16 @@ class Login_Controller extends Controller
 
     public function ingresar()
     {
+        // compruebo que están llenos los campos
+        if (!isset($_POST['login'])) {
+            throw new Exception("no se ha iniciado sesión");
+        }
+        if (strlen($_POST['correo']) == 0) {
+            throw new Exception("Ingrese su correo electrónico");
+        }
+        if (strlen($_POST['pass']) == 0) {
+            throw new Exception("Ingrese su contraseña");
+        }
         // $nombre = $_POST['nombre'];
         $correo = $_POST['correo'];
         $pass   = $_POST['pass'];

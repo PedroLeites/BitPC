@@ -25,7 +25,7 @@ use \SimpleTranslation\Translate;
         placeholder="<?php echo Translate::__('Email'); ?>" value="leitespsinsajo@gmail.com">
       <input class="input-login" type="password" id="password" name="pass"
         placeholder="<?php echo Translate::__('Password'); ?>" value="1234">
-      <button type="submit"><?php echo Translate::__('LoginBtn'); ?></button>
+      <button type="submit" name="login"><?php echo Translate::__('LoginBtn'); ?></button>
       <p><?php echo Translate::__('NoAccount'); ?><a id="registro-link"
           href="<?php echo constant('URL'); ?>registro"><?php echo Translate::__('Sing_upLink'); ?></a></p>
     </form>

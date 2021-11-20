@@ -88,8 +88,23 @@ class Articulos_Controller extends Controller
 
     public function crear()
     {
-        # code...
-        $articulo = new Articulo();
+        $this->view->render('articulos/crear');
+        $articulo              = new Articulo();
+        $articulo->nombre      = $_POST['nombre'];
+        $articulo->descripcion = $_POST['descripcion'];
+        $articulo->precio      = $_POST['precio'];
+        $articulo->estado      = $_POST['estado'];
+        $articulo->stock       = $_POST['stock'];
+        $pathImg               = $_FILES['img']['tmp_name'];
+        $tmpName               = $_FILES['img']['name'];
+        $array                 = explode(".", $tmpName);
+        $ext                   = $array[count($array) - 1];
+        $ruta                  = 'public/img/articulos/' . $articulo->id . "." . $ext;
+        $articulo->url         = $ruta;
+        $resultado             = $this->model->crear($articulo);
+        move_uploaded_file($pathImg, $ruta);
+
+        $this->view->respuesta = $resultado;
     }
 
     public function buscar()

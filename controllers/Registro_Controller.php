@@ -20,26 +20,26 @@ class Registro_Controller extends Controller
             if (!isset($_POST['registrarse'])) {
                 throw new Exception("no se ha registrado");
             }
-            if (!isset($_POST['correo'])) {
-                throw new Exception("no se ha registrado");
+            if (strlen($_POST['correo']) == 0) {
+                throw new Exception("Ingrese su correo electrónico");
             }
-            if (!isset($_POST['nombre'])) {
-                throw new Exception("no se ha registrado");
+            if (strlen($_POST['nombre']) == 0) {
+                throw new Exception("Debe ingresar su nombre");
             }
-            if (!isset($_POST['apellido'])) {
-                throw new Exception("no se ha registrado");
+            if (strlen($_POST['apellido']) == 0) {
+                throw new Exception("Debe ingresar su apellido");
             }
-            if (!isset($_POST['fechanac'])) {
-                throw new Exception("no se ha registrado");
+            if (strlen($_POST['fechanac']) == 0) {
+                throw new Exception("Debe ingresar su fecha de nacimiento");
             }
-            if (!isset($_POST['direccion'])) {
-                throw new Exception("no se ha registrado");
+            if (strlen($_POST['direccion']) == 0) {
+                throw new Exception("Debe ingresar su dirección");
             }
-            if (!isset($_POST['telefono'])) {
-                throw new Exception("no se ha registrado");
+            if (strlen($_POST['telefono']) == 0) {
+                throw new Exception("Debe ingresar su teléfono");
             }
-            if (!isset($_POST['password'])) {
-                throw new Exception("no se ha registrado");
+            if (strlen($_POST['password']) == 0) {
+                throw new Exception("Debe ingresar una contraseña");
             }
             $correo    = $_POST['correo'];
             $nombre    = $_POST['nombre'];
