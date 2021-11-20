@@ -118,4 +118,15 @@ class Articulos_Controller extends Controller
 
     }
 
+    public function verInfo($param = null)
+    {
+        $idArticulo = $param[0];
+        $articulo   = $this->model->verInfo($idArticulo);
+
+        $_SESSION["id_articulo"] = $idArticulo;
+
+        $this->view->articulo = $articulo;
+        $this->view->render('articulos/verInfo');
+    }
+
 }

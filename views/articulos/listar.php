@@ -19,13 +19,14 @@
 
     <div class="card">
       <!--ID: <?=$value->id;?>-->
-      <img id="imgUnica" class="prodimg" src="<?php echo $articulo->url; ?>"
-        alt="<?php echo $articulo->descripcion; ?>" />
-      <p class=""> <?=$value->nombre;?></p>
-      <p class=""> <?=$articulo->descripcion;?></p>
-      <p class="">$ <?=$articulo->precio;?></p>
+      <img id="imgUnica" class="prodimg" src="<?php echo $articulo->url; ?>" alt="<?php echo $urlDefecto; ?>" />
+      <div id="InfoProd">
+        <a href="<?php echo constant('URL') . 'articulos/verInfo/' . $articulo->id; ?>"><?=$value->nombre;?></a>
+        <!--<p class=""> <?=$articulo->descripcion;?></p>-->
+        <p class="">$ <?=$articulo->precio;?></p>
+      </div>
       <div id="btnContainer">
-        <input id="art-<?=$articulo->id;?>" value="1" type="number"></p>
+        <input id="art-<?=$articulo->id;?>" value="1" type="number" min="1">
         <button class="btnAgregar" type="button" data-articulo-id="<?php echo $value->id; ?>"><span class="iconify"
             data-icon="carbon:shopping-cart-plus"></span></button>
       </div>
@@ -34,6 +35,7 @@
     <?php }
 ;?>
   </section>
+
   <?php require 'views/footer.php';?>
   <!-- importo script de listar-->
   <script src="<?php echo constant('URL'); ?>/public/js/articulos/listar.js"></script>
