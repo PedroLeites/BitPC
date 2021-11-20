@@ -55,4 +55,13 @@ class Pedidos_Controller extends Controller
         $this->view->render('pedidos/actualizar');
     }
 
+    public function historial()
+    {
+        $token = $_SESSION["token"];
+        Auth::Check($token);
+        $idUser                = Auth::GetData($token)->id;
+        $this->view->articulos = $this->model->historial($idUser);
+        $this->view->render('pedidos/historial');
+    }
+
 }

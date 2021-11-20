@@ -3,7 +3,7 @@ return [
     'Sing_in' => 'Iniciar Sesión',
     'Sing_up' => 'Registrarse',
     'Log_out' => 'Salir',
-    'Products_by_Category' => 'Productos por Categoría',
+    'Products_by_Category' => 'Tienda',
     'View_All' => 'Ver Todos',
     'Computers' => 'Computadoras',
     'Accessories' => 'Accesorios',

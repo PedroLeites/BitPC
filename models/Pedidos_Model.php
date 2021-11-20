@@ -79,4 +79,26 @@ class Pedidos_Model extends Model
         }
     } //end actualizar
 
+    public function historial($idUser)
+    {
+        $items = [];
+        try {
+            $query = $this->db->connect()->query('SELECT p.id as id, a.nombre as nombre, cantidad, direccion, fecha, p.estado as estado FROM pedido p, usuarios u, item i, productos a WHERE p.usuario_id = u.id AND p.id = i.pedido_id AND i.articulo_id = a.id AND u.id = 2 AND p.estado = "entregado"');
+            while ($row = $query->fetch()) {
+                $item               = new Pedido();
+                $item->id           = $row['id'];
+                $item->nombreProd   = $row['nombre'];
+                $item->cantidadProd = $row['cantidad'];
+                $item->direccion    = $row['direccion'];
+                $stamp              = $row['fecha'];
+                $item->fecha        = $stamp;
+                $item->estado       = $row['estado'];
+                array_push($items, $item);
+            }
+            return $items;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+
 }

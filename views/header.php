@@ -28,10 +28,15 @@ if ($estaLogueado) {
     <ul class="menu_items">
       <!--<li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>-->
       <!--<li><a href="<?php echo constant('URL'); ?>pedidos">Administrar Pedidos</a></li>-->
-      <li><a href="#"><?php echo $correo; ?></a></li>
-      <li><a href="<?php echo constant('URL'); ?>login/salir" id="btnSalir"><span class="iconify"
-            data-icon="mdi:logout"></span>
-          <?php echo Translate::__('Log_out'); ?></a></li>
+      <li class="perfil">
+        <a href="#"><?php echo $correo; ?></a>
+        <ul class="menu_perfil">
+          <li><a href="<?php echo constant('URL'); ?>pedidos/historial">Historial de Pedidos</a></li>
+          <li><a href="<?php echo constant('URL'); ?>login/salir" id="btnSalir"><span class="iconify"
+                data-icon="mdi:logout"></span>
+              <?php echo Translate::__('Log_out'); ?></a></li>
+        </ul>
+      </li>
       <li><a href="<?php echo constant('URL'); ?>idioma"><span class="iconify"
             data-icon="carbon:language"></span><?php echo Translate::__('LangOp'); ?></a></li>
     </ul>

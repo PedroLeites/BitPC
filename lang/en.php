@@ -3,7 +3,7 @@ return [
     'Sing_in' => 'Sing in',
     'Sing_up' => 'Sing up',
     'Log_out' => 'Log out',
-    'Products_by_Category' => 'Products by Category',
+    'Products_by_Category' => 'Shop',
     'View_All' => 'View All',
     'Computers' => 'Computers',
     'Accessories' => 'Accessories',

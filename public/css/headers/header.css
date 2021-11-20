@@ -38,6 +38,18 @@
   transition: 0.1s;
 }
 
+.menu_items li ul {
+  display: none;
+  position: absolute;
+  min-width: 150px;
+}
+
+.menu_items .perfil:hover > ul {
+  display: block;
+  background-color: #fff;
+  border: solid 1px #0d0d0d;
+}
+
 .btn_menu {
   margin-right: 30px;
   font-size: 25px;
@@ -50,7 +62,7 @@ ul.show {
   top: 65px;
 }
 
-@media screen and (max-width: 952px) {
+/*@media screen and (max-width: 952px) {
   .menu_items li a {
     font-size: 16px;
   }
@@ -104,4 +116,4 @@ ul.show {
     overflow: scroll;
     height: calc(100% - 65px);
   }
-}
+}*/
