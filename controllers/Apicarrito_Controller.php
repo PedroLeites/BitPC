@@ -16,8 +16,6 @@ class Apicarrito_Controller extends Controller
     public function completarCarrito()
     {
         try {
-            //code...
-
             $tokenAux = Utils::obtenerToken();
             $token    = substr($tokenAux, 7, strlen($tokenAux));
             Auth::Check($token);

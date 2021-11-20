@@ -117,7 +117,8 @@
           //limpiar carrito
           localStorage.setItem("carrito", JSON.stringify([]));
           $("#cantidadElemCarrito").text(0);
-          //location.reload();
+          //restar el stock
+
           //mostrar el resultado del pedido
           $("#carritoid").html(`<div id="carritoid"></div>`);
           $("#resPedido").css({ display: "flex" });

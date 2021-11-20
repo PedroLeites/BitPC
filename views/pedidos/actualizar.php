@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Actualizar</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estado de Pedido Cambiado</title>
 </head>
 
 <body>
@@ -16,11 +18,11 @@
         <h1>Resultado actulalizar</h1>
         <?php if ($this->respuesta) {;?>
         <div role="alert">
-          Articulo actualizado con exito
+          Pedido actualizado con exito
         </div>
         <?php } else {;?>
         <div role="alert">
-          Error al actualizar
+          Error al actualizar el pedido
         </div>
         <?php }
 ;?>
@@ -28,8 +30,6 @@
     </div>
   </div>
   <?php require_once 'views/footer.php';?>
-  <!-- importo el javascript-->
-  <script src="<?php echo constant('URL'); ?>/public/js/articulos/actualizar.js"></script>
 </body>
 
 </html>

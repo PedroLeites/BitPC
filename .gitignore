@@ -2,3 +2,5 @@
 public/imagenes/*
 vendor/*
 config/secrets.php
+Models/Apipedidos_Model.php
+Controllers/Apipedidos_Controller.php
