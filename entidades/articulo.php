@@ -6,5 +6,6 @@ class Articulo
     public $descripcion;
     public $precio;
     public $estado;
+    public $stock;
     public $url;
 }

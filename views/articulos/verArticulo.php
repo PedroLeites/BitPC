@@ -29,7 +29,8 @@
       </div>
       <div>
         <label for="articuloDescripcion">Descripcion</label>
-        <input type="text" id="articuloDescripcion" name="descripcion" value="<?=$this->articulo->descripcion;?>">
+        <textarea name="descripcion" id="articuloDescripcion" cols="40"
+          rows="20"><?=$this->articulo->descripcion;?></textarea>
       </div>
       <div>
         <label for="articuloPrecio">Precio</label>
@@ -38,10 +39,13 @@
       <div>
         <label for="articuloEstado">Estado</label>
         <select value="<?=$this->articulo->estado;?>" name="estado" id="articuloEstado">
-          <option disabled selected>Selecciona una opción</option>
           <option value="activo">activo</option>
           <option value="inactivo">inactivo</option>
         </select>
+      </div>
+      <div>
+        <label for="articuloStock">Stock</label>
+        <input type="text" id="articuloStock" name="stock" value="<?=$this->articulo->stock;?>">
       </div>
       <div>
         <label for="articuloFoto">URL de la Foto</label>

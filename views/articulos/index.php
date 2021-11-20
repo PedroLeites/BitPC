@@ -29,6 +29,7 @@
                 <th>Descripción</th>
                 <th>Precio</th>
                 <th>Estado</th>
+                <th>Stock</th>
                 <th>Imagen</th>
                 <th></th>
                 <th></th>
@@ -46,6 +47,7 @@ foreach ($this->articulos as $row) {
                 <td><?php echo $articulo->descripcion; ?></td>
                 <td>$<?php echo $articulo->precio; ?></td>
                 <td><?php echo $articulo->estado; ?></td>
+                <td><?php echo $articulo->stock; ?></td>
                 <td><img src="<?php echo $articulo->url; ?>" alt="<?php echo $articulo->url; ?>" /></td>
                 <td><a id="btnActualizar"
                     href="<?php echo constant('URL') . 'articulos/verArticulo/' . $articulo->id; ?>">Actualizar</a>

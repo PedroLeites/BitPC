@@ -59,6 +59,7 @@ class Articulos_Controller extends Controller
             $precio                = floatval($precioSF);
             $articulo->precio      = number_format((float) $precio, 2, '.', '');
             $articulo->estado      = $_POST['estado'];
+            $articulo->stock       = $_POST['stock'];
             $pathImg               = $_FILES['img']['tmp_name'];
             $tmpName               = $_FILES['img']['name'];
             $array                 = explode(".", $tmpName);
@@ -78,7 +79,7 @@ class Articulos_Controller extends Controller
     {
 
         //obtiene todos los articulos
-        $articulos = $this->model->get();
+        $articulos = $this->model->listar();
         //lo asigna a la varible articulos
         $this->view->articulos = $articulos;
         //lista los articulos

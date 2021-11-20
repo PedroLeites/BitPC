@@ -19,7 +19,8 @@
 
     <div class="card">
       <!--ID: <?=$value->id;?>-->
-      <img id="imgUnica" class="prodimg" src="<?php echo $articulo->url; ?>" alt="<?php echo $urlDefecto; ?>" />
+      <img id="imgUnica" class="prodimg" src="<?php echo $articulo->url; ?>"
+        alt="<?php echo $articulo->urlDefecto; ?>" />
       <div id="InfoProd">
         <a href="<?php echo constant('URL') . 'articulos/verInfo/' . $articulo->id; ?>"><?=$value->nombre;?></a>
         <!--<p class=""> <?=$articulo->descripcion;?></p>-->
