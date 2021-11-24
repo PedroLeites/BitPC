@@ -32,7 +32,7 @@ return [
     'h1Lang' => 'Selecciona un Idioma',
     'sLang' => 'Selecciona una opción',
     'btnConfirm' => 'Confirmar',
-    'Lang' => 'Idioma cambiado con éxito',
+    'Lang' => 'Language successfully changed',
     'hCarrito' => 'Artículos en el carrito',
     'Articles' => 'Productos',
     'PriceUni' => 'Precio Unitario',

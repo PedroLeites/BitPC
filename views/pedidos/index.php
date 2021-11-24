@@ -23,8 +23,7 @@
             <th>Usuario</th>
             <th>Fecha y Hora</th>
             <th>Estado</th>
-            <th>Articulo ID</th>
-            <th>Cantidad</th>
+            <th></th>
             <th></th>
           </tr>
         </thead>
@@ -40,11 +39,11 @@ foreach ($this->articulos as $row) {
             <td><?php echo $articulo->usuario; ?></td>
             <td><?php echo $articulo->fecha; ?></td>
             <td><?php echo $articulo->estado; ?></td>
-            <td><?php echo $articulo->articulo_id; ?></td>
-            <td><?php echo $articulo->cantidad; ?></td>
             <td><a id="btnEstado"
-                href="<?php echo constant('URL') . 'pedidos/cambiarEstado/' . $articulo->id; ?>">Cambiar
+                href="<?php echo constant('URL') . 'pedidos/cambiarEstado/' . $articulo->id . '/' . $articulo->estado; ?>">Cambiar
                 Estado</a></td>
+            <td><a id="btnVerDetalle" href="<?php echo constant('URL') . 'pedidos/verDetalle/' . $articulo->id; ?>">Ver
+                Detalle</a></td>
           </tr>
           <?php }?>
         </tbody>

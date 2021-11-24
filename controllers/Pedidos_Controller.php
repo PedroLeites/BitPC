@@ -2,6 +2,8 @@
 require_once 'utils/Utils.php';
 require_once 'vendor/autoload.php';
 require_once 'auth/Auth.php';
+require_once 'entidades/pedido.php';
+//require_once 'models/Pedidos_Model.php';
 
 class Pedidos_Controller extends Controller
 {
@@ -30,29 +32,22 @@ class Pedidos_Controller extends Controller
 
     public function cambiarEstado($param = null)
     {
-        $idPedido = $param[0];
-        $pedido   = $this->model->cambiarEstado($idPedido);
-
+        $idPedido              = $param[0];
+        $estado                = $param[1];
+        $this->view->estado    = $estado;
+        $estadoNuevo           = ($estado == "pendiente") ? "entregado" : "pendiente";
+        $pedido                = $this->model->cambiarEstado($idPedido, $estadoNuevo);
         $_SESSION["id_pedido"] = $idPedido;
-
-        $this->view->pedido = $pedido;
-        $this->view->render('pedidos/cambiarEstado');
+        $this->view->pedido    = $pedido;
+        $pedidoModelUnico      = new Pedidos_Model();
+        $this->view->articulos = $pedidoModelUnico->get();
+        $this->view->render('pedidos/index');
     }
 
-    public function actualizar($param = null)
+    public function verDetalle($param = null)
     {
-        //var_dump($_POST);
-        $resultado = true;
-        try {
-            $articulo         = new Articulo();
-            $articulo->estado = $_POST['estado'];
-            $resultado        = $this->model->actualizar($articulo);
-            move_uploaded_file($pathImg, $ruta);
-        } catch (\Throwable $th) {
-            $resultado = false;
-        }
-        $this->view->respuesta = $resultado;
-        $this->view->render('pedidos/actualizar');
+        $idPedido              = $param[0];
+        $_SESSION["id_pedido"] = $idPedido;
     }
 
     public function historial()

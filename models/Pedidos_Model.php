@@ -16,7 +16,8 @@ class Pedidos_Model extends Model
         //$items = array();
         $items = [];
         try {
-            $query = $this->db->connect()->query('SELECT p.id as id, email, concat(nombre, " ", apellido) as "usuario", direccion, fecha, estado, articulo_id, cantidad FROM pedido p, usuarios u, item i WHERE p.usuario_id = u.id AND p.id = i.pedido_id');
+            $query = $this->db->connect()->query('SELECT DISTINCT (p.id) as id,  u.email, concat(u.nombre, " ", u.apellido) as "usuario", u.direccion, p.fecha, p.estado FROM pedido p INNER JOIN usuarios u on p.usuario_id= u.id');
+            //$query = $this->db->connect()->query('SELECT p.id as id, email, concat(nombre, " ", apellido) as "usuario", direccion, fecha, estado, articulo_id, cantidad FROM pedido p, usuarios u, item i WHERE p.usuario_id = u.id AND p.id = i.pedido_id');
             while ($row = $query->fetch()) {
                 $item            = new Pedido();
                 $item->id        = $row['id'];
@@ -26,10 +27,8 @@ class Pedidos_Model extends Model
                 //$fecha = DateTime::createFromFormat('Y-m-d H:i:s', $row['fecha']);
                 $stamp = $row['fecha']; // get unix timestamp
                 //$time_in_ms = $stamp * 1000;
-                $item->fecha       = $stamp;
-                $item->estado      = $row['estado'];
-                $item->articulo_id = $row['articulo_id'];
-                $item->cantidad    = $row['cantidad'];
+                $item->fecha  = $stamp;
+                $item->estado = $row['estado'];
 
                 //$item->url = isset($row['url']) ? $row['url'] : $urlDefecto;
 
@@ -42,33 +41,14 @@ class Pedidos_Model extends Model
         }
     }
 
-    public function cambiarEstado($idPedido)
+    public function cambiarEstado($idPedido, $estado)
     {
-        $articulo = null;
-        try {
-            $query = $this->db->connect()->prepare('SELECT id, estado FROM pedido WHERE id=:id');
-            $query->bindValue(':id', $idPedido);
-            $query->execute();
-            while ($row = $query->fetch()) {
-                $articulo         = new Pedido();
-                $articulo->id     = $row['id'];
-                $articulo->estado = $row['estado'];
-            }
-        } catch (PDOException $e) {
-            var_dump($e);
-        }
-        return $articulo;
-    } //end ver
-
-    public function actualizar($articulo)
-    {
-
         $resultado = false;
-        $pdo       = $query       = $this->db->connect();
+        $pdo       = $this->db->connect();
         try {
             $query = $pdo->prepare('UPDATE pedido SET estado=:estado WHERE id= :id');
-            $query->bindParam(':estado', $articulo->estado);
-            $query->bindParam(':id', $articulo->id);
+            $query->bindParam(':estado', $estado);
+            $query->bindParam(':id', $idPedido);
             $resultado = $query->execute();
             $filasAf   = $query->rowCount();
             return $resultado;
@@ -77,7 +57,12 @@ class Pedidos_Model extends Model
         } finally {
             $pdo = null;
         }
-    } //end actualizar
+    } //end ver
+
+    public function verDetalle($idPedido)
+    {
+
+    }
 
     public function historial($idUser)
     {

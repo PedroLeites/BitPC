@@ -20,9 +20,17 @@
     <form id="formPedido" action="<?php echo constant('URL'); ?>pedidos/actualizar" method="post"
       enctype="multipart/form-data">
       <label for="pedidoEstado">Estado</label>
-      <select value="<?=$this->articulo->estado;?>" name="estado" id="pedidoEstado">
-        <option value="activo">pendiente</option>
-        <option value="inactivo">entregado</option>
+      <?php //$this->articulo->estado;;;;;;;;?>
+      <select name="estado" id="pedidoEstado">
+        <?php if ($this->articulo->estado == "pendiente") {
+    ;?>
+        <option value="pendiente">pendiente</option>
+        <option value="entregado">entregado</option>
+        <?php } else {;?>
+        <option value="entregado">entregado</option>
+        <option value="pendiente">pendiente</option>
+        <?php }
+;?>
       </select>
   </div>
   <button id="btnEnviarForm" type="submit">Guardar</button>
