@@ -46,8 +46,13 @@ class Pedidos_Controller extends Controller
 
     public function verDetalle($param = null)
     {
-        $idPedido              = $param[0];
-        $_SESSION["id_pedido"] = $idPedido;
+        $idPedido = $param[0];
+        $res      = $this->model->verDetalle($idPedido);
+        //$_SESSION["id_pedido"] = $idPedido;
+        $this->view->articulo = $res->lista;
+        $this->view->total    = $res->total;
+
+        $this->view->render('pedidos/verDetalle');
     }
 
     public function historial()

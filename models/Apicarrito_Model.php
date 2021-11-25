@@ -11,9 +11,10 @@ class Apicarrito_Model extends Model
     public function completarCarrito($lista, $usuario)
     {
         $salida = new StdClass;
-        $pdo = $this->db->connect();
+        $pdo    = $this->db->connect();
         $pdo->beginTransaction();
         try {
+            $total = 0;
             $fecha = date('Y-m-d H:i:s', time());
             $query = $pdo->prepare('insert into pedido (usuario_id, fecha) VALUES (:idUsuario, :fecha)');
             $query->bindParam(':idUsuario', $usuario);
@@ -33,18 +34,27 @@ class Apicarrito_Model extends Model
                 $query->bindParam(':cantidad', $articulo->cantidad);
                 $query->bindParam(':precio', $articulo->precio);
                 $query->bindParam(':pedido_id', $lastInsertId);
+                $cantidadFloat = floatval($articulo->cantidad);
+                $precioFloat   = floatval($articulo->precio);
+                $total += ($cantidadFloat * $precioFloat);
                 $query->execute();
             }
             $pdo->commit();
 
+            //con la otra consulta actualiza el total
+            $query = $pdo->prepare('UPDATE pedido SET total=:total WHERE id= :id');
+            $query->bindParam(':total', $total);
+            $query->bindParam(':id', $lastInsertId);
+            $query->execute();
+
             $salida->pedidoId = $lastInsertId;
-            $salida->res = true;
+            $salida->res      = true;
             return $salida;
             // Si hay una exception, vuelve a insertar
         } catch (PDOException $e) {
             $pdo->rollBack();
             $salida->pedidoId = -1;
-            $salida->res = false;
+            $salida->res      = false;
             return $salida;
             // finally para liberar espacio
         } finally {

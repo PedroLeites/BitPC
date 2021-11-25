@@ -61,7 +61,33 @@ class Pedidos_Model extends Model
 
     public function verDetalle($idPedido)
     {
+        $salida = new StdClass;
+        $lista  = null;
+        $total  = 0;
+        try {
+            $query = $this->db->connect()->prepare('SELECT p.id as id, p.nombre, p.precio, i.cantidad, i.pedido_id FROM item i INNER JOIN productos p ON p.id=i.articulo_id WHERE i.pedido_id=:id');
+            $query->bindValue(':id', $idPedido);
+            $query->execute();
+            while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+                $articulo           = new Pedido();
+                $articulo->id       = $row['id'];
+                $articulo->nombre   = $row['nombre'];
+                $cantidadFloat      = floatval($row['cantidad']);
+                $precioFloat        = floatval($row['precio']);
+                $articulo->precio   = $row['precio'];
+                $articulo->cantidad = $row['cantidad'];
+                $subtotal           = $cantidadFloat * $precioFloat;
+                $articulo->subtotal = number_format($subtotal, 2, ",", ".");
+                $total += $subtotal;
+                $lista[] = $articulo;
 
+            }
+            $salida->lista = $lista;
+            $salida->total = number_format($total, 2, ".", ",");
+        } catch (Exception $ex) {
+            //throw $ex;
+        }
+        return $salida;
     }
 
     public function historial($idUser)
