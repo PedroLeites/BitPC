@@ -41,6 +41,7 @@ class Login_Controller extends Controller
             $_SESSION["estalogueado"] = true;
             $_SESSION["email"]        = $correo;
             $_SESSION["rol"]          = $res->rol;
+            $_SESSION["id"]           = $res->id;
             $_SESSION["token"]        = $token;
             $this->view->token        = $token;
             $this->view->render('login/ingresar');

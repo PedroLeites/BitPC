@@ -16,7 +16,7 @@ class Pedidos_Model extends Model
         //$items = array();
         $items = [];
         try {
-            $query = $this->db->connect()->query('SELECT DISTINCT (p.id) as id,  u.email, concat(u.nombre, " ", u.apellido) as "usuario", u.direccion, p.fecha, p.estado FROM pedido p INNER JOIN usuarios u on p.usuario_id= u.id');
+            $query = $this->db->connect()->query('SELECT DISTINCT (p.id) as id, u.email, concat(u.nombre, " ", u.apellido) as "usuario", u.direccion, p.fecha, p.estado FROM pedido p INNER JOIN usuarios u on p.usuario_id= u.id ORDER BY id DESC');
             //$query = $this->db->connect()->query('SELECT p.id as id, email, concat(nombre, " ", apellido) as "usuario", direccion, fecha, estado, articulo_id, cantidad FROM pedido p, usuarios u, item i WHERE p.usuario_id = u.id AND p.id = i.pedido_id');
             while ($row = $query->fetch()) {
                 $item            = new Pedido();
@@ -94,7 +94,9 @@ class Pedidos_Model extends Model
     {
         $items = [];
         try {
-            $query = $this->db->connect()->query('SELECT a.nombre as nombre, cantidad, direccion, fecha, p.estado as estado FROM pedido p, usuarios u, item i, productos a WHERE p.usuario_id = u.id AND p.id = i.pedido_id AND i.articulo_id = a.id AND u.id = 2');
+            $query = $this->db->connect()->prepare('SELECT a.nombre as nombre, cantidad, direccion, fecha, p.estado as estado FROM pedido p, usuarios u, item i, productos a WHERE p.usuario_id = u.id AND p.id = i.pedido_id AND i.articulo_id = a.id AND u.id = :idUser ORDER BY fecha DESC');
+            $query->bindValue(':idUser', $idUser);
+            $query->execute();
             while ($row = $query->fetch()) {
                 $item               = new Pedido();
                 $item->nombreProd   = $row['nombre'];

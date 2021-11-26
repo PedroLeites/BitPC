@@ -49,6 +49,7 @@
   background-color: #fff;
   border: solid 2px #005b97;
   border-radius: 5px;
+  z-index: 1;
 }
 
 .btn_menu {

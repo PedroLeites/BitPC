@@ -59,7 +59,8 @@ class Pedidos_Controller extends Controller
     {
         $token = $_SESSION["token"];
         Auth::Check($token);
-        $idUser                = Auth::GetData($token)->id;
+        $idUser = Auth::GetData($token)->id;
+        //$idUser                = $_SESSION["id"];
         $this->view->articulos = $this->model->historial($idUser);
         $this->view->render('pedidos/historial');
     }
