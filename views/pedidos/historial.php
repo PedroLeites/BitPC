@@ -21,7 +21,6 @@
       <table>
         <thead>
           <tr>
-            <th>Pedido ID</th>
             <th>Producto</th>
             <th>Cantidad</th>
             <th>Dirección</th>
@@ -36,7 +35,6 @@ foreach ($this->articulos as $row) {
     $articulo = new Pedido();
     $articulo = $row;?>
           <tr id="filaart-<?php echo $articulo->id; ?>">
-            <td><?php echo $articulo->id; ?></td>
             <td><?php echo $articulo->nombreProd; ?></td>
             <td><?php echo $articulo->cantidadProd; ?></td>
             <td><?php echo $articulo->direccion; ?></td>

@@ -8,4 +8,6 @@ class Articulo
     public $estado;
     public $stock;
     public $url;
+    public $ext;
+    public $urlBase;
 }

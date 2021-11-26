@@ -1,5 +1,7 @@
 <?php
 require_once 'entidades/articulo.php';
+require_once 'models/Stock_Model.php';
+
 class Articulos_Model extends Model
 {
 
@@ -24,7 +26,10 @@ class Articulos_Model extends Model
                 $item->descripcion = $row['descripcion'];
                 $item->precio      = $row['precio'];
                 $item->estado      = $row['estado'];
-                $item->stock       = $row['stock'];
+                $stock             = $row['stock'];
+                $modeloStock       = new Stock_Model();
+                $totalVentas       = $modeloStock->calcularStock($item->id);
+                $item->stock       = floatval($stock) - floatval($totalVentas);
                 $item->url         = isset($row['url_foto']) ? constant('URL') . $row['url_foto'] : $urlDefecto;
                 array_push($items, $item);
             }
@@ -106,10 +111,12 @@ class Articulos_Model extends Model
         }
     } //end actualizar
 
-    public function crear($articulo)
+    public function creado($articulo, $llegoImg)
     {
+
         $urlDefecto = constant('URL') . 'public/img/articulos/imgDefecto.svg';
-        $pdo        = $query        = $this->db->connect();
+        //$urlDefecto = constant('URL') . 'public/img/articulos/imgDefecto.svg';
+        $pdo = $this->db->connect();
         try {
             $query = $pdo->prepare('insert into productos (nombre, descripcion, precio, estado, stock, url_foto) values (:nombre, :descripcion, :precio, :estado, :stock, :url_foto)');
             $query->bindParam(':nombre', $articulo->nombre);
@@ -121,6 +128,14 @@ class Articulos_Model extends Model
             $lastInsertId = 0;
             if ($query->execute()) {
                 $lastInsertId = $pdo->lastInsertId();
+                if ($llegoImg) {
+                    $query   = $pdo->prepare('UPDATE productos SET url_foto=:url_foto WHERE id= :id');
+                    $fotoUrl = $articulo->urlBase . $lastInsertId . "." . $articulo->ext;
+                    $query->bindParam(':url_foto', $fotoUrl);
+                    $query->bindParam(':id', $lastInsertId);
+                    $query->execute();
+                }
+
             } else {
                 //porque pueden haber errores, como clave duplicada
                 $lastInsertId = -1;

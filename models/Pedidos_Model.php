@@ -94,10 +94,9 @@ class Pedidos_Model extends Model
     {
         $items = [];
         try {
-            $query = $this->db->connect()->query('SELECT p.id as id, a.nombre as nombre, cantidad, direccion, fecha, p.estado as estado FROM pedido p, usuarios u, item i, productos a WHERE p.usuario_id = u.id AND p.id = i.pedido_id AND i.articulo_id = a.id AND u.id = 2 AND p.estado = "entregado"');
+            $query = $this->db->connect()->query('SELECT a.nombre as nombre, cantidad, direccion, fecha, p.estado as estado FROM pedido p, usuarios u, item i, productos a WHERE p.usuario_id = u.id AND p.id = i.pedido_id AND i.articulo_id = a.id AND u.id = 2');
             while ($row = $query->fetch()) {
                 $item               = new Pedido();
-                $item->id           = $row['id'];
                 $item->nombreProd   = $row['nombre'];
                 $item->cantidadProd = $row['cantidad'];
                 $item->direccion    = $row['direccion'];

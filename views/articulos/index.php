@@ -16,7 +16,7 @@
         <h1>Lista de Articulos (ADMINS)</h1>
       </div>
       <div id="divCrear">
-        <a id="btnCrear" href="<?php echo constant('URL'); ?>/articulos/crear">Crear Artículo</a>
+        <a id="btnCrear" href="<?php echo constant('URL'); ?>articulos/crear">Crear Artículo</a>
       </div>
 
       <div id="divtabla">

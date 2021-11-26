@@ -18,7 +18,7 @@
         <h1>Crear Articulo</h1>
       </div>
     </div>
-    <form id="formCrear" action="<?php echo constant('URL'); ?>articulos/crear" method="post"
+    <form id="formCrear" action="<?php echo constant('URL'); ?>articulos/creado" method="post"
       enctype="multipart/form-data">
       <div>
         <label for="articuloNombre">Nombre</label>
@@ -54,6 +54,7 @@
     </form>
   </div>
   <?php require_once 'views/footer.php';?>
+  <script src="<?php echo constant('URL'); ?>/public/js/articulos/crear.js"></script>
 </body>
 
 </html>
