@@ -7,6 +7,7 @@ class Articulo
     public $precio;
     public $estado;
     public $stock;
+    public $categoria;
     public $url;
     public $ext;
     public $urlBase;

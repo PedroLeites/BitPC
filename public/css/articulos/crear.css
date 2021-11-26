@@ -1,0 +1,100 @@
+body {
+  background: url(../../img/fondos/fondo-form.jpg);
+  background-size: contain;
+}
+
+#form-container {
+  width: 1200px;
+  height: 1200px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #0d0d0d;
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+#formCrear {
+  width: 100%;
+  max-width: 500px;
+  height: 1250px;
+  padding: 0px;
+  border: 2px solid #005b97;
+  padding: 3px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.input {
+  font-size: 20px;
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #0d0d0d;
+  margin: 0 auto;
+  margin-top: 10px;
+  outline: none;
+  margin-left: 50px;
+}
+
+textarea {
+  font-size: 20px;
+  width: 80%;
+  height: 250px;
+  padding: 10px;
+  border: 1px solid #0d0d0d;
+  margin: 0 auto;
+  margin-top: 10px;
+  outline: none;
+  margin-left: 50px;
+}
+
+select {
+  font-size: 20px;
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #0d0d0d;
+  margin: 0 auto;
+  margin-top: 10px;
+  outline: none;
+  margin-left: 50px;
+}
+
+label {
+  font-size: 16px;
+  display: flex;
+  margin-left: 53px;
+  margin-top: 15px;
+  color: #0d0d0d;
+}
+
+#imgP {
+  max-width: 300px;
+  max-height: 300px;
+  background-color: red;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  width: 40%;
+  color: #ffffff;
+  font-size: 20px;
+  background: #005b97;
+  padding: 15px 20px;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-left: 150px;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: #ff3900;
+  transition: 0.1s;
+}

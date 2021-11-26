@@ -60,6 +60,7 @@ class Articulos_Controller extends Controller
             $articulo->precio      = number_format((float) $precio, 2, '.', '');
             $articulo->estado      = $_POST['estado'];
             $articulo->stock       = $_POST['stock'];
+            $articulo->categoria   = $_POST['categoria'];
             $pathImg               = $_FILES['img']['tmp_name'];
             $tmpName               = $_FILES['img']['name'];
             $array                 = explode(".", $tmpName);
@@ -105,6 +106,7 @@ class Articulos_Controller extends Controller
         $articulo->precio      = $_POST['precio'];
         $articulo->estado      = $_POST['estado'];
         $articulo->stock       = $_POST['stock'];
+        $articulo->categoria   = $_POST['categoria'];
         $pathImg               = $_FILES['img']['tmp_name'];
         $tmpName               = $_FILES['img']['name'];
         $array                 = explode(".", $tmpName);
@@ -146,6 +148,11 @@ class Articulos_Controller extends Controller
             $resultado = false;
         }
 
+    }
+
+    public function filtar($param = null)
+    {
+        # code...
     }
 
     public function verInfo($param = null)

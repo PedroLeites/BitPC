@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/articulos/verArticulo.css">
   <title>Editar Articulo</title>
 </head>
 
@@ -11,21 +12,19 @@
   <?php require 'views/header.php';?>
   <?php require_once 'views/buscador.php';?>
 
-  <div>
+  <div id="form-container">
     <div>
-      <div>
-        <h1>Editar Articulo</h1>
-      </div>
+      <h1>Editar Articulo</h1>
     </div>
     <form id="form01" action="<?php echo constant('URL'); ?>articulos/actualizar" method="post"
       enctype="multipart/form-data">
       <div>
         <label for="articuloId">Id</label>
-        <input type="text" id="articuloId" name="id" disabled value="<?php echo $this->articulo->id; ?>">
+        <input class="input" type="text" id="articuloId" name="id" disabled value="<?php echo $this->articulo->id; ?>">
       </div>
       <div>
         <label for="articuloNombre">Nombre</label>
-        <input type="text" id="articuloNombre" name="nombre" value="<?=$this->articulo->nombre;?>">
+        <input class="input" type="text" id="articuloNombre" name="nombre" value="<?=$this->articulo->nombre;?>">
       </div>
       <div>
         <label for="articuloDescripcion">Descripcion</label>
@@ -34,7 +33,7 @@
       </div>
       <div>
         <label for="articuloPrecio">Precio</label>
-        <input type="text" id="articuloPrecio" name="precio" value="<?=$this->articulo->precio;?>">
+        <input class="input" type="text" id="articuloPrecio" name="precio" value="<?=$this->articulo->precio;?>">
       </div>
       <div>
         <label for="articuloEstado">Estado</label>
@@ -45,11 +44,19 @@
       </div>
       <div>
         <label for="articuloStock">Stock</label>
-        <input type="text" id="articuloStock" name="stock" value="<?=$this->articulo->stock;?>">
+        <input class="input" type="text" id="articuloStock" name="stock" value="<?=$this->articulo->stock;?>">
+      </div>
+      <div>
+        <label for="articuloCategoria">Categoría</label>
+        <select value="<?=$this->articulo->categoria;?>" name="categoria" id="articuloCategoria">
+          <option value="Computadora">Computadora</option>
+          <option value="Accesorio">Accesorio</option>
+          <option value="Componente">Componente</option>
+        </select>
       </div>
       <div>
         <label for="articuloFoto">URL de la Foto</label>
-        <input type="file" id="articuloFoto" name="img">
+        <input class="input" type="file" id="articuloFoto" name="img">
       </div>
       <div id="imgP"></div>
       <div>

@@ -14,9 +14,12 @@ use \SimpleTranslation\Translate;
         </a>
         <ul class="submenu_productos">
           <li><a href="<?php echo constant('URL'); ?>articulos/listar"><?php echo Translate::__('View_All'); ?></a></li>
-          <li><a href=""><?php echo Translate::__('Computers'); ?></a></li>
-          <li><a href=""><?php echo Translate::__('Accessories'); ?></a></li>
-          <li><a href=""><?php echo Translate::__('PC_Components'); ?></a></li>
+          <li><a href="<?php echo constant('URL'); ?>articulos/filtar" .><?php echo Translate::__('Computers'); ?></a>
+          </li>
+          <li><a href="<?php echo constant('URL'); ?>articulos/filtar"><?php echo Translate::__('Accessories'); ?></a>
+          </li>
+          <li><a href="<?php echo constant('URL'); ?>articulos/filtar"><?php echo Translate::__('PC_Components'); ?></a>
+          </li>
         </ul>
       </li>
     </ul>

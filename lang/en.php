@@ -12,7 +12,7 @@ return [
     'DescBIT' => 'BIT PC is a company dedicated to the sale of computer supplies.',
     'Contact' => 'CONTACT US',
     'DescCode' => 'Website created by BIT Code SRL',
-    'LangOp' => 'Language',
+    'LangOp' => 'EN',
     'InDatos' => 'Enter your data',
     'Email' => 'Email',
     'Password' => 'Password',

@@ -10,7 +10,7 @@ h1 {
 }
 
 table {
-  width: 50%;
+  width: 100%;
   padding: 15px;
   text-align: center;
   border-collapse: collapse;
@@ -35,4 +35,17 @@ td {
 
 tr td:hover {
   background-color: #369add;
+}
+
+#btnEstado,
+#btnVerDetalle {
+  text-decoration: none;
+  color: #fff;
+  background-color: #005b97;
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 90%;
+  height: 25%;
 }
