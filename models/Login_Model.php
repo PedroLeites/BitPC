@@ -6,26 +6,29 @@ class Login_Model extends Model
         parent::__construct();
     }
 
-    public function ingresar($Nombre, $Contrasena)
+    public function ingresar($correo, $pass)
     {
 
-        $tieneAcceso = false;
+        $salida = new StdClass;
+        $salida->res = false;
         try {
-            $query = $this->db->connect()->prepare('SELECT password FROM personas WHERE Nombre=:Nombre');
-            $query->bindValue(':Nombre', $Nombre);
+            $query = $this->db->connect()->prepare('SELECT id, email, nombre, pwd, rol FROM usuarios WHERE email=:correo');
+            $query->bindValue(':correo', $correo);
             //$query->execute(['nombre' => $nombre]);
             $query->execute();
             $paswordStr = "";
             while ($row = $query->fetch()) {
-                $paswordStr = $row['Contrasena'];
+                $paswordStr = $row['pwd'];
+                $salida->id = $row['id'];
+                $salida->rol = $row['rol'];
             }
-            if ($paswordStr == $Contrasena) {
-                $tieneAcceso = true;
+            if ($paswordStr == $pass) {
+                $salida->res = true;
             }
         } catch (PDOException $e) {
             var_dump($e);
         }
-        return $tieneAcceso;
+        return $salida;
 
     }
 }

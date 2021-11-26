@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   background-color: #005b97;
   height: 55px;
@@ -23,8 +28,13 @@ li {
   list-style: none;
 }
 
+.productos_container {
+  padding: 0 10px;
+  position: relative;
+  left: 5%;
+}
+
 .menu_nav li a {
-  list-style: none;
   color: #fff;
   text-decoration: none;
   display: block;
@@ -66,17 +76,9 @@ li {
   background-color: #005b97;
 }
 
-.productos_container {
-  margin-left: 50px;
-  padding: 0 10px;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  width: 500px;
-}
-
 .busqueda_container {
-  margin-right: 325px;
+  padding: 0 10px;
+  position: relative;
 }
 
 .busqueda_container input {
@@ -117,7 +119,8 @@ li {
 }
 
 .carrito_container {
-  margin-right: 100px;
+  margin-right: 15%;
+  margin-left: 10%;
 }
 
 .cantidadElemCarrito {

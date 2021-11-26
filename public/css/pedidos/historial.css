@@ -1,0 +1,38 @@
+h1 {
+  color: #0d0d0d;
+  font-size: 30px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#tablaPedidos {
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  color: #0d0d0d;
+  border-bottom: solid 1px #0d0d0d;
+}
+
+td {
+  background-color: #fff;
+  border-bottom: solid 1px #827681;
+}
+
+tr td:hover {
+  background-color: #369add;
+}

@@ -29,7 +29,12 @@
       </div>
       <div>
         <label for="articuloDescripcion">Descripcion</label>
+<<<<<<< HEAD
         <input type="text" id="articulosDescripcion" name="Descripcion" value="<?=$this->articulos->Descripcion;?>">
+=======
+        <textarea name="descripcion" id="articuloDescripcion" cols="40"
+          rows="20"><?=$this->articulo->descripcion;?></textarea>
+>>>>>>> origin/axel
       </div>
       <div>
         <label for="articuloPrecio">Precio</label>
@@ -38,6 +43,17 @@
       <div>
         <label for="articuloPrecio">Cantidad</label>
         <input type="text" id="articulosStock" name="Stock" value="<?=$this->articulos->Stock;?>">
+      </div>
+      <div>
+        <label for="articuloEstado">Estado</label>
+        <select value="<?=$this->articulo->estado;?>" name="estado" id="articuloEstado">
+          <option value="activo">activo</option>
+          <option value="inactivo">inactivo</option>
+        </select>
+      </div>
+      <div>
+        <label for="articuloStock">Stock</label>
+        <input type="text" id="articuloStock" name="stock" value="<?=$this->articulo->stock;?>">
       </div>
       <div>
         <label for="articuloFoto">URL de la Foto</label>
@@ -51,6 +67,7 @@
       <input type="hidden" value="<?php echo $this->articulo->id; ?>" id="articuloId" name="articuloId">
     </form>
   </div>
+<<<<<<< HEAD
 =======
       <input type="hidden" value="<?php echo $this->articulos->$IDProd; ?>" IDProd="IDProd" name="IDProd">
       </form>
@@ -59,6 +76,9 @@
 
   <!-- importo el jQuery-->
   <script src="<?php echo constant('URL'); ?>/public/js/jquery-3.6.0.min.js"></script>
+=======
+  <?php require_once 'views/footer.php';?>
+>>>>>>> origin/axel
   <!-- importo el javascript-->
   <script src="<?php echo constant('URL'); ?>/public/js/articulos/verArticulo.js"></script>
 

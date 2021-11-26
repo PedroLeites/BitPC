@@ -1,0 +1,87 @@
+h1 {
+  color: #0d0d0d;
+  font-size: 30px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#divtabla {
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+th,
+td {
+  padding: 2px;
+}
+
+th {
+  color: #0d0d0d;
+  border-bottom: solid 1px #0d0d0d;
+}
+
+td {
+  background-color: #fff;
+  border-bottom: solid 1px #827681;
+}
+
+tr td:hover {
+  background-color: #369add;
+}
+
+td img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.btnEliminar {
+  background-color: #ff3900;
+  border: none;
+  width: 90%;
+  height: 25%;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#btnActualizar {
+  text-decoration: none;
+  color: #fff;
+  background-color: #005b97;
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 90%;
+  height: 25%;
+}
+
+#divCrear {
+  margin: auto;
+  align-items: center;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#btnCrear {
+  text-decoration: none;
+  color: #fff;
+  background-color: #005b97;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  height: 50%;
+}

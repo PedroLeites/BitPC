@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>BIT PC</title>
+  <?php
+
+require_once 'traduccion/Translate.php';
+use \SimpleTranslation\Translate;
+
+?>
+  <meta charset="UTF-8">
+  <title>BIT PC</title>
+  <link rel="stylesheet" href="<?php echo constant('URL'); ?>public/css/login/ingresar.css">
 </head>
+
 <body>
-    <?php require_once 'views/header.php';?>
-    <?php require_once 'views/buscador.php';?>
-    <div>
-    <div>
-        <div>
-            <h1>Ingreso correcto</h1>
-            <h2>Bienvenido <?php echo $Nombre; ?></h2>
-        </div>
-    </div>
-    </div>
+  <input type="hidden" value="<?php echo $this->token; ?>" id="token">
+  <?php require_once 'views/header.php';?>
+  <?php require_once 'views/buscador.php';?>
+  <div id="ResultadoLogin">
+    <h1><?php echo Translate::__('Login'); ?></h1>
+    <h2>¡<?php echo Translate::__('LoginSaludo'); ?> <?php echo $correo; ?>!</h2>
+  </div>
+
+  <?php require_once 'views/footer.php';?>
+  <script src="<?php echo constant('URL'); ?>public/js/login/ingresar.js"></script>
 </body>
+
 </html>
+<!-- echo Translate::__(''); -->

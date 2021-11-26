@@ -5,11 +5,11 @@ body {
 
 #form-container {
   width: 1200px;
-  height: 600px;
+  height: 400px;
   margin: auto;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 h1 {

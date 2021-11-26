@@ -1,5 +1,13 @@
 <?php
 
+//"importando" la libreria
+require_once 'traduccion/Translate.php';
+use \SimpleTranslation\Translate;
+
+//manejo de cookies
+$idioma = $_COOKIE['idioma'] ?? "es";
+Translate::init($idioma, "lang/" . $idioma . ".php");
+
 class Controller
 {
     public $model;
@@ -24,7 +32,7 @@ class Controller
         if (file_exists($url)) {
             require $url;
 
-            $modelName = ucfirst($model) . '_Model';
+            $modelName   = ucfirst($model) . '_Model';
             $this->model = new $modelName();
         }
     }
