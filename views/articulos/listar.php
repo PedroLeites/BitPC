@@ -21,7 +21,7 @@
       <!--ID: <?=$value->id;?>-->
       <img id="imgUnica" class="prodimg" src="<?php echo $articulo->url; ?>" alt="<?=$articulo->descripcion;?>" />
       <div id="InfoProd">
-        <a href="<?php echo constant('URL') . 'articulos/verInfo/' . $articulo->id; ?>"><?=$value->nombre;?></a>
+        <p id="nom"><?=$value->nombre;?></p>
         <!--<p class=""> <?=$articulo->descripcion;?></p>-->
         <p class="">$ <?=$articulo->precio;?></p>
       </div>
@@ -35,6 +35,7 @@
     <?php }
 ;?>
   </section>
+
 
   <?php require 'views/footer.php';?>
   <!-- importo script de listar-->

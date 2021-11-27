@@ -1,0 +1,22 @@
+body {
+  background: url(../../img/fondos/fondo-form.jpg);
+  background-size: contain;
+}
+
+#ResultadoRegistro {
+  width: 100%;
+  max-width: 500px;
+  height: 120px;
+  padding: 0px;
+  border: 2px solid #005b97;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  margin-bottom: 150px;
+  margin-top: 30px;
+  padding: 5px;
+}

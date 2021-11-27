@@ -75,15 +75,10 @@ h1 {
   margin-top: 2px;
 }
 
-#InfoProd a {
+#InfoProd #nom {
   color: #005b97;
   text-decoration: none;
-  font-weight: 600;
-}
-
-#InfoProd a:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  font-weight: 500;
 }
 
 #InfoProd p {
