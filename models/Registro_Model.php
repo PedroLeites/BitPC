@@ -16,6 +16,7 @@ class Registro_Model extends Model
         //formatear fecha anio-mes-dia, baseDatos
         $fechaAux = explode("-", $fechanac);
         $fechaF   = $fechaAux[2] . '-' . $fechaAux[1] . '-' . $fechaAux[0];
+        $passHash = password_hash($password, PASSWORD_DEFAULT, ['COST' => 10]);
         $query    = $this->db->connect()->prepare('insert into usuarios (email, nombre, apellido, fechanac, direccion, telefono, pwd, rol) values (:email, :nombre, :apellido, :fechanac, :direccion, :telefono,:pwd, :rol)');
         /*$query    = $this->db->connect()->prepare('insert into usuarios ( email, nombre, apellido, fechanac, direccion, telefono, pwd, rol) VALUES (:email, :nombre, :apellido, :fechanac, :direccion, :telefono, :pwd, :rol');*/
         /*$query = $this->db->connect()->prepare('INSERT INTO usuarios (email, nombre, apellido, fechanac, direccion, telefono, password) VALUES (:correo, :nombre, :apellido, :fechanac, :direccion, :telefono, :password)');*/
@@ -25,7 +26,7 @@ class Registro_Model extends Model
         $query->bindParam(':fechanac', $fechanac);
         $query->bindParam(':direccion', $direccion);
         $query->bindParam(':telefono', $telefono);
-        $query->bindParam(':pwd', $password);
+        $query->bindParam(':pwd', $passHash);
         $query->bindValue(':rol', "cliente");
         $query->execute();
 

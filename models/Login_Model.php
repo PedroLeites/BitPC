@@ -11,6 +11,7 @@ class Login_Model extends Model
 
         $salida      = new StdClass;
         $salida->res = false;
+
         try {
             $query = $this->db->connect()->prepare('SELECT id, email, nombre, pwd, rol FROM usuarios WHERE email=:correo');
             $query->bindValue(':correo', $correo);
@@ -18,7 +19,7 @@ class Login_Model extends Model
             $query->execute();
             $paswordStr = "";
             while ($row = $query->fetch()) {
-                $paswordStr  = $row['pwd'];
+                $paswordStr  = password_verify($pass, $row['pwd']);
                 $salida->id  = $row['id'];
                 $salida->rol = $row['rol'];
             }
