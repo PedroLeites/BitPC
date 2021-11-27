@@ -150,20 +150,15 @@ class Articulos_Controller extends Controller
 
     }
 
-    public function filtar($param = null)
-    {
-        # code...
-    }
-
     public function verInfo($param = null)
     {
-        $idArticulo = $param[0];
-        $articulo   = $this->model->verInfo($idArticulo);
+        /*$idArticulo = $param[0];
+    $articulo   = $this->model->verInfo($idArticulo);
 
-        $_SESSION["id_articulo"] = $idArticulo;
+    $_SESSION["id_articulo"] = $idArticulo;
 
-        $this->view->articulo = $articulo;
-        $this->view->render('articulos/verInfo');
+    $this->view->articulo = $articulo;
+    $this->view->render('articulos/verInfo');*/
     }
 
 }

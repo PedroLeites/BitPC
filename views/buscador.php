@@ -9,18 +9,9 @@ use \SimpleTranslation\Translate;
   <div class="productos_container">
     <ul class="menu_nav">
       <li>
-        <a><?php echo Translate::__('Products_by_Category'); ?><span class="iconify"
-            data-icon="entypo:triangle-down"></span>
+        <a href="<?php echo constant('URL'); ?>articulos/listar"><?php echo Translate::__('Products_by_Category'); ?><span
+            class="iconify" data-icon="grommet-icons:shop"></span>
         </a>
-        <ul class="submenu_productos">
-          <li><a href="<?php echo constant('URL'); ?>articulos/listar"><?php echo Translate::__('View_All'); ?></a></li>
-          <li><a href="<?php echo constant('URL'); ?>articulos/filtar" .><?php echo Translate::__('Computers'); ?></a>
-          </li>
-          <li><a href="<?php echo constant('URL'); ?>articulos/filtar"><?php echo Translate::__('Accessories'); ?></a>
-          </li>
-          <li><a href="<?php echo constant('URL'); ?>articulos/filtar"><?php echo Translate::__('PC_Components'); ?></a>
-          </li>
-        </ul>
       </li>
     </ul>
   </div>
