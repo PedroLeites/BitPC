@@ -19,32 +19,28 @@
     <div>
     </div>
     <div id="tablaPedidos">
-      <table>
-        <thead>
-          <tr>
-            <th>#ID</th>
-            <th>Articulo</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Precio Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
+      <table class="tabla">
+        <tr>
+          <th>#ID</th>
+          <th>Articulo</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Precio Total</th>
+        </tr>
+        <?php
 
 foreach ($this->articulo as $row) {
     //$articulo = new Pedido();
     $articulo = $row;?>
-          <tr id="filaart-<?php echo $articulo->id; ?>">
-            <td><?php echo $articulo->id; ?></td>
-            <td><?php echo $articulo->nombre; ?></td>
-            <td><?php echo $articulo->precio; ?></td>
-            <td><?php echo $articulo->cantidad; ?></td>
-            <td><?php echo $articulo->subtotal; ?></td>
-          </tr>
-          <?php }?>
-        </tbody>
-        <tr>
+        <tr id="filaart-<?php echo $articulo->id; ?>">
+          <td><?php echo $articulo->id; ?></td>
+          <td><?php echo $articulo->nombre; ?></td>
+          <td><?php echo $articulo->precio; ?></td>
+          <td><?php echo $articulo->cantidad; ?></td>
+          <td><?php echo $articulo->subtotal; ?></td>
+        </tr>
+        <?php }?>
+        <tr id="total">
           <td></td>
           <td></td>
           <td></td>

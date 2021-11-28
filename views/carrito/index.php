@@ -21,7 +21,7 @@ use \SimpleTranslation\Translate;
   <?php require_once 'views/buscador.php';?>
   <h1 id="hArticulos"><?php echo Translate::__('hCarrito'); ?></h1>
   <div id="carritoid">
-    <table id="tablaCarrito">
+    <table class="tabla" id="tablaCarrito">
       <tr>
         <th><?php echo Translate::__('Articles'); ?></th>
         <th><?php echo Translate::__('PriceUni'); ?></th>

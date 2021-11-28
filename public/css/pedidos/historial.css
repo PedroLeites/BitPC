@@ -9,7 +9,7 @@ h1 {
   margin: auto;
 }
 
-table {
+/*table {
   width: 100%;
   padding: 15px;
   text-align: center;
@@ -17,22 +17,43 @@ table {
   margin-top: 10px;
   margin-bottom: 70px;
 }
-
 th,
 td {
   padding: 10px;
 }
-
 th {
   color: #0d0d0d;
   border-bottom: solid 1px #0d0d0d;
 }
-
 td {
   background-color: #fff;
   border-bottom: solid 1px #827681;
 }
-
 tr td:hover {
+  background-color: #369add;
+}*/
+
+.tabla {
+  width: 100%;
+  padding: 10px;
+  border-spacing: 0;
+}
+
+.tabla th {
+  border-bottom: solid 1px #0d0d0d;
+  background-color: #005b97;
+  color: #fff;
+}
+
+.tabla th,
+.tabla td {
+  padding: 10px;
+}
+
+.tabla tr:nth-child(even) {
+  background-color: #e7e7e7;
+}
+
+.tabla tr:hover {
   background-color: #369add;
 }

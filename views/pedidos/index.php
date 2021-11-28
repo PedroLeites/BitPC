@@ -15,38 +15,34 @@
       <h1>Lista de Pedidos (ADMINS)</h1>
     </div>
     <div id="tablaPedidos">
-      <table>
-        <thead>
-          <tr>
-            <th>#ID</th>
-            <th>email</th>
-            <th>Usuario</th>
-            <th>Fecha y Hora</th>
-            <th>Estado</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
+      <table class="tabla">
+        <tr>
+          <th>#ID</th>
+          <th>email</th>
+          <th>Usuario</th>
+          <th>Fecha y Hora</th>
+          <th>Estado</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <?php
 
 foreach ($this->articulos as $row) {
     $articulo = new Pedido();
     $articulo = $row;?>
-          <tr id="filaart-<?php echo $articulo->id; ?>">
-            <td><?php echo $articulo->id; ?></td>
-            <td><?php echo $articulo->email; ?></td>
-            <td><?php echo $articulo->usuario; ?></td>
-            <td><?php echo $articulo->fecha; ?></td>
-            <td><?php echo $articulo->estado; ?></td>
-            <td><a id="btnEstado"
-                href="<?php echo constant('URL') . 'pedidos/cambiarEstado/' . $articulo->id . '/' . $articulo->estado; ?>">Cambiar
-                Estado</a></td>
-            <td><a id="btnVerDetalle" href="<?php echo constant('URL') . 'pedidos/verDetalle/' . $articulo->id; ?>">Ver
-                Detalle</a></td>
-          </tr>
-          <?php }?>
-        </tbody>
+        <tr id="filaart-<?php echo $articulo->id; ?>">
+          <td><?php echo $articulo->id; ?></td>
+          <td><?php echo $articulo->email; ?></td>
+          <td><?php echo $articulo->usuario; ?></td>
+          <td><?php echo $articulo->fecha; ?></td>
+          <td><?php echo $articulo->estado; ?></td>
+          <td><a id="btnEstado"
+              href="<?php echo constant('URL') . 'pedidos/cambiarEstado/' . $articulo->id . '/' . $articulo->estado; ?>">Cambiar
+              Estado</a></td>
+          <td><a id="btnVerDetalle" href="<?php echo constant('URL') . 'pedidos/verDetalle/' . $articulo->id; ?>">Ver
+              Detalle</a></td>
+        </tr>
+        <?php }?>
       </table>
     </div>
   </div>

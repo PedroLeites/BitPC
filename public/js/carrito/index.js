@@ -45,9 +45,12 @@
       $("#tablaCarrito").append(insert);
     });
     let total = localStorage.getItem("total");
-    let totalInsert = `<tr>
-      <td colspan="3"><b>Total:</b></td>
-      <td colspan="2"><b>$${total}</b></td>
+    let totalInsert = `<tr id="total">
+      <td></td>
+      <td></td>
+      <td><b>Total:</b></td>
+      <td><b>$${total}</b></td>
+      <td></td>
     </tr>`;
     $("#tablaCarrito").append(totalInsert);
 

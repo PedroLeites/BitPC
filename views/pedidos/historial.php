@@ -18,31 +18,27 @@
       <h1>Pedidos Anteriores</h1>
     </div>
     <div id="tablaPedidos">
-      <table>
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Dirección</th>
-            <th>Fecha</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
+      <table class="tabla">
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Dirección</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+        </tr>
+        <?php
 
 foreach ($this->articulos as $row) {
     $articulo = new Pedido();
     $articulo = $row;?>
-          <tr id="filaart-<?php echo $articulo->id; ?>">
-            <td><?php echo $articulo->nombreProd; ?></td>
-            <td><?php echo $articulo->cantidadProd; ?></td>
-            <td><?php echo $articulo->direccion; ?></td>
-            <td><?php echo $articulo->fecha; ?></td>
-            <td><?php echo $articulo->estado; ?></td>
-          </tr>
-          <?php }?>
-        </tbody>
+        <tr id="filaart-<?php echo $articulo->id; ?>">
+          <td><?php echo $articulo->nombreProd; ?></td>
+          <td><?php echo $articulo->cantidadProd; ?></td>
+          <td><?php echo $articulo->direccion; ?></td>
+          <td><?php echo $articulo->fecha; ?></td>
+          <td><?php echo $articulo->estado; ?></td>
+        </tr>
+        <?php }?>
       </table>
     </div>
   </div>
