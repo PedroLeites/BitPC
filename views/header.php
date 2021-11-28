@@ -26,8 +26,11 @@ $estaLogueado = isset($_SESSION["estalogueado"]) ? $_SESSION["estalogueado"] : f
 if ($estaLogueado) {
     ?><?php $correo = $_SESSION["email"];?>
     <ul class="menu_items">
-      <!--<li><a href="<?php echo constant('URL'); ?>articulos">Administrar Articulos</a></li>-->
-      <!--<li><a href="<?php echo constant('URL'); ?>pedidos">Administrar Pedidos</a></li>-->
+      <?php if ($_SESSION['rol'] == 'admin') {?>
+      <li><a href="<?php echo constant('URL'); ?>articulos">Admin Articulos</a></li>
+      <li><a href="<?php echo constant('URL'); ?>pedidos">Admin Pedidos</a></li>
+      <?php }
+    ;?>
       <li class="perfil">
         <a href="#"><?php echo $correo; ?></a>
         <ul class="menu_perfil">

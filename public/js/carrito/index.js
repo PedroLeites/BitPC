@@ -42,9 +42,18 @@
           <td>$${pc}</td>
           <td><button type="button" class="btnEliminar" data-articulo-id="${element.id}"><span class="iconify" data-icon="carbon:shopping-cart-minus"></span></button></td>
         </tr>`;
-
       $("#tablaCarrito").append(insert);
     });
+    let total = localStorage.getItem("total");
+    let totalInsert = `<tr id="total">
+      <td></td>
+      <td></td>
+      <td><b>Total:</b></td>
+      <td><b>$${total}</b></td>
+      <td></td>
+    </tr>`;
+    $("#tablaCarrito").append(totalInsert);
+
     /*
     $(document).on('click', '.borrar', function (event) {
     event.preventDefault();
@@ -67,9 +76,15 @@
           carrito.forEach(function (art, index, object) {
             if (art.id == articuloId) {
               object.splice(index, 1);
+              let total = parseFloat(localStorage.getItem("total"));
+              let subtotal = parseFloat(art.precio) * parseFloat(art.cantidad);
+              total -= subtotal;
               localStorage.setItem("carrito", JSON.stringify(carrito));
+              localStorage.setItem("total", total);
             }
             $("#cantidadElemCarrito").text(carrito.length);
+            //actulizas el total
+
             location.reload();
           }); //end carrito.foreach
         } //end if carritoStr

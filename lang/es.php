@@ -12,7 +12,7 @@ return [
     'DescBIT' => 'BIT PC es una empresa dedicada a la venta de insumos informáticos',
     'Contact' => 'CONTÁCTENOS',
     'DescCode' => 'Página web creada por BIT Code SRL',
-    'LangOp' => 'Idioma',
+    'LangOp' => 'ES',
     'InDatos' => 'Ingrese sus datos',
     'Email' => 'Correo Electrónico',
     'Password' => 'Contraseña',

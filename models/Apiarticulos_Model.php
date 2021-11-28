@@ -36,7 +36,7 @@ class Apiarticulos_Model extends Model
     public function crear($articulos)
     {
         $urlDefecto = constant('URL') . 'public/img/articulos/imgDefecto.svg';
-        $pdo = $query = $this->db->connect();
+        $pdo        = $query        = $this->db->connect();
         try {
             $query = $pdo->prepare('insert into productos (nombre, descripcion, precio, estado) values (:nombre, :descripcion, :precio, :estado)');
             $query->bindParam(':nombre', $articulo->nombre);

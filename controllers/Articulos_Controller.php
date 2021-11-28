@@ -60,6 +60,7 @@ class Articulos_Controller extends Controller
             $articulo->precio = number_format((float) $precio, 2, '.', '');
             $articulo->estado = $_POST['estado'];
             $articulo->stock = $_POST['stock'];
+            $articulo->categoria = $_POST['categoria'];
             $pathImg = $_FILES['img']['tmp_name'];
             $tmpName = $_FILES['img']['name'];
             $array = explode(".", $tmpName);
@@ -89,22 +90,37 @@ class Articulos_Controller extends Controller
     public function crear()
     {
         $this->view->render('articulos/crear');
+    }
+
+    public function creado()
+    {
+        $llegoImg = false;
+        $nombreImagen = $_FILES['img']['name'];
+        if ($nombreImagen != "") {
+            $llegoImg = true;
+        }
+        //$llegoImg              = $_FILES['img']['tmp_name']['error'];
         $articulo = new Articulo();
         $articulo->nombre = $_POST['nombre'];
         $articulo->descripcion = $_POST['descripcion'];
         $articulo->precio = $_POST['precio'];
         $articulo->estado = $_POST['estado'];
         $articulo->stock = $_POST['stock'];
+        $articulo->categoria = $_POST['categoria'];
         $pathImg = $_FILES['img']['tmp_name'];
         $tmpName = $_FILES['img']['name'];
         $array = explode(".", $tmpName);
         $ext = $array[count($array) - 1];
-        $ruta = 'public/img/articulos/' . $articulo->id . "." . $ext;
-        $articulo->url = $ruta;
-        $resultado = $this->model->crear($articulo);
-        move_uploaded_file($pathImg, $ruta);
+        $rutaBase = 'public/img/articulos/';
+        $articulo->urlBase = $rutaBase;
+        $articulo->ext = $ext;
+        $resultado = $this->model->creado($articulo, $llegoImg);
+        if ($llegoImg) {
+            move_uploaded_file($pathImg, $rutaBase . $resultado . "." . $ext);
+        }
 
         $this->view->respuesta = $resultado;
+        $this->view->render('articulos/creado');
     }
 
     public function buscar()
@@ -136,13 +152,13 @@ class Articulos_Controller extends Controller
 
     public function verInfo($param = null)
     {
-        $idArticulo = $param[0];
-        $articulo = $this->model->verInfo($idArticulo);
+        /*$idArticulo = $param[0];
+    $articulo   = $this->model->verInfo($idArticulo);
 
-        $_SESSION["id_articulo"] = $idArticulo;
+    $_SESSION["id_articulo"] = $idArticulo;
 
-        $this->view->articulo = $articulo;
-        $this->view->render('articulos/verInfo');
+    $this->view->articulo = $articulo;
+    $this->view->render('articulos/verInfo');*/
     }
 
 }

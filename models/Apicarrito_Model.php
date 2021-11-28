@@ -14,7 +14,7 @@ class Apicarrito_Model extends Model
         $pdo = $this->db->connect();
         $pdo->beginTransaction();
         try {
-
+            $total = 0;
             $fecha = date('Y-m-d H:i:s', time());
             $query = $pdo->prepare('insert into pedido (ID, FechaNac) VALUES (:ID, :FechaNac)');
             $query->bindParam(':ID', $personas);
@@ -30,27 +30,31 @@ class Apicarrito_Model extends Model
             // inserto en la base de datos
             $query = $pdo->prepare('insert into item (IDProd, NomProd,Descripcion,Precio, Stock, Estado, Categoria, IDPedidos, URL_Foto) VALUES (:IDProd, :NomProd, :Descripcion, :Precio, :Stock, :Estado, :Categoria, :URL_Foto, :IDPedidos)');
             // le paso los parámetros a lista
-            foreach ($lista as $key => $articulos) {
-                $query->bindParam(':IDProd', $articulos->IDProd);
-                $query->bindParam(':NomProd', $articulos->NomProd);
-                $query->bindParam(':Descripcion', $articulos->Descripcion);
-                $query->bindParam(':Precio', $articulos->Precio);
-                $query->bindParam(':Stock', $articulos->Stock);
-                $query->bindParam(':Estado', $articulos->Estado);
-                $query->bindParam(':Categoria', $articulos->Categoria);
-                $query->bindParam(':URL_Foto', $articulos->URL_Foto);
-                $query->bindParam(':IDPedidos', $lastInsertIDPedidos);
+            foreach ($lista as $key => $articulo) {
+                $query->bindParam(':articulo_id', $articulo->id);
+                $query->bindParam(':cantidad', $articulo->cantidad);
+                $query->bindParam(':precio', $articulo->precio);
+                $query->bindParam(':pedido_id', $lastInsertId);
+                $cantidadFloat = floatval($articulo->cantidad);
+                $precioFloat = floatval($articulo->precio);
+                $total += ($cantidadFloat * $precioFloat);
                 $query->execute();
             }
             $pdo->commit();
 
-            $salida->IDPedidos = $lastInsertId;
+            //con la otra consulta actualiza el total
+            $query = $pdo->prepare('UPDATE pedido SET total=:total WHERE id= :id');
+            $query->bindParam(':total', $total);
+            $query->bindParam(':id', $lastInsertId);
+            $query->execute();
+
+            $salida->pedidoId = $lastInsertId;
             $salida->res = true;
             return $salida;
             // Si hay una exception, vuelve a insertar
         } catch (PDOException $e) {
             $pdo->rollBack();
-            $salida->IDPedidos = -1;
+            $salida->pedidoId = -1;
             $salida->res = false;
             return $salida;
             // finally para liberar espacio
