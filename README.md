@@ -22,4 +22,6 @@ El proyecto inició su desarrollo el 15/05/2021. Se siguió un ciclo de vida con
 
 3- Colonar el repositorio en la carpeta correspondiente al servicio instalado (www en WAMP o htdocs en XAMP).
 
-4- Ejecutar el proyecto en el navegador de su preferencia, nosotros recomendamos Google Chrome.
+4- Tener el Gestor de Dependencias Composer instalado y ejecutar el comando composer install en una terminal en el proyecto
+
+5- Ejecutar el proyecto en el navegador de su preferencia, nosotros recomendamos Google Chrome.
